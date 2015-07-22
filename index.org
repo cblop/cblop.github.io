@@ -1,6 +1,6 @@
- #+TITLE:Matt Thompson's Blog
+ #+TITLE:Matt Thompson
 * Blogging using just org-mode and github-pages
-<2015-07-22 Wed>
+/Wed July 22 2015/
 
 Possibly the very simplest way to blog in emacs is to just write the entries down in org-mode. This then gets exported to static html, which becomes a github pages thingy.
 The key is to use some nice CSS in addition, though.
