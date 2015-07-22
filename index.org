@@ -5,8 +5,11 @@
 Most recently: [[./org-blog.html][Blogging using just org-mode and github-pages]]
 
 Previously:
+
 [[./jam-2014.html][Global Game Jam 2014: Bristol Edition]]
+
 [[./artfinder.html][Discovering Japanese artists with Artfinder]]
+
 [[./linear-stories.html][Why are stories still linear?]]
 
 -----
