@@ -8,7 +8,7 @@ This year I took part in my first ever game jam. Overall, I would totally recomm
 The Global Game Jam is an event where people all over the world get into teams and make games over the course of 48 hours. The theme of the games is announced on the Friday night, and you then have until Sunday evening to put together an interesting game that matches the theme. This year’s theme was:
 
 #+BEGIN_QUOTE
-We don’t see things as they are, we see things as we are.
+/We don’t see things as they are, we see things as we are./
 #+END_QUOTE
 
 Or something to that effect. Needless to say, this was vague and cryptic enough to give the game jammers plenty of room for interpretation (or in our case, plenty of reason to make a game and come up with an ad-hoc explanation later).
