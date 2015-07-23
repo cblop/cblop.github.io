@@ -1,21 +1,46 @@
  #+TITLE:MATT THOMPSON
 
------
-
-Most recently: [[./org-blog.html][Blogging using just org-mode and github-pages]]
+[[file:./img/mattconf.jpg]]
 
 -----
+** Blog
 
-Previously:
+*Recent*:
 
-[[./jam-2014.html][Global Game Jam 2014: Bristol Edition]]
+[[./org-blog.html][Blogging using just org-mode and github-pages]]
 
-[[./artfinder.html][Discovering Japanese artists with Artfinder]]
+*Previous*:
 
-[[./linear-stories.html][Why are stories still linear?]]
+- [[./jam-2014.html][Global Game Jam 2014: Bristol Edition]]
+- [[./artfinder.html][Discovering Japanese artists with Artfinder]]
+- [[./linear-stories.html][Why are stories still linear?]]
 
 -----
 
+** Papers
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: right-align
+:END:
 
+*Recent*:
 
+Telling Non-Linear Stories with Interval Temporal Logic (Pending conference acceptance)
+
+*Previous*:
+
+- [[http://drops.dagstuhl.de/opus/frontdoor.php?source_opus%3D5288][Governing Narrative Events with Institutional Norms (CMN 2015)]]
+- [[http://coin2015.tbm.tudelft.nl/files/2015/06/COINIJCAI_2015_submission_19.pdf][An Interactive, Generative Punch and Judy Show Using Institutions, ASP and Emotional Agents (COIN @ IJCAI 2015)]]
+- [[http://www.cs.kent.ac.uk/events/2015/AISB2015/proceedings/aiAndGames/AI-games-15_submission_10--MatthewThompson--interactive.pdf][An Interactive, Generative Punch and Judy Show Using Institutions, ASP and Emotional Agents (AISB 2015)]]
+- [[http://hswi.referata.com/w/images/Hswi2014_paper_1.pdf][Artfinder: A Faceted Browser for Cross-Cultural Art Discovery (HSWI 2014)]]
+- [[http://dl.acm.org/citation.cfm?id%3D2377952][Effect of Touch Screen Size on Game Immersion (BCS HCI 2012)]]
+-----
+
+** Contact
+
+- [[./cv][CV]]
+- [[mailto:mrt32@bath.ac.uk][Email]]
+- [[https://github.com/cblop][Github]]
+- [[https://twitter.com/cblop][Twitter]]
+
+-----
 
