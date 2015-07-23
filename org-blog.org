@@ -6,3 +6,7 @@
 Possibly the very simplest way to blog in emacs is to just write the entries down in org-mode. This then gets exported to static html, which becomes a github pages thingy.
 The key is to use some nice CSS in addition, though.
 -----
+
+#+HTML:<div align=center>
+[[http://mthompson.org][Home]]
+#+HTML:</div>
