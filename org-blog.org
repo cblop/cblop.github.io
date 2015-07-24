@@ -3,8 +3,10 @@
 * Blogging using just org-mode and github-pages
 /Wed July 22nd 2015/
 
-Possibly the very simplest way to blog in emacs is to just write the entries down in org-mode. This then gets exported to static html, which becomes a github pages thingy.
-The key is to use some nice CSS in addition, though.
+When I'm writing something, I want to just open up a window (or emacs buffer) and start writing. I don't want to have to worry about whether or not I have a net connection, or whether Jekyll/Octopress/Pelikan/whatever is synced with the git repo properly. I want to be able to blog from multiple machines without going through all the madness that Octopress etc involve.
+
+That's why I decided to migrate my blog to the simplest format possible: just plain org-mode. A single command generates the html from inside emacs. I have a simple CSS style, using default fonts. It looks nice, and loads fast. Publishing to github pages is hella easy. So now I have a dead simple, freely hosted blog/web page. Writing blog posts is now somehow less intimidating.
+
 -----
 
 #+HTML:<div align=center>
