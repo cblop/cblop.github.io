@@ -9,6 +9,7 @@
 ** Blog
 
 *Recent*:
+
 [[./do-life.html][What do you want to do with your life?]]
 
 *Previous*:
