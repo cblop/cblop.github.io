@@ -1,3 +1,5 @@
+ #+TITLE: MATT THOMPSON
+-----
 * What is it you want to do with your life?
 Last week I had an out-of-the-blue meeting with [[http://www.cs.bath.ac.uk/~jjb/][Joanna Bryson]] to discuss the overlaps in our research. We both did stuff with emotional models for agents, but it was pretty tangential for both of us.
 
@@ -15,3 +17,9 @@ I'm about to reach a point in my life where I have a huge decision to make. What
 There's no reason I can't do number 1. in my free time while pursuing one of the other options. And in fact, I am, by working on small games now and putting them on my website. But to make a decent game will take my full-time commitment, and for that I need enough money to at least cover my living costs. That means either saving up enough, or getting funding.
 
 I'm glad Joanna asked me that question. Until last week, I'd been unsure what to do next. But being asked what I wanted to do with my life forced me to make my choice. Though my next step might be unclear, I know where I want it to take me eventually.
+
+-----
+
+#+HTML:<div align=center>
+[[http://mthompson.org][Home]]
+#+HTML:</div>
