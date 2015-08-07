@@ -39,6 +39,24 @@ Telling Non-Linear Stories with Interval Temporal Logic (Pending conference acce
 - [[http://dl.acm.org/citation.cfm?id%3D2377952][Effect of Touch Screen Size on Game Immersion (BCS HCI 2012)]]
 -----
 
+** Music
+-----
+
+- [[http://commanderblop.bandcamp.com][Commander Blop]]
+- [[http://vlov.bandcamp.com][Vice Lords of Valhalla]]
+- [[http://soggybrick.bandcamp.com][Soggy Brick]]
+
+-----
+
+** Games
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: right-align
+:END:
+
+- [[https://github.com/cblop/bloodbath][Blood Bath (Love2D source)]]
+
+-----
+
 ** Contact
 
 - [[./cv][CV]]
