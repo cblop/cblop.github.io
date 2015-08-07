@@ -40,7 +40,6 @@ Telling Non-Linear Stories with Interval Temporal Logic (Pending conference acce
 -----
 
 ** Music
------
 
 - [[http://commanderblop.bandcamp.com][Commander Blop]]
 - [[http://vlov.bandcamp.com][Vice Lords of Valhalla]]
