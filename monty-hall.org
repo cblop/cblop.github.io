@@ -16,6 +16,8 @@ At this week's Bristol Clojurians meetup we decided to give the Monty Hall probl
       (if (= ":car:" choice) true false)
       (if (= ":car:" (nth world other-choice)) true false))))
 
+#+end_src
+#+begin_src clojure
 (defn play [times]
   (let [stick (take times (repeatedly #(choose (rand-int 3) false)))
         change (take times (repeatedly #(choose (rand-int 3) true)))
@@ -23,6 +25,8 @@ At this week's Bristol Clojurians meetup we decided to give the Monty Hall probl
         c-count (count (filter true? change))]
     (hash-map :stick s-count :change c-count)))
 
+#+end_src
+#+begin_src clojure
 (play 1000)
 #+end_src
 
