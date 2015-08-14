@@ -9,6 +9,7 @@
 ** Blog
 
 *Recent*:
+
 [[./monty-hall.html][Solving the Monty Hall problem in Clojure]]
 
 *Previous*:

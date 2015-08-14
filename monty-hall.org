@@ -10,7 +10,8 @@ At this week's Bristol Clojurians meetup we decided to give the Monty Hall probl
         world (assoc [":goat:" ":goat:" ":goat:"] car ":car:")
         choice (nth world n)
         others (remove #(= n %) (range 3))
-        other-choice (if (= ":goat:" (nth world (first others))) (last others) (first others))]
+        other-choice (if (= ":goat:" (nth world (first others)))
+                       (last others) (first others))]
     (if-not change
       (if (= ":car:" choice) true false)
       (if (= ":car:" (nth world other-choice)) true false))))
