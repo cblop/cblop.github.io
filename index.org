@@ -9,11 +9,11 @@
 ** Blog
 
 *Recent*:
-
-[[./do-life.html][What do you want to do with your life?]]
+[[./monty-hall.html][Solving the Monty Hall problem in Clojure]]
 
 *Previous*:
 
+- [[./do-life.html][What do you want to do with your life?]]
 - [[./org-blog.html][Blogging using just org-mode and github-pages]]
 - [[./jam-2014.html][Global Game Jam 2014: Bristol Edition]]
 - [[./artfinder.html][Discovering Japanese artists with Artfinder]]
