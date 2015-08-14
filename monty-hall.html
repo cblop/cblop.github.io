@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta  name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MATT THOMPSON</title>
+    <meta  name="generator" content="Org-mode" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div id="content">
+      <header>
+        <h1 class="title">MATT THOMPSON</h1>
+      </header><hr  />
+      <div id="outline-container-orgheadline1" class="outline-2">
+        <h2 id="orgheadline1">Solving the Monty Hall problem in Clojure</h2>
+        <div class="outline-text-2" id="text-orgheadline1">
+          <p>
+            At this week's Bristol Clojurians meetup we decided to give the Monty Hall problem a go as described in the <a href="http://cyber-dojo.org/">cyber dojo</a> problem set. Here's the solution I (eventually) came up with:
+          </p>
+
+          <div class="org-src-container">
+
+            <pre class="src src-clojure"><span style="color: #A1EFE4;">(</span><span style="color: #F92672;">defn</span> <span style="color: #A6E22E;">choose</span> <span style="color: #E6DB74;">[</span>n change<span style="color: #E6DB74;">]</span>
+              <span style="color: #E6DB74;">(</span><span style="color: #F92672;">let</span> <span style="color: #66D9EF;">[</span>car <span style="color: #FD971F;">(</span>rand-int <span style="color: #AE81FF;">3</span><span style="color: #FD971F;">)</span>
+              world <span style="color: #FD971F;">(</span>assoc <span style="color: #A6E22E;">[</span><span style="color: #E6DB74;">":goat:"</span> <span style="color: #E6DB74;">":goat:"</span> <span style="color: #E6DB74;">":goat:"</span><span style="color: #A6E22E;">]</span> car <span style="color: #E6DB74;">":car:"</span><span style="color: #FD971F;">)</span>
+              choice <span style="color: #FD971F;">(</span>nth world n<span style="color: #FD971F;">)</span>
+              others <span style="color: #FD971F;">(</span>remove #<span style="color: #A6E22E;">(</span>= n <span style="color: #FD971F;">%</span><span style="color: #A6E22E;">)</span> <span style="color: #A6E22E;">(</span>range <span style="color: #AE81FF;">3</span><span style="color: #A6E22E;">)</span><span style="color: #FD971F;">)</span>
+              other-choice <span style="color: #FD971F;">(</span><span style="color: #F92672;">if</span> <span style="color: #A6E22E;">(</span>= <span style="color: #E6DB74;">":goat:"</span> <span style="color: #E6DB74;">(</span>nth world <span style="color: #66D9EF;">(</span>first others<span style="color: #66D9EF;">)</span><span style="color: #E6DB74;">)</span><span style="color: #A6E22E;">)</span> <span style="color: #A6E22E;">(</span>last others<span style="color: #A6E22E;">)</span> <span style="color: #A6E22E;">(</span>first others<span style="color: #A6E22E;">)</span><span style="color: #FD971F;">)</span><span style="color: #66D9EF;">]</span>
+              <span style="color: #66D9EF;">(</span><span style="color: #F92672;">if-not</span> change
+              <span style="color: #FD971F;">(</span><span style="color: #F92672;">if</span> <span style="color: #A6E22E;">(</span>= <span style="color: #E6DB74;">":car:"</span> choice<span style="color: #A6E22E;">)</span> <span style="color: #AE81FF;">true</span> <span style="color: #AE81FF;">false</span><span style="color: #FD971F;">)</span>
+              <span style="color: #FD971F;">(</span><span style="color: #F92672;">if</span> <span style="color: #A6E22E;">(</span>= <span style="color: #E6DB74;">":car:"</span> <span style="color: #E6DB74;">(</span>nth world other-choice<span style="color: #E6DB74;">)</span><span style="color: #A6E22E;">)</span> <span style="color: #AE81FF;">true</span> <span style="color: #AE81FF;">false</span><span style="color: #FD971F;">)</span><span style="color: #66D9EF;">)</span><span style="color: #E6DB74;">)</span><span style="color: #A1EFE4;">)</span>
+
+              <span style="color: #A1EFE4;">(</span><span style="color: #F92672;">defn</span> <span style="color: #A6E22E;">play</span> <span style="color: #E6DB74;">[</span>times<span style="color: #E6DB74;">]</span>
+              <span style="color: #E6DB74;">(</span><span style="color: #F92672;">let</span> <span style="color: #66D9EF;">[</span>stick <span style="color: #FD971F;">(</span>take times <span style="color: #A6E22E;">(</span>repeatedly #<span style="color: #E6DB74;">(</span>choose <span style="color: #66D9EF;">(</span>rand-int <span style="color: #AE81FF;">3</span><span style="color: #66D9EF;">)</span> <span style="color: #AE81FF;">false</span><span style="color: #E6DB74;">)</span><span style="color: #A6E22E;">)</span><span style="color: #FD971F;">)</span>
+              change <span style="color: #FD971F;">(</span>take times <span style="color: #A6E22E;">(</span>repeatedly #<span style="color: #E6DB74;">(</span>choose <span style="color: #66D9EF;">(</span>rand-int <span style="color: #AE81FF;">3</span><span style="color: #66D9EF;">)</span> <span style="color: #AE81FF;">true</span><span style="color: #E6DB74;">)</span><span style="color: #A6E22E;">)</span><span style="color: #FD971F;">)</span>
+              s-count <span style="color: #FD971F;">(</span>count <span style="color: #A6E22E;">(</span>filter true? stick<span style="color: #A6E22E;">)</span><span style="color: #FD971F;">)</span>
+              c-count <span style="color: #FD971F;">(</span>count <span style="color: #A6E22E;">(</span>filter true? change<span style="color: #A6E22E;">)</span><span style="color: #FD971F;">)</span><span style="color: #66D9EF;">]</span>
+              <span style="color: #66D9EF;">(</span>hash-map <span style="color: #AE81FF;">:stick</span> s-count <span style="color: #AE81FF;">:change</span> c-count<span style="color: #66D9EF;">)</span><span style="color: #E6DB74;">)</span><span style="color: #A1EFE4;">)</span>
+
+              <span style="color: #A1EFE4;">(</span>play <span style="color: #AE81FF;">1000</span><span style="color: #A1EFE4;">)</span>
+            </pre>
+          </div>
+
+          <p>
+            This turned out to be a lot trickier than it looks. I ended up spending way more time than necessary hacking emoji support into Emacs to display little car and goat icons. Important things first, right?
+          </p>
+
+          <hr  />
+
+          <div align=center>
+            <p>
+              <a href="http://mthompson.org/">Home</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
