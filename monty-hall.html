@@ -21,35 +21,7 @@
             At this week's Bristol Clojurians meetup we decided to give the Monty Hall problem a go as described in the <a href="http://cyber-dojo.org/">cyber dojo</a> problem set. Here's the solution I (eventually) came up with:
           </p>
 
-          <div class="org-src-container">
-
-            <pre class="src src-clojure"><span style="color: #2f96dc;">(</span><span style="color: #237fbf; font-weight: bold;">defn</span> <span style="color: #6c3163; font-weight: bold;">choose</span> <span style="color: #6c3163;">[</span>n change<span style="color: #6c3163;">]</span>
-              <span style="color: #6c3163;">(</span><span style="color: #237fbf; font-weight: bold;">let</span> <span style="color: #2aa198;">[</span>car <span style="color: #67b11d;">(</span>rand-int <span style="color: #4e3163;">3</span><span style="color: #67b11d;">)</span>
-              world <span style="color: #67b11d;">(</span>assoc <span style="color: #b1951d;">[</span><span style="color: #2aa198;">":goat:"</span> <span style="color: #2aa198;">":goat:"</span> <span style="color: #2aa198;">":goat:"</span><span style="color: #b1951d;">]</span> car <span style="color: #2aa198;">":car:"</span><span style="color: #67b11d;">)</span>
-              choice <span style="color: #67b11d;">(</span>nth world n<span style="color: #67b11d;">)</span>
-              others <span style="color: #67b11d;">(</span>remove #<span style="color: #b1951d;">(</span>= n <span style="color: #656370;">%</span><span style="color: #b1951d;">)</span> <span style="color: #b1951d;">(</span>range <span style="color: #4e3163;">3</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
-              other-choice <span style="color: #67b11d;">(</span><span style="color: #237fbf; font-weight: bold;">if</span> <span style="color: #b1951d;">(</span>= <span style="color: #2aa198;">":goat:"</span> <span style="color: #2f96dc;">(</span>nth world <span style="color: #6c3163;">(</span>first others<span style="color: #6c3163;">)</span><span style="color: #2f96dc;">)</span><span style="color: #b1951d;">)</span>
-              <span style="color: #b1951d;">(</span>last others<span style="color: #b1951d;">)</span> <span style="color: #b1951d;">(</span>first others<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2aa198;">]</span>
-              <span style="color: #2aa198;">(</span><span style="color: #237fbf; font-weight: bold;">if-not</span> change
-              <span style="color: #67b11d;">(</span><span style="color: #237fbf; font-weight: bold;">if</span> <span style="color: #b1951d;">(</span>= <span style="color: #2aa198;">":car:"</span> choice<span style="color: #b1951d;">)</span> <span style="color: #4e3163;">true</span> <span style="color: #4e3163;">false</span><span style="color: #67b11d;">)</span>
-              <span style="color: #67b11d;">(</span><span style="color: #237fbf; font-weight: bold;">if</span> <span style="color: #b1951d;">(</span>= <span style="color: #2aa198;">":car:"</span> <span style="color: #2f96dc;">(</span>nth world other-choice<span style="color: #2f96dc;">)</span><span style="color: #b1951d;">)</span> <span style="color: #4e3163;">true</span> <span style="color: #4e3163;">false</span><span style="color: #67b11d;">)</span><span style="color: #2aa198;">)</span><span style="color: #6c3163;">)</span><span style="color: #2f96dc;">)</span>
-            </pre>
-          </div>
-          <div class="org-src-container">
-
-            <pre class="src src-clojure"><span style="color: #2f96dc;">(</span><span style="color: #237fbf; font-weight: bold;">defn</span> <span style="color: #6c3163; font-weight: bold;">play</span> <span style="color: #6c3163;">[</span>times<span style="color: #6c3163;">]</span>
-              <span style="color: #6c3163;">(</span><span style="color: #237fbf; font-weight: bold;">let</span> <span style="color: #2aa198;">[</span>stick <span style="color: #67b11d;">(</span>take times <span style="color: #b1951d;">(</span>repeatedly #<span style="color: #2f96dc;">(</span>choose <span style="color: #6c3163;">(</span>rand-int <span style="color: #4e3163;">3</span><span style="color: #6c3163;">)</span> <span style="color: #4e3163;">false</span><span style="color: #2f96dc;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
-              change <span style="color: #67b11d;">(</span>take times <span style="color: #b1951d;">(</span>repeatedly #<span style="color: #2f96dc;">(</span>choose <span style="color: #6c3163;">(</span>rand-int <span style="color: #4e3163;">3</span><span style="color: #6c3163;">)</span> <span style="color: #4e3163;">true</span><span style="color: #2f96dc;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
-              s-count <span style="color: #67b11d;">(</span>count <span style="color: #b1951d;">(</span>filter true? stick<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
-              c-count <span style="color: #67b11d;">(</span>count <span style="color: #b1951d;">(</span>filter true? change<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2aa198;">]</span>
-              <span style="color: #2aa198;">(</span>hash-map <span style="color: #4e3163;">:stick</span> s-count <span style="color: #4e3163;">:change</span> c-count<span style="color: #2aa198;">)</span><span style="color: #6c3163;">)</span><span style="color: #2f96dc;">)</span>
-            </pre>
-          </div>
-          <div class="org-src-container">
-
-            <pre class="src src-clojure"><span style="color: #2f96dc;">(</span>play <span style="color: #4e3163;">1000</span><span style="color: #2f96dc;">)</span>
-            </pre>
-          </div>
+          <script src="https://gist.github.com/cblop/c4254965e599911cfe6c.js"></script>
 
           <p>
             This turned out to be a lot trickier than it looks. I ended up spending way more time than necessary hacking emoji support into Emacs to display little car and goat icons. Important things first, right?

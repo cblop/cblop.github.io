@@ -4,31 +4,7 @@
 
 At this week's Bristol Clojurians meetup we decided to give the Monty Hall problem a go as described in the [[http://cyber-dojo.org][cyber dojo]] problem set. Here's the solution I (eventually) came up with:
 
-#+begin_src clojure
-(defn choose [n change]
-  (let [car (rand-int 3)
-        world (assoc [":goat:" ":goat:" ":goat:"] car ":car:")
-        choice (nth world n)
-        others (remove #(= n %) (range 3))
-        other-choice (if (= ":goat:" (nth world (first others)))
-                       (last others) (first others))]
-    (if-not change
-      (if (= ":car:" choice) true false)
-      (if (= ":car:" (nth world other-choice)) true false))))
-
-#+end_src
-#+begin_src clojure
-(defn play [times]
-  (let [stick (take times (repeatedly #(choose (rand-int 3) false)))
-        change (take times (repeatedly #(choose (rand-int 3) true)))
-        s-count (count (filter true? stick))
-        c-count (count (filter true? change))]
-    (hash-map :stick s-count :change c-count)))
-
-#+end_src
-#+begin_src clojure
-(play 1000)
-#+end_src
+#+HTML:<script src="https://gist.github.com/cblop/c4254965e599911cfe6c.js"></script>
 
 This turned out to be a lot trickier than it looks. I ended up spending way more time than necessary hacking emoji support into Emacs to display little car and goat icons. Important things first, right?
 
