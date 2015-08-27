@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta  name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MATT THOMPSON</title>
+    <meta  name="generator" content="Org-mode" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      displayAlign: "center",
+      displayIndent: "0em",
+
+      "HTML-CSS": { scale: 100,
+      linebreaks: { automatic: "false" },
+      webFont: "TeX"
+      },
+      SVG: {scale: 100,
+      linebreaks: { automatic: "false" },
+      font: "TeX"},
+      NativeMML: {scale: 100},
+      TeX: { equationNumbers: {autoNumber: "AMS"},
+      MultLineWidth: "85%",
+      TagSide: "right",
+      TagIndent: ".8em"
+      }
+      });
+    </script>
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+  </head>
+  <body>
+    <div id="content">
+      <header>
+        <h1 class="title">MATT THOMPSON</h1>
+      </header><hr  />
+      <div id="outline-container-orgheadline1" class="outline-2">
+        <h2 id="orgheadline1">Describing Tropes With Interval Temporal Logic</h2>
+        <div class="outline-text-2" id="text-orgheadline1">
+          <p>
+            (Work in progress)
+          </p>
+
+          <p>
+            Taking popular examples from the <a href="http://www.designthroughstorytelling.net/periodic/">Periodic Table of Storytelling</a> (derived from <a href="http://tvtropes.org/">TVTropes</a>), and describing them using Interval Temporal Logic.
+          </p>
+
+          <p>
+            TVTropes has the concept of <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/OmnipresentTropes">Omnipresent Tropes</a>, which are tropes that are ubiquitous to storytelling. I try to cover most of them here, as well as some less vital but common tropes.
+          </p>
+        </div>
+
+        <div id="outline-container-orgheadline13" class="outline-3">
+          <h3 id="orgheadline13">Story structure</h3>
+          <div class="outline-text-3" id="text-orgheadline13">
+          </div><div id="outline-container-orgheadline2" class="outline-4">
+            <h4 id="orgheadline2">Plot</h4>
+            <div class="outline-text-4" id="text-orgheadline2">
+              <p>
+                A plot is a series of events. Must have:
+              </p>
+
+              <ul class="org-ul">
+                <li>cause and effect (physics)</li>
+                <li>emotional motivation (biology), and</li>
+                <li>reason (logic and ethics)</li>
+              </ul>
+
+              <p>
+                If it doesn't have these, then a plot hole is the result (or in our case, the plot is unsatisfiable).
+              </p>
+            </div>
+          </div>
+
+          <div id="outline-container-orgheadline3" class="outline-4">
+            <h4 id="orgheadline3">Conflict</h4>
+            <div class="outline-text-4" id="text-orgheadline3">
+              <p>
+                <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/Conflict">http://tvtropes.org/pmwiki/pmwiki.php/Main/Conflict</a>
+              </p>
+
+              <p>
+                Arthur Quiller-Couch says there are seven kinds of conflict creating seven basic plots:
+              </p>
+              <ol class="org-ol">
+                <li>Man vs Man</li>
+                <li>Man vs Self</li>
+                <li>Man vs Nature</li>
+                <li>Man vs Society</li>
+                <li>Man vs God/Fate</li>
+                <li>Man caught in the middle of other characters/conflicts</li>
+                <li>Male and female</li>
+                <li>Man vs machine (added as an extension)</li>
+              </ol>
+
+              <p>
+                Could just be boiled down to the first three ("Man" is defeatable, "nature" is to be survived or changed rather than defeated).
+              </p>
+
+              <p>
+                So, taking just the first three:
+              </p>
+
+              <p>
+                \(
+                \mathit{conflict(X, Y)}\land
+                [B] (\mathit {problem(X, Y})\land
+                \langle E \rangle \mathit{resolution(problem(X, Y))}
+                \)
+              </p>
+
+              <p>
+                &#x2026;where \(X\) is "entityA" and \(Y\) can be "entityA", "entityB" or "nature".
+              </p>
+
+              <p>
+                (consider replacing "problem" here with "inciting incident")
+              </p>
+            </div>
+          </div>
+
+          <div id="outline-container-orgheadline8" class="outline-4">
+            <h4 id="orgheadline8">Three Act Structure</h4>
+            <div class="outline-text-4" id="text-orgheadline8">
+              <p>
+                <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/ThreeActStructure">http://tvtropes.org/pmwiki/pmwiki.php/Main/ThreeActStructure</a>
+              </p>
+              <ul class="org-ul">
+                <li>Setup, confrontation, resolution</li>
+                <li>(leads to a climax in the third act)</li>
+                <li>Setup is <a href="#orgheadline4">Call to Adventure</a>, or just an <a href="#orgheadline5">Inciting Incident</a></li>
+                <li>In confrontation, protagonist and antagonist must clash or obstacles must be faced</li>
+                <li>Resolution contains <a href="#orgheadline6">Climax</a> and <a href="#orgheadline7">Dénouement</a>.</li>
+              </ul>
+
+              <p>
+                \(
+                \mathit{setup(X, Y) \land (\mathit{callToAdventure(X)} \lor \mathit{incitingIncident(X)})}
+                \)
+              </p>
+
+              <p>
+                \(
+                \mathit{confrontation(X, Y)} \land [D] (\mathit{fight (X, Y)} \lor \mathit{struggle (X)})
+                \)
+              </p>
+
+              <p>
+                \(
+                \mathit{resolution(Z) \land [E] Z}
+                \)
+              </p>
+
+              <p>
+                \(
+                \mathit{threeActStructure(X, Y)} \land
+                [B] \mathit{setup (X, Y)} \land
+                [D] \mathit{confrontation (X, Y)} \land
+                [E] \mathit{resolution (setup(X, Y))}
+                \)
+              </p>
+
+              <p>
+                (And consider replacing "confrontation" here with "conflict", as above)
+              </p>
+
+              <p>
+                (and "resolution" with "climax", as below)
+              </p>
+
+              <p>
+                (also: "setup" could be the "inciting incident", below)
+              </p>
+            </div>
+          </div>
+
+          <div id="outline-container-orgheadline6" class="outline-4">
+            <h4 id="orgheadline6">Climax</h4>
+            <div class="outline-text-4" id="text-orgheadline6">
+              <p>
+                <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheClimax">http://tvtropes.org/pmwiki/pmwiki.php/Main/TheClimax</a>
+              </p>
+
+              <ul class="org-ul">
+                <li>Must have <a href="#orgheadline8">Three Act Structure</a></li>
+                <li><a href="#orgheadline3">Conflict</a> must be resolved by the third act</li>
+                <li><a href="#orgheadline7">Dénouement</a> must occur to explain loose ends</li>
+                <li>Climax can be some sort of big fight between protagonist and antagonist</li>
+                <li>Type of climax depends on the genre and the setup</li>
+                <li>For example, the protagonist and antagonist could fight over the <a href="#orgheadline9">MacGuffin</a></li>
+                <li>Or the detective could solve the murder mystery</li>
+                <li>I suggest just having this as a necessary component of <a href="#orgheadline8">Three Act Structure</a></li>
+              </ul>
+
+              <p>
+                Simply describe it as a list of types of climax (fight between protagonist and antagonist, solving of the murder, etc)
+              </p>
+
+              <p>
+                \(
+                \mathit{climax} \land [D] (\mathit{fight (X, Y)} \lor
+                \mathit{struggle (X)})
+                \)
+              </p>
+            </div>
+          </div>
+
+          <div id="outline-container-orgheadline7" class="outline-4">
+            <h4 id="orgheadline7">Dénouement</h4>
+            <div class="outline-text-4" id="text-orgheadline7">
+              <p>
+                <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/Denouement">http://tvtropes.org/pmwiki/pmwiki.php/Main/Denouement</a>
+              </p>
+
+              <p>
+                The aftermath of the action, where loose ends are tied up.
+              </p>
+
+              <p>
+                It could be:
+              </p>
+
+              <ul class="org-ul">
+                <li>happy ending</li>
+                <li>consequences of a tragic ending (funeral of the hero, for example)</li>
+                <li>more examples in the tvtropes page</li>
+              </ul>
+            </div>
+          </div>
+
+
+          <div id="outline-container-orgheadline9" class="outline-4">
+            <h4 id="orgheadline9">MacGuffin</h4>
+            <div class="outline-text-4" id="text-orgheadline9">
+              <p>
+                <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/MacGuffin">http://tvtropes.org/pmwiki/pmwiki.php/Main/MacGuffin</a>
+              </p>
+
+              <p>
+                <i>A motivating element in a story that is used to drive the plot</i>
+              </p>
+
+              <p>
+                The Maltese falcon, the holy grail, the briefcase of money, the Golden Fleece, etc. A MacGuffin must be:
+              </p>
+
+              <ul class="org-ul">
+                <li>interchangeable. It could be anything, it just happens to be whatever it is in the story.</li>
+                <li>Not used in the story. If it does something and is used, it's a <a href="#orgheadline10">Plot Device</a>, not a MacGuffin.</li>
+              </ul>
+
+              <p>
+                It seems that MacGuffins are always parts of <a href="#orgheadline11">Quest</a>s. Is a quest a type of <a href="#orgheadline3">Conflict</a>, that's only resolved by the retrieval of a MacGuffin?
+              </p>
+
+              <p>
+                \(
+                \mathit{macguffinQuest} \land [B] \mathit{loss (macguffin)} \land [E] \mathit{find (macguffin)}
+                \)
+              </p>
+            </div>
+          </div>
+
+          <div id="outline-container-orgheadline11" class="outline-4">
+            <h4 id="orgheadline11">Quest</h4>
+            <div class="outline-text-4" id="text-orgheadline11">
+              <p>
+                <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheQuest">http://tvtropes.org/pmwiki/pmwiki.php/Main/TheQuest</a>
+              </p>
+
+              <p>
+                A quest must have a hero (and supporters), travelling in search of something. Could be a <a href="#orgheadline9">MacGuffin</a>, to defeat the antagonist, or to rescue someone. Or all of these.
+              </p>
+
+              <p>
+                See <a href="#orgheadline9">MacGuffin</a> above.
+              </p>
+
+              <p>
+                \(
+                \mathit{defeatQuest} \land [B] \mathit{find (Antogonist)} \land [E] (\mathit{defeat (Antagonist)} \lor \mathit{defeat(Protagonist)}))
+                \)
+              </p>
+
+              <p>
+                \(
+                \mathit{rescueQuest} \land [B] \mathit{find (Rescuee)} \land [E] \mathit{rescue (Rescuee)}
+                \)
+              </p>
+
+              <p>
+                \(
+                \mathit{quest} \land [D] (\mathit{macguffinQuest} \lor \mathit{defeatQuest} \lor \mathit{rescueQuest})
+                \)
+              </p>
+            </div>
+          </div>
+
+          <div id="outline-container-orgheadline12" class="outline-4">
+            <h4 id="orgheadline12">The Reveal</h4>
+            <div class="outline-text-4" id="text-orgheadline12">
+              <p>
+                <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheReveal">http://tvtropes.org/pmwiki/pmwiki.php/Main/TheReveal</a>
+              </p>
+
+              <p>
+                The resolution of a twist. The audience is given new information which has been withheld to create suspense.
+              </p>
+
+              <p>
+                This is a key trope in murder mysteries. In that case, you know that there's a mystery to be solved, and it's solved by the end. Other times, the reveal is a shock (like the endings of <i>The Empire Strikes Back</i> and <i>Fight Club</i>).
+              </p>
+
+              <p>
+                \(
+                \mathit{secret(father(Darth, Luke))} \land [E] \mathit{reveal (father(Darth, Luke))}
+                \)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="outline-container-orgheadline15" class="outline-3">
+          <h3 id="orgheadline15">Setting/location</h3>
+          <div class="outline-text-3" id="text-orgheadline15">
+          </div><div id="outline-container-orgheadline5" class="outline-4">
+            <h4 id="orgheadline5">Inciting Incident</h4>
+            <div class="outline-text-4" id="text-orgheadline5">
+              <p>
+                <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/IncitingIncident">http://tvtropes.org/pmwiki/pmwiki.php/Main/IncitingIncident</a>
+              </p>
+
+              <p>
+                The first thing that sets in motion the sequence of events that form the plot. Ideally, it should foreshadow what the <a href="#orgheadline6">Climax</a> will be like.
+              </p>
+
+              <p>
+                If it's part of a quest story, the inciting incident would be the <a href="#orgheadline4">Call to Adventure</a>.
+              </p>
+            </div>
+          </div>
+
+          <div id="outline-container-orgheadline4" class="outline-4">
+            <h4 id="orgheadline4">Call to Adventure</h4>
+            <div class="outline-text-4" id="text-orgheadline4">
+              <p>
+                <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/CallToAdventure">http://tvtropes.org/pmwiki/pmwiki.php/Main/CallToAdventure</a>
+              </p>
+
+
+              <p>
+                First step on Campbell's <a href="#orgheadline14">Hero's Journey</a>. The hero discovers that he must leave the known world behind and go forth to unknown places.
+              </p>
+
+              <p>
+                If a hero initially rejects the call, they usually end up worse off for it.
+              </p>
+            </div>
+          </div>
+
+          <div id="outline-container-orgheadline14" class="outline-4">
+            <h4 id="orgheadline14">Hero's Journey</h4>
+            <div class="outline-text-4" id="text-orgheadline14">
+              <p>
+                <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheHerosJourney">http://tvtropes.org/pmwiki/pmwiki.php/Main/TheHerosJourney</a>
+              </p>
+
+              <p>
+                Can be boiled down to three stages:
+              </p>
+
+              <ol class="org-ol">
+                <li>Departure (hero leaves familiar world behind)</li>
+                <li>Initiation (hero learns to navigate the unfamiliar world of adventure)</li>
+                <li>Return: the Hero returns to the familiar world</li>
+              </ol>
+
+              <p>
+                There's more to it than that (see below), but we shouldn't be concerned with that for now.
+              </p>
+
+              <p>
+                This is analogous to the three parts of the <a href="#orgheadline8">Three Act Structure</a>, so can be seen as a variation on that.
+              </p>
+
+              <p>
+                Call to adventure &#x2013;(supernatural aid)&#x2013;&gt; Threshold Guardian &#x2013;&gt;
+                Threshold (between the known and unknown) &#x2013;(challenges: helper, mentor, temptation)&#x2013;&gt;
+                REVELATION: Abyss death &amp; rebirth&#x2013;&gt;Transformation&#x2013;&gt;Atonement&#x2013;&gt;
+                Return&#x2013;&gt;Call to adventure again
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-orgheadline29" class="outline-3">
+          <h3 id="orgheadline29">Characters</h3>
+          <div class="outline-text-3" id="text-orgheadline29">
+          </div><div id="outline-container-orgheadline18" class="outline-4">
+            <h4 id="orgheadline18">Heroes</h4>
+            <div class="outline-text-4" id="text-orgheadline18">
+            </div><ul class="org-ul"><li><a id="orgheadline16"></a>The Chosen One<br  /><div class="outline-text-5" id="text-orgheadline16">
+                  <p>
+                    <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheChosenOne">http://tvtropes.org/pmwiki/pmwiki.php/Main/TheChosenOne</a>
+                  </p>
+              </div></li>
+              <li><a id="orgheadline17"></a>Anti-hero<br  /><div class="outline-text-5" id="text-orgheadline17">
+                  <p>
+                    <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/AntiHero">http://tvtropes.org/pmwiki/pmwiki.php/Main/AntiHero</a>
+                  </p>
+            </div></li></ul>
+          </div>
+          <div id="outline-container-orgheadline21" class="outline-4">
+            <h4 id="orgheadline21">Villains</h4>
+            <div class="outline-text-4" id="text-orgheadline21">
+            </div><ul class="org-ul"><li><a id="orgheadline19"></a>The Empire<br  /><div class="outline-text-5" id="text-orgheadline19">
+                  <p>
+                    <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheEmpire">http://tvtropes.org/pmwiki/pmwiki.php/Main/TheEmpire</a>
+                  </p>
+              </div></li>
+              <li><a id="orgheadline20"></a>The Chessmaster<br  /><div class="outline-text-5" id="text-orgheadline20">
+                  <p>
+                    <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheChessmaster">http://tvtropes.org/pmwiki/pmwiki.php/Main/TheChessmaster</a>
+                  </p>
+            </div></li></ul>
+          </div>
+          <div id="outline-container-orgheadline24" class="outline-4">
+            <h4 id="orgheadline24">Archetypes</h4>
+            <div class="outline-text-4" id="text-orgheadline24">
+            </div><ul class="org-ul"><li><a id="orgheadline22"></a>Mad Scientist<br  /><div class="outline-text-5" id="text-orgheadline22">
+                  <p>
+                    <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/MadScientist">http://tvtropes.org/pmwiki/pmwiki.php/Main/MadScientist</a>
+                  </p>
+              </div></li>
+              <li><a id="orgheadline23"></a>Gentle Giant<br  /><div class="outline-text-5" id="text-orgheadline23">
+                  <p>
+                    <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/GentleGiant">http://tvtropes.org/pmwiki/pmwiki.php/Main/GentleGiant</a>
+                  </p>
+            </div></li></ul>
+          </div>
+          <div id="outline-container-orgheadline28" class="outline-4">
+            <h4 id="orgheadline28">Modifiers</h4>
+            <div class="outline-text-4" id="text-orgheadline28">
+            </div><ul class="org-ul"><li><a id="orgheadline25"></a>Protagonist<br  /><div class="outline-text-5" id="text-orgheadline25">
+                  <p>
+                    <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheProtagonist">http://tvtropes.org/pmwiki/pmwiki.php/Main/TheProtagonist</a>
+                  </p>
+              </div></li>
+              <li><a id="orgheadline26"></a>Antagonist<br  /><div class="outline-text-5" id="text-orgheadline26">
+                  <p>
+                    <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/TheAntagonist">http://tvtropes.org/pmwiki/pmwiki.php/Main/TheAntagonist</a>
+                  </p>
+              </div></li>
+              <li><a id="orgheadline27"></a>Jerk With a Heart of Gold<br  /><div class="outline-text-5" id="text-orgheadline27">
+                  <p>
+                    <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/JerkWithAHeartOfGold">http://tvtropes.org/pmwiki/pmwiki.php/Main/JerkWithAHeartOfGold</a>
+                  </p>
+            </div></li></ul>
+          </div>
+        </div>
+        <div id="outline-container-orgheadline30" class="outline-3">
+          <h3 id="orgheadline30">Modifiers and plot devices</h3>
+          <div class="outline-text-3" id="text-orgheadline30">
+            <p>
+              (Arguably, modifiers can't be described temporally. Or can they?!)
+            </p>
+          </div>
+          <div id="outline-container-orgheadline31" class="outline-4">
+            <h4 id="orgheadline31">Darker and edgier</h4>
+            <div class="outline-text-4" id="text-orgheadline31">
+              <p>
+                <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/DarkerAndEdgier">http://tvtropes.org/pmwiki/pmwiki.php/Main/DarkerAndEdgier</a>
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgheadline10" class="outline-4">
+            <h4 id="orgheadline10">Plot Device</h4>
+            <div class="outline-text-4" id="text-orgheadline10">
+              <p>
+                <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/PlotDevice">http://tvtropes.org/pmwiki/pmwiki.php/Main/PlotDevice</a>
+                An object or character in the story whose purpose is purely to drive the plot.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-orgheadline34" class="outline-3">
+          <h3 id="orgheadline34">Metatropes</h3>
+          <div class="outline-text-3" id="text-orgheadline34">
+          </div><ul class="org-ul"><li><a id="orgheadline32"></a>Lampshade hanging<br  /><div class="outline-text-5" id="text-orgheadline32">
+                <p>
+                  <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/LampshadeHanging">http://tvtropes.org/pmwiki/pmwiki.php/Main/LampshadeHanging</a>
+                </p>
+            </div></li>
+            <li><a id="orgheadline33"></a>Subverted trope<br  /><div class="outline-text-5" id="text-orgheadline33">
+                <p>
+                  <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/SubvertedTrope">http://tvtropes.org/pmwiki/pmwiki.php/Main/SubvertedTrope</a>
+                </p>
+          </div></li></ul>
+        </div>
+        <div id="outline-container-orgheadline35" class="outline-3">
+          <h3 id="orgheadline35">Propp's story functions as tropes</h3>
+          <div class="outline-text-3" id="text-orgheadline35">
+            <p>
+              <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/ProppsFunctionsOfFolktales">http://tvtropes.org/pmwiki/pmwiki.php/Main/ProppsFunctionsOfFolktales</a>
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-orgheadline40" class="outline-3">
+          <h3 id="orgheadline40">Examples</h3>
+          <div class="outline-text-3" id="text-orgheadline40">
+          </div><div id="outline-container-orgheadline36" class="outline-4">
+            <h4 id="orgheadline36">Star Wars</h4>
+          </div>
+          <div id="outline-container-orgheadline37" class="outline-4">
+            <h4 id="orgheadline37">Breaking Bad</h4>
+          </div>
+          <div id="outline-container-orgheadline38" class="outline-4">
+            <h4 id="orgheadline38">Lord of the Rings: The Fellowship of the Ring</h4>
+          </div>
+          <div id="outline-container-orgheadline39" class="outline-4">
+            <h4 id="orgheadline39">Raymond Chandler</h4>
+            <div class="outline-text-4" id="text-orgheadline39">
+              <p>
+                <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/ChandlersLaw">http://tvtropes.org/pmwiki/pmwiki.php/Main/ChandlersLaw</a>
+              </p>
+
+              <p>
+                <i>When in doubt, have a man come through a door with a gun in his hand.</i>
+              </p>
+
+              <hr  />
+
+              <div align=center>
+                <p>
+                  <a href="http://mthompson.org/">Home</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

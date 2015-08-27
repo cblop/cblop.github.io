@@ -1,0 +1,241 @@
+ #+TITLE: MATT THOMPSON
+-----
+* Describing Tropes With Interval Temporal Logic
+
+(Work in progress)
+
+Taking popular examples from the [[http://www.designthroughstorytelling.net/periodic/][Periodic Table of Storytelling]] (derived from [[http://tvtropes.org][TVTropes]]), and describing them using Interval Temporal Logic.
+
+TVTropes has the concept of [[http://tvtropes.org/pmwiki/pmwiki.php/Main/OmnipresentTropes][Omnipresent Tropes]], which are tropes that are ubiquitous to storytelling. I try to cover most of them here, as well as some less vital but common tropes.
+
+** Story structure
+*** Plot
+A plot is a series of events. Must have:
+
+- cause and effect (physics)
+- emotional motivation (biology), and
+- reason (logic and ethics)
+
+If it doesn't have these, then a plot hole is the result (or in our case, the plot is unsatisfiable).
+
+*** Conflict
+[[http://tvtropes.org/pmwiki/pmwiki.php/Main/Conflict]]
+
+Arthur Quiller-Couch says there are seven kinds of conflict creating seven basic plots:
+1. Man vs Man
+2. Man vs Self
+3. Man vs Nature
+4. Man vs Society
+5. Man vs God/Fate
+6. Man caught in the middle of other characters/conflicts
+7. Male and female
+8. Man vs machine (added as an extension)
+
+Could just be boiled down to the first three ("Man" is defeatable, "nature" is to be survived or changed rather than defeated).
+
+So, taking just the first three:
+
+\(
+\mathit{conflict(X, Y)}\land
+[B] (\mathit {problem(X, Y})\land
+\langle E \rangle \mathit{resolution(problem(X, Y))}
+\)
+
+...where $X$ is "entityA" and $Y$ can be "entityA", "entityB" or "nature".
+
+(consider replacing "problem" here with "inciting incident")
+
+*** Three Act Structure
+[[http://tvtropes.org/pmwiki/pmwiki.php/Main/ThreeActStructure]]
+- Setup, confrontation, resolution
+- (leads to a climax in the third act)
+- Setup is [[Call to Adventure]], or just an [[Inciting Incident]]
+- In confrontation, protagonist and antagonist must clash or obstacles must be faced
+- Resolution contains [[Climax]] and [[Dénouement]].
+
+\(
+\mathit{setup(X, Y) \land (\mathit{callToAdventure(X)} \lor \mathit{incitingIncident(X)})}
+\)
+
+\(
+\mathit{confrontation(X, Y)} \land [D] (\mathit{fight (X, Y)} \lor \mathit{struggle (X)})
+\)
+
+\(
+\mathit{resolution(Z) \land [E] Z}
+\)
+
+\(
+\mathit{threeActStructure(X, Y)} \land
+[B] \mathit{setup (X, Y)} \land
+[D] \mathit{confrontation (X, Y)} \land
+[E] \mathit{resolution (setup(X, Y))}
+\)
+
+(And consider replacing "confrontation" here with "conflict", as above)
+
+(and "resolution" with "climax", as below)
+
+(also: "setup" could be the "inciting incident", below)
+
+*** Climax
+[[http://tvtropes.org/pmwiki/pmwiki.php/Main/TheClimax]]
+
+- Must have [[Three Act Structure]]
+- [[Conflict]] must be resolved by the third act
+- [[Dénouement]] must occur to explain loose ends
+- Climax can be some sort of big fight between protagonist and antagonist
+- Type of climax depends on the genre and the setup
+- For example, the protagonist and antagonist could fight over the [[MacGuffin]]
+- Or the detective could solve the murder mystery
+- I suggest just having this as a necessary component of [[Three Act Structure]]
+
+Simply describe it as a list of types of climax (fight between protagonist and antagonist, solving of the murder, etc)
+
+\(
+\mathit{climax} \land [D] (\mathit{fight (X, Y)} \lor
+\mathit{struggle (X)})
+\)
+
+*** Dénouement
+http://tvtropes.org/pmwiki/pmwiki.php/Main/Denouement
+
+The aftermath of the action, where loose ends are tied up.
+
+It could be:
+
+- happy ending
+- consequences of a tragic ending (funeral of the hero, for example)
+- more examples in the tvtropes page
+
+
+*** MacGuffin
+[[http://tvtropes.org/pmwiki/pmwiki.php/Main/MacGuffin]]
+
+/A motivating element in a story that is used to drive the plot/
+
+The Maltese falcon, the holy grail, the briefcase of money, the Golden Fleece, etc. A MacGuffin must be:
+
+- interchangeable. It could be anything, it just happens to be whatever it is in the story.
+- Not used in the story. If it does something and is used, it's a [[Plot Device]], not a MacGuffin.
+
+It seems that MacGuffins are always parts of [[Quest]]s. Is a quest a type of [[Conflict]], that's only resolved by the retrieval of a MacGuffin?
+
+\(
+\mathit{macguffinQuest} \land [B] \mathit{loss (macguffin)} \land [E] \mathit{find (macguffin)}
+\)
+
+*** Quest
+http://tvtropes.org/pmwiki/pmwiki.php/Main/TheQuest
+
+A quest must have a hero (and supporters), travelling in search of something. Could be a [[MacGuffin]], to defeat the antagonist, or to rescue someone. Or all of these.
+
+See [[MacGuffin]] above.
+
+\(
+\mathit{defeatQuest} \land [B] \mathit{find (Antogonist)} \land [E] (\mathit{defeat (Antagonist)} \lor \mathit{defeat(Protagonist)}))
+\)
+
+\(
+\mathit{rescueQuest} \land [B] \mathit{find (Rescuee)} \land [E] \mathit{rescue (Rescuee)}
+\)
+
+\(
+\mathit{quest} \land [D] (\mathit{macguffinQuest} \lor \mathit{defeatQuest} \lor \mathit{rescueQuest})
+\)
+
+*** The Reveal
+http://tvtropes.org/pmwiki/pmwiki.php/Main/TheReveal
+
+The resolution of a twist. The audience is given new information which has been withheld to create suspense.
+
+This is a key trope in murder mysteries. In that case, you know that there's a mystery to be solved, and it's solved by the end. Other times, the reveal is a shock (like the endings of /The Empire Strikes Back/ and /Fight Club/).
+
+\(
+\mathit{secret(father(Darth, Luke))} \land [E] \mathit{reveal (father(Darth, Luke))}
+\)
+
+** Setting/location
+*** Inciting Incident
+http://tvtropes.org/pmwiki/pmwiki.php/Main/IncitingIncident
+
+The first thing that sets in motion the sequence of events that form the plot. Ideally, it should foreshadow what the [[Climax]] will be like.
+
+If it's part of a quest story, the inciting incident would be the [[Call to Adventure]].
+
+*** Call to Adventure
+http://tvtropes.org/pmwiki/pmwiki.php/Main/CallToAdventure
+
+
+First step on Campbell's [[Hero's Journey]]. The hero discovers that he must leave the known world behind and go forth to unknown places.
+
+If a hero initially rejects the call, they usually end up worse off for it.
+
+*** Hero's Journey
+http://tvtropes.org/pmwiki/pmwiki.php/Main/TheHerosJourney
+
+Can be boiled down to three stages:
+
+1. Departure (hero leaves familiar world behind)
+2. Initiation (hero learns to navigate the unfamiliar world of adventure)
+3. Return: the Hero returns to the familiar world
+
+There's more to it than that (see below), but we shouldn't be concerned with that for now.
+
+This is analogous to the three parts of the [[Three Act Structure]], so can be seen as a variation on that.
+
+Call to adventure --(supernatural aid)--> Threshold Guardian -->
+Threshold (between the known and unknown) --(challenges: helper, mentor, temptation)-->
+REVELATION: Abyss death & rebirth-->Transformation-->Atonement-->
+Return-->Call to adventure again
+** Characters
+*** Heroes
+**** The Chosen One
+http://tvtropes.org/pmwiki/pmwiki.php/Main/TheChosenOne
+**** Anti-hero
+http://tvtropes.org/pmwiki/pmwiki.php/Main/AntiHero
+*** Villains
+**** The Empire
+http://tvtropes.org/pmwiki/pmwiki.php/Main/TheEmpire
+**** The Chessmaster
+http://tvtropes.org/pmwiki/pmwiki.php/Main/TheChessmaster
+*** Archetypes
+**** Mad Scientist
+http://tvtropes.org/pmwiki/pmwiki.php/Main/MadScientist
+**** Gentle Giant
+http://tvtropes.org/pmwiki/pmwiki.php/Main/GentleGiant
+*** Modifiers
+**** Protagonist
+http://tvtropes.org/pmwiki/pmwiki.php/Main/TheProtagonist
+**** Antagonist
+http://tvtropes.org/pmwiki/pmwiki.php/Main/TheAntagonist
+**** Jerk With a Heart of Gold
+http://tvtropes.org/pmwiki/pmwiki.php/Main/JerkWithAHeartOfGold
+** Modifiers and plot devices
+(Arguably, modifiers can't be described temporally. Or can they?!)
+*** Darker and edgier
+http://tvtropes.org/pmwiki/pmwiki.php/Main/DarkerAndEdgier
+*** Plot Device
+http://tvtropes.org/pmwiki/pmwiki.php/Main/PlotDevice
+An object or character in the story whose purpose is purely to drive the plot.
+** Metatropes
+**** Lampshade hanging
+http://tvtropes.org/pmwiki/pmwiki.php/Main/LampshadeHanging
+**** Subverted trope
+http://tvtropes.org/pmwiki/pmwiki.php/Main/SubvertedTrope
+** Propp's story functions as tropes
+http://tvtropes.org/pmwiki/pmwiki.php/Main/ProppsFunctionsOfFolktales
+** Examples
+*** Star Wars
+*** Breaking Bad
+*** Lord of the Rings: The Fellowship of the Ring
+*** Raymond Chandler
+http://tvtropes.org/pmwiki/pmwiki.php/Main/ChandlersLaw
+
+/When in doubt, have a man come through a door with a gun in his hand./
+
+-----
+
+#+HTML:<div align=center>
+[[http://mthompson.org][Home]]
+#+HTML:</div>
