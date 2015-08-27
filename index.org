@@ -14,11 +14,11 @@
 
 *Previous*:
 
-- [[./do-life.html][What do you want to do with your life?]]
-- [[./org-blog.html][Blogging using just org-mode and github-pages]]
-- [[./jam-2014.html][Global Game Jam 2014: Bristol Edition]]
-- [[./artfinder.html][Discovering Japanese artists with Artfinder]]
-- [[./linear-stories.html][Why are stories still linear?]]
+[[./do-life.html][What do you want to do with your life?]]\\
+[[./org-blog.html][Blogging using just org-mode and github-pages]]\\
+[[./jam-2014.html][Global Game Jam 2014: Bristol Edition]]\\
+[[./artfinder.html][Discovering Japanese artists with Artfinder]]\\
+[[./linear-stories.html][Why are stories still linear?]]
 
 -----
 
@@ -33,18 +33,19 @@ Telling Non-Linear Stories with Interval Temporal Logic (Pending conference acce
 
 *Previous*:
 
-- [[http://drops.dagstuhl.de/opus/frontdoor.php?source_opus%3D5288][Governing Narrative Events with Institutional Norms (CMN 2015)]]
-- [[http://coin2015.tbm.tudelft.nl/files/2015/06/COINIJCAI_2015_submission_19.pdf][An Interactive, Generative Punch and Judy Show Using Institutions, ASP and Emotional Agents (COIN @ IJCAI 2015)]]
-- [[http://www.cs.kent.ac.uk/events/2015/AISB2015/proceedings/aiAndGames/AI-games-15_submission_10--MatthewThompson--interactive.pdf][An Interactive, Generative Punch and Judy Show Using Institutions, ASP and Emotional Agents (AISB 2015)]]
-- [[http://hswi.referata.com/w/images/Hswi2014_paper_1.pdf][Artfinder: A Faceted Browser for Cross-Cultural Art Discovery (HSWI 2014)]]
-- [[http://dl.acm.org/citation.cfm?id%3D2377952][Effect of Touch Screen Size on Game Immersion (BCS HCI 2012)]]
+[[http://drops.dagstuhl.de/opus/frontdoor.php?source_opus%3D5288][Governing Narrative Events with Institutional Norms (CMN 2015)]]\\
+[[http://coin2015.tbm.tudelft.nl/files/2015/06/COINIJCAI_2015_submission_19.pdf][An Interactive, Generative Punch and Judy Show Using Institutions, ASP and Emotional Agents (COIN @ IJCAI 2015)]]\\
+[[http://www.cs.kent.ac.uk/events/2015/AISB2015/proceedings/aiAndGames/AI-games-15_submission_10--MatthewThompson--interactive.pdf][An Interactive, Generative Punch and Judy Show Using Institutions, ASP and Emotional Agents (AISB 2015)]]\\
+[[http://hswi.referata.com/w/images/Hswi2014_paper_1.pdf][Artfinder: A Faceted Browser for Cross-Cultural Art Discovery (HSWI 2014)]]\\
+[[http://dl.acm.org/citation.cfm?id%3D2377952][Effect of Touch Screen Size on Game Immersion (BCS HCI 2012)]]
+
 -----
 
 ** Music
 
-- [[http://commanderblop.bandcamp.com][Commander Blop]]
-- [[http://vlov.bandcamp.com][Vice Lords of Valhalla]]
-- [[http://soggybrick.bandcamp.com][Soggy Brick]]
+[[http://commanderblop.bandcamp.com][Commander Blop]]\\
+[[http://vlov.bandcamp.com][Vice Lords of Valhalla]]\\
+[[http://soggybrick.bandcamp.com][Soggy Brick]]
 
 -----
 
@@ -53,16 +54,16 @@ Telling Non-Linear Stories with Interval Temporal Logic (Pending conference acce
 :HTML_CONTAINER_CLASS: right-align
 :END:
 
-- [[https://github.com/cblop/bloodbath][Blood Bath (Love2D source)]]
+[[https://github.com/cblop/bloodbath][Blood Bath (Love2D source)]]
 
 -----
 
 ** Contact
 
-- [[./cv][CV]]
-- [[mailto:mrt32@bath.ac.uk][Email]]
-- [[https://github.com/cblop][Github]]
-- [[https://twitter.com/cblop][Twitter]]
+[[./cv][CV]]\\
+[[mailto:mrt32@bath.ac.uk][Email]]\\
+[[https://github.com/cblop][Github]]\\
+[[https://twitter.com/cblop][Twitter]]
 
 -----
 
