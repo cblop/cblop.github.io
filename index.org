@@ -29,7 +29,7 @@
 
 *Recent*:
 
-Telling Non-Linear Stories with Interval Temporal Logic (Pending conference acceptance)
+Telling Non-Linear Stories with Interval Temporal Logic (ICIDS2015 poster)
 
 *Previous*:
 
