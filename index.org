@@ -9,6 +9,7 @@
 ** Blog
 
 *Recent*:
+
 [[./keyboard.html][IBM is still making ThinkPad keyboards]]
 
 *Previous*
