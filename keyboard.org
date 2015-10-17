@@ -27,9 +27,10 @@ So perhaps that's it: IBM is still making Thinkpad-style keyboards for its rack-
 
 It's a really nice keyboard, much better made than the modern chiclet-key Lenovo equivalents. It feels really solid, and the keyboard is at least as good as the one on my x200. It's good to know that somewhere out there, someone at IBM is still keeping the glory days of the Thinkpad keyboard alive.
 
-[[https://news.ycombinator.com/item?id=10332693][Discuss this post on Hacker News]]
 
 -----
 #+HTML:<div align=center>
+[[https://news.ycombinator.com/item?id=10332693][Discuss this post on Hacker News]]\\
+
 [[http://mthompson.org][Home]]
 #+HTML:</div>
