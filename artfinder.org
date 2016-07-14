@@ -19,6 +19,8 @@ The idea is that a person who is unfamiliar with Japanese art can browse through
 
 Artfinder is available online [[http://cblop.github.io/artfinder][here]]. It was written using Angular.js, with the tag hierarchies for the facets having been clustered using Python and Clojure.
 
+I later presented [[http://hswi.referata.com/w/images/Hswi2014_paper_1.pdf][this paper]] about ArtFinder to the HSWI workshop at the ESWC 2014 conference.
+
 -----
 
 #+HTML:<div align=center>

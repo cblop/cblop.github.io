@@ -1,7 +1,21 @@
 #+TITLE: MATT THOMPSON
 -----
 
-* An Interactive, Generative Punch and Judy Show
+* An interactive, generative Punch and Judy show
+/Thu Jul 14th 2016/
+
+This is an interactive puppet show that I demoed at the AISB conference in 2015. The video shows what it looks like, but the innards are a bit complicated. Each puppet is actually simulated using an intelligent agent, each with its own emotional model! Additionally, the puppets' actions are constrained to fit in with a formal description of the Punch and Judy story.
+
+#+HTML:<div align=center>
+#+HTML: <video width="640" height="480" controls> <source src="./vid/punchjudy.mp4" type="video/mp4"> </video>
+#+HTML:</div>
+
+The main idea is that the flow and content of the story can be influenced by the actions of the audience. As the puppet show is acted out, the audience reacts to events by cheering or booing the characters. This changes the emotional state of each agent, potentially causing them to change their actions, altering the course of the narrative. An institutional (social) model is used to ensure that the narrative is constrained to remain consistent with the Punch and Judy canon. This model is described using Answer Set Programming, which is a bit like Prolog.
+
+Further information can be found in these papers:
+
+[[http://coin2015.tbm.tudelft.nl/files/2015/06/COINIJCAI_2015_submission_19.pdf][An Interactive, Generative Punch and Judy Show Using Institutions, ASP and Emotional Agents (COIN @ IJCAI 2015)]]\\
+[[http://drops.dagstuhl.de/opus/frontdoor.php?source_opus%3D5288][Governing Narrative Events with Institutional Norms (CMN 2015)]]
 
 -----
 
