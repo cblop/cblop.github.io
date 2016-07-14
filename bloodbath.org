@@ -59,9 +59,7 @@ LÖVE uses the Lua scripting language for the programming of game logic. Lua is 
 ‘extension programming language’, meaning that it only works embedded in a host client. It
 is an ideal scripting language for games, as its minimalistic featureset allows for extremely
 fast execution.
-Lua is a dynamically typed language that offers good support for object-oriented, func-
-tional and data-driven programming paradigms. Interestingly, the only data structure pro-
-vided out-of-the-box is a table, but the nature of Lua facilitates the extension of these tables
+Lua is a dynamically typed language that offers good support for object-oriented, functional and data-driven programming paradigms. Interestingly, the only data structure provided out-of-the-box is a table, but the nature of Lua facilitates the extension of these tables
 into more complex data structures.
 Another interesting feature of Lua is its use of metatables, which define the behaviour of
 values under certain special operations. These metatables allow the extension of Lua to create
@@ -104,13 +102,13 @@ found for testing.
 The code is split into seven files: main.lua, player.lua, gfx.lua, fight.lua, game.lua,
 hud.lua and anim8.lua.
 
-- main.lua contains the main LÖVE callbacks (load, update, draw).
-- player.lua contains the Player class.
-- gfx.lua contains functions to load animations from image files.
-- fight.lua contains the Fight class, which manages the interactions between Player objects.
-- game.lua contains the Game class, which handles the entire game and displays the character selection menu
-- hud.lua contains the StatusBar and Messages classes, which display the players’ health bars and shows text on screen.
-- anim8.lua is a third-party library for the handling of animations.
+- *main.lua* contains the main LÖVE callbacks (load, update, draw).
+- *player.lua* contains the Player class.
+- *gfx.lua* contains functions to load animations from image files.
+- *fight.lua* contains the Fight class, which manages the interactions between Player objects.
+- *game.lua* contains the Game class, which handles the entire game and displays the character selection menu
+- *hud.lua* contains the StatusBar and Messages classes, which display the players’ health bars and shows text on screen.
+- *anim8.lua* is a third-party library for the handling of animations.
 
 *** Finite State Machine
 
