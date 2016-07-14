@@ -10,7 +10,9 @@
 
 *Recent*:
 
-[[./bloodbath.html][Create a live-action fighting game with your friends as characters]]
+[[./bloodbath.html][Create a live-action fighting game with your friends as characters]]\\
+[[./every-object.html][Every Object Tells a Story]]\\
+[[./punch-judy.html][An interactive, generative Punch and Judy show]]
 
 *Previous*
 
@@ -31,7 +33,7 @@
 
 *Recent*:
 
-Telling Non-Linear Stories with Interval Temporal Logic (ICIDS2015 poster)
+[[https://www.researchgate.net/profile/Steve_Battle/publication/300139574_Telling_Non-linear_Stories_with_Interval_Temporal_Logic/links/5733578408ae298602dce909.pdf][Telling Non-Linear Stories with Interval Temporal Logic (ICIDS2015 poster)]]
 
 *Previous*:
 
