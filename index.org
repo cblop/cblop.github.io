@@ -9,6 +9,7 @@
 ** Blog
 
 *Recent*:
+
 [[./bloodbath.html][Create a live-action fighting game with your friends as characters]]
 
 *Previous*
