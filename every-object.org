@@ -1,0 +1,10 @@
+#+TITLE: MATT THOMPSON
+-----
+
+* Every Object Tells a Story
+
+-----
+
+#+HTML:<div align=center>
+[[http://mthompson.org][Home]]
+#+HTML:</div>

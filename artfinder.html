@@ -1,65 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-  <head>
-    <title>MATT THOMPSON</title>
-    <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <meta  name="generator" content="Org-mode" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-    <div id="content">
-      <h1 class="title">MATT THOMPSON</h1>
-      <hr  />
+<head>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>MATT THOMPSON</title>
+<meta  name="generator" content="Org-mode" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
 
-      <div id="outline-container-sec-1" class="outline-2">
-        <h2 id="sec-1">Discovering Japanese Artists with Artfinder</h2>
-        <div class="outline-text-2" id="text-1">
-          <p>
-            <i>Fri Jan 31st 2014</i>
-          </p>
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
 
-          <p>
-            I was lucky enough to spend the summer doing some research at the <a href="http://www.nii.ac.jp/en">NII (National Institute of Informatics)</a> in Tokyo. I spent three months there working on ways to browse and visualise their LODAC dataset of Japanese artists and artworks.
-          </p>
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
 
-          <p>
-            At the end of the summer internship, I made a browser-based art discovery tool called <a href="http://cblop.github.io/artfinder">'ArtFinder'</a>.
-          </p>
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
 
 
-          <div class="figure">
-            <p><img src="img/artfinder1.png" alt="artfinder1.png" />
-            </p>
-          </div>
-          <div align=center>
-            <p>
-              <i>ArtFinder</i>
-            </p>
-          </div>
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">MATT THOMPSON</h1>
+<hr  />
 
-          <p>
-            After putting the artists names and metadata through Google Translate, I created a faceted browser for Japanese artists. The idea is that you click on a tab on the left to choose a facet (location, era, genre, medium), then drill down through a hierarchy to find a specific tag for that facet. Multiple tags can be selected (they appear on the right as green boxes) and the list of artists in the middle is filtered according to the selected tags. Clicking on an artist’s name shows a list of their related tags.
-          </p>
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Discovering Japanese Artists with Artfinder</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<p>
+<i>Fri Jan 31st 2014</i>
+</p>
 
-          <p>
-            The idea is that a person who is unfamiliar with Japanese art can browse through categories of artists that they do know to find similar Japanese artists.
-          </p>
+<p>
+I was lucky enough to spend the summer doing some research at the <a href="http://www.nii.ac.jp/en">NII (National Institute of Informatics)</a> in Tokyo. I spent three months there working on ways to browse and visualise their LODAC dataset of Japanese artists and artworks.
+</p>
 
-          <p>
-            Artfinder is available online <a href="http://cblop.github.io/artfinder">here</a>. It was written using Angular.js, with the tag hierarchies for the facets having been clustered using Python and Clojure.
-          </p>
+<p>
+At the end of the summer internship, I made a browser-based art discovery tool called <a href="http://cblop.github.io/artfinder">'ArtFinder'</a>.
+</p>
 
-          <hr  />
 
-          <div align=center>
-            <p>
-              <a href="http://mthompson.org">Home</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+<div class="figure">
+<p><img src="img/artfinder1.png" alt="artfinder1.png" />
+</p>
+</div>
+<div align=center>
+<p>
+<i>ArtFinder</i>
+</p>
+</div>
+
+<p>
+After putting the artists names and metadata through Google Translate, I created a faceted browser for Japanese artists. The idea is that you click on a tab on the left to choose a facet (location, era, genre, medium), then drill down through a hierarchy to find a specific tag for that facet. Multiple tags can be selected (they appear on the right as green boxes) and the list of artists in the middle is filtered according to the selected tags. Clicking on an artist’s name shows a list of their related tags.
+</p>
+
+<p>
+The idea is that a person who is unfamiliar with Japanese art can browse through categories of artists that they do know to find similar Japanese artists.
+</p>
+
+<p>
+Artfinder is available online <a href="http://cblop.github.io/artfinder">here</a>. It was written using Angular.js, with the tag hierarchies for the facets having been clustered using Python and Clojure.
+</p>
+
+<hr  />
+
+<div align=center>
+<p>
+<a href="http://mthompson.org/">Home</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
 </html>
