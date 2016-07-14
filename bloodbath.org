@@ -71,9 +71,7 @@ to use [[https://www.blender.org][Blender]], a 3D modelling tool, for compositin
 the [[https://www.gimp.org][Gimp]], an image editor, to stitch together the images produced by Blender into sprite
 sheets.
 Although Blender is traditionally used for 3D modelling and animation, it also has a very
-sophisticated node editor for compositing work. In section 4.1, I describe how I used this
-node editor to remove the green screen from the background of the video footage.
-I used a [[http://registry.gimp.org/node/27761][script]] made by a GIMP user for the creation of sprite sheets to stitch together
+sophisticated node editor for compositing work. I used this node editor to remove the green screen from the background of the video footage, then used a [[http://registry.gimp.org/node/27761][script]] made by a GIMP user for the creation of sprite sheets to stitch together
 my animation images.
 
 ** Game design
