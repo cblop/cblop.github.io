@@ -3,6 +3,7 @@
 
 
 * Create a live-action fighting game with your friends as characters
+/Thu Jul 14th 2016/
 
 [[./img/bloodbath.png]]
 #+HTML: <div align=center>
