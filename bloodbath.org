@@ -2,7 +2,7 @@
 -----
 
 
-* Create a Live-Action Fighting Game With Your Friends as Characters
+* Create a live-action fighting game with your friends as characters
 
 [[./img/bloodbath.png]]
 #+HTML: <div align=center>
@@ -77,7 +77,7 @@ node editor to remove the green screen from the background of the video footage.
 I used a [[http://registry.gimp.org/node/27761][script]] made by a GIMP user for the creation of sprite sheets to stitch together
 my animation images.
 
-** Game Design
+** Game design
 
 This game is designed to be played by two players. When the game first starts, the players are
 presented with a character selection screen. Once both players have selected their characters,
@@ -99,7 +99,7 @@ Pressing the escape key at any time quits the game.
 Joypad support is partially implemented, however no Linux-compatible joypads could be
 found for testing.
 
-*** Code Structure
+*** Code structure
 The code is split into seven files: main.lua, player.lua, gfx.lua, fight.lua, game.lua,
 hud.lua and anim8.lua.
 
@@ -145,8 +145,8 @@ If a player has been hit many times by the other player and their health value r
 zero, they go into the ‘lose’ state, from which there is no return. The other player ends in the
 ‘win’ state.
 
-** Animation Techniques
-*** Chroma Keying
+** Animation techniques
+*** Chroma keying
 
 Chroma key compositing is a technique for layering two images together. One image, the
 ‘foreground image’ has a mask of transparent pixels (alpha mask) applied according to a set
@@ -188,7 +188,7 @@ Here is how the image looks in Blender's node editor once the chroma key and col
 /Blender's compositing node editor/
 #+HTML: </div>
 
-*** Sprite Sheets
+*** Sprite sheets
 In the game, each character is represented by a sprite, which is simply a 2D image with a
 transparent background. Each action for each character has a set of images which make up
 its animation sprite. While it would be perfectly possible to store every image for an animation separately, this
@@ -211,7 +211,7 @@ the sprite sheet for one character’s “winning” animation:
 /The sprite sheet for Hashim's "winning" animation/
 #+HTML: </div>
 
-** If I Had Time...
+** If I had time...
 
 Though this prototype is playable enough, there is plenty that still needs to be done to make this a decent game.
 
@@ -226,7 +226,7 @@ the screen, who then beats themselves up.
 - Players can still inflict damage when attacking in the wrong direction.
 - Players can still be moved when dead.
 - The only way to replay the game is to close and re-open it.
-- 
+ 
 At the moment, this game is just a proof-of-concept, but I do hope to develop and polish it
 a little further. The full source code can be found online at [[http://github.com/cblop/bloodbath]].
 
