@@ -1,8 +1,3 @@
-var ctx = document.getElementById("humidity2014");
-$.getJSON("./json/humidity2014.json", function(d)
-                     {
-                         data = d;
-                     });
 // var data = {
 //     labels: ["January", "February", "March", "April", "May", "June", "July",
 //              "August", "September", "October", "November", "December"],
@@ -31,24 +26,39 @@ $.getJSON("./json/humidity2014.json", function(d)
 //         }
 //     ]
 // };
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: data,
-    options: {
-        title: {
-            text: "Humidity in 2014",
-            display: true
-        },
-        legend: {
-            display: false
-        },
-        tooltips: {
-            displayColors: false,
-            callbacks: {
-                label: function(tooltipItem, data) {
-                    return data.datasets[0].data[tooltipItem.index];
+
+function makeChart(data) {
+    var ctx = document.getElementById("humidity2014");
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: {
+            title: {
+                text: "Humidity in 2014",
+                display: true
+            },
+            legend: {
+                display: false
+            },
+            tooltips: {
+                displayColors: false,
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        return data.datasets[0].data[tooltipItem.index];
+                    }
                 }
             }
         }
-    }
+    });
+}
+
+function getData() {
+$.getJSON("./json/humidity2014.json", function(d)
+          {
+              makeChart(d);
+          });
+}
+
+$(document).ready(function(){
+    getData();
 });
