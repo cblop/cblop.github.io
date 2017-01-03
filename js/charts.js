@@ -53,10 +53,10 @@ function makeChart(data) {
 }
 
 function getData() {
-$.getJSON("./json/humidity2014.json", function(d)
-          {
-              makeChart(d);
-          });
+    $.getJSON("./json/humidity2014.json", function(d)
+              {
+                  makeChart(d);
+              });
 }
 
 $(document).ready(function(){
