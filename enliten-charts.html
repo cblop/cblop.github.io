@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MATT THOMPSON</title>
 <meta name="generator" content="Org mode">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -59,9 +59,9 @@ for the JavaScript code in this tag.
 <h1 class="title">MATT THOMPSON</h1>
 </header><hr >
 
-<div id="outline-container-org633c5af" class="outline-2">
-<h2 id="org633c5af">The ENLITEN Project: Visualising Energy Use</h2>
-<div class="outline-text-2" id="text-org633c5af">
+<div id="outline-container-org237aa46" class="outline-2">
+<h2 id="org237aa46">The ENLITEN Project: Visualising Energy Use</h2>
+<div class="outline-text-2" id="text-org237aa46">
 <p>
 <i>Tue Jan 3<sup>rd</sup> 2017</i>
 </p>
@@ -94,9 +94,9 @@ Let's look through the data to see if any patterns emerge.
 </p>
 </div>
 
-<div id="outline-container-org108b582" class="outline-3">
-<h3 id="org108b582">Power Usage Over Time</h3>
-<div class="outline-text-3" id="text-org108b582">
+<div id="outline-container-org3592819" class="outline-3">
+<h3 id="org3592819">Power Usage Over Time</h3>
+<div class="outline-text-3" id="text-org3592819">
 <p>
 First, let's ask a very simple question: how does the power usage of a home vary during different times of year?
 </p>
@@ -105,7 +105,9 @@ First, let's ask a very simple question: how does the power usage of a home vary
 To visualise this, we take the average of all power readings for each home for every month of the year. The result looks like this:
 </p>
 
-<canvas id="myChart" width="200" height="200"></canvas>
+<br>
+<canvas id="humidity2014" width="200" height="100"></canvas>
+<br>
 
 <p>
 As you can see,
@@ -117,9 +119,9 @@ As you might expect, this is also reflected in gas usage throughout the year:
 </div>
 </div>
 
-<div id="outline-container-org58c7f1d" class="outline-3">
-<h3 id="org58c7f1d">How Power / Gas Usage Affect Environmental Factors</h3>
-<div class="outline-text-3" id="text-org58c7f1d">
+<div id="outline-container-org02cedbe" class="outline-3">
+<h3 id="org02cedbe">How Power / Gas Usage Affect Environmental Factors</h3>
+<div class="outline-text-3" id="text-org02cedbe">
 <p>
 As well as monitoring the energy use in each appliance of the homes examined, the environment inside and outside of a home were also monitored. Let's see how power and gas usage were affected by the temperature outside the home:
 </p>
@@ -138,13 +140,15 @@ Or carbon dioxide levels:
 </div>
 </div>
 
-<div id="outline-container-org90b9b25" class="outline-3">
-<h3 id="org90b9b25">Compare For Yourself</h3>
-<div class="outline-text-3" id="text-org90b9b25">
+<div id="outline-container-org41f0404" class="outline-3">
+<h3 id="org41f0404">Compare For Yourself</h3>
+<div class="outline-text-3" id="text-org41f0404">
 <p>
 You can play with this interactive tool to compare different energy level readings over time. Can you find any correlations?
 </p>
 
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"></script>
 <script src="js/charts.js"></script>
 
 <hr >
