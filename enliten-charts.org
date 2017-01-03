@@ -28,7 +28,7 @@ First, let's ask a very simple question: how does the power usage of a home vary
 To visualise this, we take the average of all power readings for each home for every month of the year. The result looks like this:
 
 #+BEGIN_EXPORT html
-<canvas id="myChart" width="400" height="400"></canvas>
+<canvas id="myChart" width="200" height="200"></canvas>
 <script>
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
