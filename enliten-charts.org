@@ -1,5 +1,4 @@
 #+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"></script>
-#+HTML_HEAD: <script src="js/charts.js"></script>
 #+TITLE: MATT THOMPSON
 -----
 
@@ -46,6 +45,7 @@ Or carbon dioxide levels:
 ** Compare For Yourself
 You can play with this interactive tool to compare different energy level readings over time. Can you find any correlations?
 
+#+HTML: <script src="js/charts.js"></script>
 
 -----
 
