@@ -1,0 +1,52 @@
+#+TITLE: MATT THOMPSON
+-----
+
+* The ENLITEN Project: Visualising Energy Use
+/Tue Jan 3^{rd} 2017/
+
+ENLITEN is a multidisciplinary research project that I'm working on as a Research Associate at the University of Bath. Its aim is to reduce the energy use of buildings through analysis of current appliance usage patterns. Through the understanding of data gathered in several sensor-equipped homes, we should be able to better advise people how to use their energy more efficiently, which will save them money and reduce their carbon footprint. A good overview of the project can be found at the University of Bath's research page [[http://www.bath.ac.uk/research/case-studies/enlitening-household-energy-literacy][here]].
+
+The data were gathered from 24 locations around the country. Each home was equipped with sensors attached to raspberry-pis, which monitored the energy usage of appliances, as well as the environmental conditions of each house, over a time span of multiple years.
+
+Data recorded included:
+
+- carbon dioxide levels
+- gas usage
+- humidity levels
+- light levels inside the home
+- motion activity inside the home
+- electrical power usage
+- sound levels
+- temperature levels
+
+Let's look through the data to see if any patterns emerge.
+
+** Power Usage Over Time
+First, let's ask a very simple question: how does the power usage of a home vary during different times of year?
+
+To visualise this, we take the average of all power readings for each home for every month of the year. The result looks like this:
+
+
+As you can see,
+
+As you might expect, this is also reflected in gas usage throughout the year:
+
+** How Power / Gas Usage Affect Environmental Factors
+As well as monitoring the energy use in each appliance of the homes examined, the environment inside and outside of a home were also monitored. Let's see how power and gas usage were affected by the temperature outside the home:
+
+The chart shows...
+
+We can also see if there is a correlation between power usage and humidity levels:
+
+Or carbon dioxide levels:
+
+** Compare For Yourself
+You can play with this interactive tool to compare different energy level readings over time. Can you find any correlations?
+
+
+-----
+
+#+HTML:<div align=center>
+[[http://mthompson.org][Home]]
+#+HTML:</div>
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MATT THOMPSON</title>
+<meta name="generator" content="Org mode">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">MATT THOMPSON</h1>
+</header><hr >
+
+<div id="outline-container-org41bcaca" class="outline-2">
+<h2 id="org41bcaca">The ENLITEN Project: Visualising Energy Use</h2>
+<div class="outline-text-2" id="text-org41bcaca">
+<p>
+<i>Tue Jan 3<sup>rd</sup> 2017</i>
+</p>
+
+<p>
+ENLITEN is a multidisciplinary research project that I'm working on as a Research Associate at the University of Bath. Its aim is to reduce the energy use of buildings through analysis of current appliance usage patterns. Through the understanding of data gathered in several sensor-equipped homes, we should be able to better advise people how to use their energy more efficiently, which will save them money and reduce their carbon footprint. A good overview of the project can be found at the University of Bath's research page <a href="http://www.bath.ac.uk/research/case-studies/enlitening-household-energy-literacy">here</a>.
+</p>
+
+<p>
+The data were gathered from 24 locations around the country. Each home was equipped with sensors attached to raspberry-pis, which monitored the energy usage of appliances, as well as the environmental conditions of each house, over a time span of multiple years.
+</p>
+
+<p>
+Data recorded included:
+</p>
+
+<ul class="org-ul">
+<li>carbon dioxide levels</li>
+<li>gas usage</li>
+<li>humidity levels</li>
+<li>light levels inside the home</li>
+<li>motion activity inside the home</li>
+<li>electrical power usage</li>
+<li>sound levels</li>
+<li>temperature levels</li>
+</ul>
+
+<p>
+Let's look through the data to see if any patterns emerge.
+</p>
+</div>
+
+<div id="outline-container-org874bd60" class="outline-3">
+<h3 id="org874bd60">Power Usage Over Time</h3>
+<div class="outline-text-3" id="text-org874bd60">
+<p>
+First, let's ask a very simple question: how does the power usage of a home vary during different times of year?
+</p>
+
+<p>
+To visualise this, we take the average of all power readings for each home for every month of the year. The result looks like this:
+</p>
+
+
+<p>
+As you can see,
+</p>
+
+<p>
+As you might expect, this is also reflected in gas usage throughout the year:
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfa8b27d" class="outline-3">
+<h3 id="orgfa8b27d">How Power / Gas Usage Affect Environmental Factors</h3>
+<div class="outline-text-3" id="text-orgfa8b27d">
+<p>
+As well as monitoring the energy use in each appliance of the homes examined, the environment inside and outside of a home were also monitored. Let's see how power and gas usage were affected by the temperature outside the home:
+</p>
+
+<p>
+The chart shows&#x2026;
+</p>
+
+<p>
+We can also see if there is a correlation between power usage and humidity levels:
+</p>
+
+<p>
+Or carbon dioxide levels:
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6d35c63" class="outline-3">
+<h3 id="org6d35c63">Compare For Yourself</h3>
+<div class="outline-text-3" id="text-org6d35c63">
+<p>
+You can play with this interactive tool to compare different energy level readings over time. Can you find any correlations?
+</p>
+
+
+<hr >
+
+<div align=center>
+<p>
+<a href="http://mthompson.org">Home</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>
