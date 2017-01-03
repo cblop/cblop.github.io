@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MATT THOMPSON</title>
 <meta name="generator" content="Org mode">
-<link rel="stylesheet" type="text/css" href="style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -59,9 +59,9 @@ for the JavaScript code in this tag.
 <h1 class="title">MATT THOMPSON</h1>
 </header><hr >
 
-<div id="outline-container-org41bcaca" class="outline-2">
-<h2 id="org41bcaca">The ENLITEN Project: Visualising Energy Use</h2>
-<div class="outline-text-2" id="text-org41bcaca">
+<div id="outline-container-orgd4ee45a" class="outline-2">
+<h2 id="orgd4ee45a">The ENLITEN Project: Visualising Energy Use</h2>
+<div class="outline-text-2" id="text-orgd4ee45a">
 <p>
 <i>Tue Jan 3<sup>rd</sup> 2017</i>
 </p>
@@ -94,9 +94,9 @@ Let's look through the data to see if any patterns emerge.
 </p>
 </div>
 
-<div id="outline-container-org874bd60" class="outline-3">
-<h3 id="org874bd60">Power Usage Over Time</h3>
-<div class="outline-text-3" id="text-org874bd60">
+<div id="outline-container-org42903e9" class="outline-3">
+<h3 id="org42903e9">Power Usage Over Time</h3>
+<div class="outline-text-3" id="text-org42903e9">
 <p>
 First, let's ask a very simple question: how does the power usage of a home vary during different times of year?
 </p>
@@ -104,6 +104,48 @@ First, let's ask a very simple question: how does the power usage of a home vary
 <p>
 To visualise this, we take the average of all power readings for each home for every month of the year. The result looks like this:
 </p>
+
+<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+
 
 
 <p>
@@ -116,9 +158,9 @@ As you might expect, this is also reflected in gas usage throughout the year:
 </div>
 </div>
 
-<div id="outline-container-orgfa8b27d" class="outline-3">
-<h3 id="orgfa8b27d">How Power / Gas Usage Affect Environmental Factors</h3>
-<div class="outline-text-3" id="text-orgfa8b27d">
+<div id="outline-container-org3674f4c" class="outline-3">
+<h3 id="org3674f4c">How Power / Gas Usage Affect Environmental Factors</h3>
+<div class="outline-text-3" id="text-org3674f4c">
 <p>
 As well as monitoring the energy use in each appliance of the homes examined, the environment inside and outside of a home were also monitored. Let's see how power and gas usage were affected by the temperature outside the home:
 </p>
@@ -137,9 +179,9 @@ Or carbon dioxide levels:
 </div>
 </div>
 
-<div id="outline-container-org6d35c63" class="outline-3">
-<h3 id="org6d35c63">Compare For Yourself</h3>
-<div class="outline-text-3" id="text-org6d35c63">
+<div id="outline-container-org3c39605" class="outline-3">
+<h3 id="org3c39605">Compare For Yourself</h3>
+<div class="outline-text-3" id="text-org3c39605">
 <p>
 You can play with this interactive tool to compare different energy level readings over time. Can you find any correlations?
 </p>
