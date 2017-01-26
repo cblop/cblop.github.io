@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+h1 {color: #ccc;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 60px;
+    text-align: center;
+    padding-bottom: 0;
+    margin-bottom: 0;
+   }
+body {
+    color: #000;
+    background-color: #fff;
+    font-family: 'Source Serif Pro', serif;
+    font-size: 18px;
+    padding: 0 15%;
+    margin: 0 15%;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background: #aaa;
+}
+.right-align {
+    text-align: right;
+}
+img {
+    display: block;
+    margin: 0 auto;
+}
+.src a {
+    color: #000;  
+    underline: none;
+}
+
+.src-ttl {
+    font-size: 12px;
+}
+/*
+ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+*/

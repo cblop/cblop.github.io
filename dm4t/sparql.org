@@ -1,0 +1,715 @@
+#+TITLE: DM4T PROJECT
+-----
+
+* Querying Home Sensor Data with SPARQL
+/Matt Thompson/
+
+[[https://teddinet.org][TEDDINET]] is a multi-disciplinary research project to monitor the energy usage of homes and appliances, and work out ways to reduce it. From 2013 up until 2016, millions of sensor readings have been taken from hundreds of homes, recording data such as power usage, temperature, humidity, and sound levels. Now that all the data have been gathered, we have to figure out how to process it to make it easy to query and visualise.
+
+My role in this project is to:
+
+- process the data to make it possible to send queries across multiple datasets
+- devise some example queries that show some example visualisations
+- design tools to help people convert their data so that we can send queries to it
+- find ways to query and convert these data sets on the fly without having to store a converted version on our own servers
+
+The first technologies I'm looking at are [[https://en.wikipedia.org/wiki/Resource_Description_Framework][RDF]] and [[https://en.wikipedia.org/wiki/SPARQL][SPARQL]], tools that were originally developed for the semantic web.
+
+*RDF* is a way of describing graphs in subject-predicate-object triples. A simple way to think of these triples is that the /subject/ and /object/ refer to /things/ (nodes on a graph), and the /predicate/ describes their /relationship/ (the edges on a graph).
+
+Because it was designed for the semantic web, each part of a triple must refer to a specific instance of something using a unique identifier called a *URI*. A URI is similar to a web address, pointing to an address that can be used to identify a particular resource.
+
+Examples of RDF triples are:
+
+"Appliance 2 is an appliance":
+#+BEGIN_SRC xml
+<http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2>
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+<https://w3id.org/seas/Appliance>
+#+END_SRC
+
+"Appliance 3 contains device 276":
+#+BEGIN_SRC xml
+<http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3>
+<https://w3id.org/seas#contains>
+<http://www.cs.bath.ac.uk/dm4t/enliten/device/276>
+#+END_SRC
+
+"Reading 15998574 came from house 10":
+#+BEGIN_SRC xml
+<http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574>
+<http://purl.oclc.org/NET/ssnx/ssn#hasLocation>
+<http://www.cs.bath.ac.uk/dm4t/refit/home/house_10>
+#+END_SRC
+
+The above triples are in the "n-triples" format, which is an XML representation of RDF triples. This format is a little verbose, as it uses one line per triple. A more efficient RDF representation is the "Turtle" format, which allows us to specify a subject with all of its predicates and objects separated by semicolons (and indented for legibility).
+
+An example of a power reading from our ENLITEN dataset in the "turtle" format looks like this:
+
+#+BEGIN_SRC ttl
+<http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1> a <https://w3id.org/seas/PowerQuantity> , <https://w3id.org/seas/Observation> ;
+	<http://www.cs.bath.ac.uk/dm4t/enliten/minValue> "0.0"^^<http://www.w3.org/2001/XMLSchema#float> ;
+	<http://www.cs.bath.ac.uk/dm4t/enliten/maxValue> "1339.0"^^<http://www.w3.org/2001/XMLSchema#float> ;
+	<http://www.cs.bath.ac.uk/dm4t/enliten/meanValue> "669.0"^^<http://www.w3.org/2001/XMLSchema#float> ;
+	<https://w3id.org/seas#measurementInstrument> <http://www.cs.bath.ac.uk/dm4t/enliten/sensor/8> ;
+	<https://w3id.org/seas#measurementSite> <http://www.cs.bath.ac.uk/dm4t/enliten/device/8> ;
+	<https://w3id.org/seas#measurementStart> "2013-04-16T07:20:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+	<https://w3id.org/seas#measurementEnd> "2013-04-16T07:20:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+#+END_SRC
+
+This RDF snippet expresses:
+
+- Power reading 1 is a power reading and observation
+- its minimum value is 0.0
+- its maximum value is 1339.0
+- its mean value is 669.0
+- the instrument used to measure it was sensor 8
+- it originated from device 8
+- the reading started and ended at 07:20am on April 16th, 2013
+
+The beauty of RDF is the way it expresses data as a graph. This means that we should be able to query it without knowing too much about particular structure of the database its stored in. Contrast this with SQL, where one must know the exact layout of a database's tables in order to query it.
+
+It also allows us to join graphs together, querying databases (known as /triple stores/ in RDF parlance) from entirely separate locations with the same query. Querying across multiple datasets in this way is called /federated querying/.
+
+Due to the expression of our data in terms of triples, we must query them with a special language called SPARQL. SPARQL resembles SQL on a superficial level, but it allows for much more expressive queries in terms of triples.
+
+** The ENLITEN Dataset
+These SPARQL queries use the [[http://www.cs.bath.ac.uk/enliten/][ENLITEN]] dataset gathered by the University of Bath. These data were gathered from 23 homes around the UK, taking readings on:
+
+- appliance power usage
+- gas usage
+- carbon dioxide levels
+- humidity levels
+- light levels inside the home
+- sound levels inside the home
+- temperature inside the home
+- motion data from inside the home
+
+These data were originally gathered using sensors attached to Raspberry PIs, and stored in a mySQL database. In order for us to query them with SPARQL, we converted them into RDF triples to load into a Jena triple store (the process is described in [[http://mthompson.org/dm4t/triples.html][this blog post]]). This allowed us to create a "SPARQL endpoint", a web service to which we can send SPARQL queries to retrieve our data.
+
+** A General SPARQL Query
+The most basic SPARQL query possible would be:
+
+/"Get every subject, predicate and object in our datastore, and return them as "s", "p" and "o" variables. But we only want the first 10!"/
+
+Here is how we express that as a SPARQL query:
+
+  #+BEGIN_SRC sparql :url http://mist.cs.bath.ac.uk/enliten/query :format text/csv
+ SELECT ?subject ?predicate ?object WHERE { ?subject ?predicate ?object } LIMIT 20
+  #+END_SRC
+
+  #+RESULTS:
+  | subject                                           | predicate                                       | object                                              |
+  |---------------------------------------------------+-------------------------------------------------+-----------------------------------------------------|
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2 | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Appliance                     |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2 | https://w3id.org/seas#contains                  | http://www.cs.bath.ac.uk/dm4t/enliten/device/275    |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2 | http://www.w3.org/2000/01/rdf-schema#label      | Kettle                                              |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/275  | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Device                        |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/275  | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | http://www.cs.bath.ac.uk/dm4t/enliten/device/type/8 |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/275  | http://www.w3.org/2000/01/rdf-schema#label      | 3ZU-V6Q-K3J-NVV-WV                                  |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/275  | http://purl.org/dc/terms/description            | A                                                   |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3 | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Appliance                     |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3 | https://w3id.org/seas#contains                  | http://www.cs.bath.ac.uk/dm4t/enliten/device/276    |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3 | http://www.w3.org/2000/01/rdf-schema#label      | Microwave                                           |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/276  | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Device                        |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/276  | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | http://www.cs.bath.ac.uk/dm4t/enliten/device/type/8 |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/276  | http://www.w3.org/2000/01/rdf-schema#label      | 3ZU-V6V-Y3J-NVI-H2                                  |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/276  | http://purl.org/dc/terms/description            | B                                                   |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/4 | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Appliance                     |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/4 | https://w3id.org/seas#contains                  | http://www.cs.bath.ac.uk/dm4t/enliten/device/277    |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/4 | http://www.w3.org/2000/01/rdf-schema#label      | Washing Machine                                     |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/277  | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Device                        |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/277  | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | http://www.cs.bath.ac.uk/dm4t/enliten/device/type/8 |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/277  | http://www.w3.org/2000/01/rdf-schema#label      | 3ZU-VDN-W3J-NWG-4N                                  |
+
+Certain keywords (SELECT and LIMIT) are used in much the same way as their SQL counterparts, but the naming of variables to be returned with the question mark (?) operator is new, as is their arrangement in triples. Once a user becomes familiar with SPARQL, it becomes a powerful, expressive and flexible way to query RDF triples. A good way to start learning the basics of SPARQL is with the Apache Jena [[https://jena.apache.org/tutorials/sparql.html][SPARQL tutorial]].
+
+Sending the above query to our SPARQL endpoint located at http://mist.cs.bath.ac.uk/enliten/query returns the following 10 results:
+
+  #+RESULTS:
+  | s                                                 | p                                               | o                                                   |
+  |---------------------------------------------------+-------------------------------------------------+-----------------------------------------------------|
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2 | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Appliance                     |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2 | https://w3id.org/seas#contains                  | http://www.cs.bath.ac.uk/dm4t/enliten/device/275    |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2 | http://www.w3.org/2000/01/rdf-schema#label      | Kettle                                              |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/275  | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Device                        |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/275  | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | http://www.cs.bath.ac.uk/dm4t/enliten/device/type/8 |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/275  | http://www.w3.org/2000/01/rdf-schema#label      | 3ZU-V6Q-K3J-NVV-WV                                  |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/275  | http://purl.org/dc/terms/description            | A                                                   |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3 | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Appliance                     |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3 | https://w3id.org/seas#contains                  | http://www.cs.bath.ac.uk/dm4t/enliten/device/276    |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3 | http://www.w3.org/2000/01/rdf-schema#label      | Microwave                                           |
+
+It is clear that these are the first ten triples of millions (1.25 billion, to be exact). What if we want to query just a sample of the data, in order to get just enough for a representative visualisation without having to process millions of results?
+
+** Returning a Random Sample of Data
+Let's try querying a subset of the data that returns millions of results: the humidity level readings. A good example query to try would be to get all humidity readings across all homes for April 2013.
+
+A naive way to do this would be to order the data randomly and return a certain number of the randomly-ordered data:
+
+  #+BEGIN_SRC sparql :url http://mist.cs.bath.ac.uk/enliten/query :format text/csv
+PREFIX seas: <https://w3id.org/seas/>
+PREFIX sear: <https://w3id.org/seas#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?value ?time
+WHERE {
+        ?uri rdf:type seas:RelativeHumidity;
+              sear:value ?value;
+              sear:measurementStart ?time .
+        FILTER ( month(?time) = 4 && year(?time) = 2013 )
+      }
+ORDER BY RAND()
+LIMIT 25
+  #+END_SRC
+
+However, this query will result in a timeout on most SPARQL endpoints, taking more than 10 minutes to return a result. This is because it must order our (potentially millions of) humidity readings randomly before returning 25 of them. This is too expensive. Can we do better?
+
+  #+BEGIN_SRC sparql :url http://mist.cs.bath.ac.uk/enliten/query :format text/csv
+ PREFIX seas: <https://w3id.org/seas/>
+  PREFIX sear: <https://w3id.org/seas#>
+  PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+  PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?value ?tstring
+WHERE {
+  {
+  SELECT ?value ?time ?r
+  WHERE {
+          ?uri rdf:type seas:RelativeHumidity;
+                sear:value ?value;
+                sear:measurementStart ?time .
+        BIND ( rand() AS ?r )
+        FILTER ( ?r < 0.01 )
+        }
+  LIMIT 1000
+  }
+  FILTER( year(?time) = 2013 && month(?time) = 4 )
+  BIND (xsd:string(?time) AS ?tstring)
+}
+LIMIT 1000
+  #+END_SRC
+
+#+PLOT: title:"April humidities" ind:2 type:2d with:lines
+#+PLOT: labels:("Time" "Humidity")
+  #+RESULTS:
+  | value | tstring             |
+  |-------+---------------------|
+  |  35.0 | 2013-04-01T16:15:22 |
+  |  37.0 | 2013-04-01T17:51:27 |
+  |  35.0 | 2013-04-01T19:24:30 |
+  |  34.0 | 2013-04-01T21:30:51 |
+  |  30.0 | 2013-04-02T00:45:28 |
+  |  29.0 | 2013-04-02T01:41:07 |
+  |  29.0 | 2013-04-02T10:44:51 |
+  |  29.0 | 2013-04-02T13:55:41 |
+  |  29.0 | 2013-04-02T14:57:20 |
+  |  29.0 | 2013-04-02T15:05:05 |
+  |  28.0 | 2013-04-02T15:19:56 |
+  |  28.0 | 2013-04-02T16:24:27 |
+  |  28.0 | 2013-04-03T04:54:14 |
+  |  28.0 | 2013-04-03T06:10:02 |
+  |  28.0 | 2013-04-03T06:27:29 |
+  |  28.0 | 2013-04-03T11:39:55 |
+  |  28.0 | 2013-04-03T11:40:56 |
+  |  28.0 | 2013-04-03T13:44:34 |
+  |  28.0 | 2013-04-03T14:51:18 |
+  |  28.0 | 2013-04-03T18:30:55 |
+  |  28.0 | 2013-04-03T18:50:14 |
+  |  27.0 | 2013-04-03T18:57:57 |
+  |  27.0 | 2013-04-03T22:25:22 |
+  |  26.0 | 2013-04-04T02:50:35 |
+  |  28.0 | 2013-04-04T19:22:58 |
+  |  26.0 | 2013-04-04T21:28:27 |
+  |  27.0 | 2013-04-04T23:12:57 |
+  |  26.0 | 2013-04-05T00:24:17 |
+  |  28.0 | 2013-04-05T05:12:00 |
+  |  29.0 | 2013-04-05T07:06:56 |
+  |  27.0 | 2013-04-05T10:05:13 |
+  |  27.0 | 2013-04-05T12:07:54 |
+  |  27.0 | 2013-04-05T13:06:29 |
+  |  28.0 | 2013-04-05T13:25:29 |
+  |  27.0 | 2013-04-05T18:17:13 |
+  |  27.0 | 2013-04-05T21:14:04 |
+  |  28.0 | 2013-04-06T00:26:52 |
+  |  28.0 | 2013-04-06T10:51:18 |
+  |  29.0 | 2013-04-06T11:16:31 |
+  |  29.0 | 2013-04-06T15:57:54 |
+  |  32.0 | 2013-04-07T09:00:59 |
+  |  32.0 | 2013-04-07T09:04:14 |
+  |  31.0 | 2013-04-07T12:23:05 |
+  |  32.0 | 2013-04-07T19:07:53 |
+  |  34.0 | 2013-04-12T05:35:15 |
+  |  35.0 | 2013-04-12T11:40:12 |
+  |  43.0 | 2013-04-12T14:25:34 |
+  |  45.0 | 2013-04-12T17:10:04 |
+  |  34.0 | 2013-04-13T00:15:11 |
+  |  33.0 | 2013-04-13T07:55:05 |
+  |  42.0 | 2013-04-13T11:55:12 |
+  |  47.0 | 2013-04-13T20:45:27 |
+  |  47.0 | 2013-04-13T22:50:25 |
+  |  47.0 | 2013-04-13T23:05:25 |
+  |  47.0 | 2013-04-13T23:20:57 |
+  |  38.0 | 2013-04-14T00:05:07 |
+  |  38.0 | 2013-04-14T00:15:11 |
+  |  37.0 | 2013-04-14T10:20:08 |
+  |  37.0 | 2013-04-14T10:30:08 |
+  |  53.0 | 2013-04-14T15:25:20 |
+  |  52.0 | 2013-04-14T18:35:16 |
+  |  53.0 | 2013-04-15T02:25:25 |
+  |  36.0 | 2013-04-15T19:30:16 |
+  |  38.0 | 2013-04-16T07:45:08 |
+  |  27.0 | 2013-04-16T18:40:05 |
+  |  28.0 | 2013-04-16T19:25:12 |
+  |  33.0 | 2013-04-17T04:00:11 |
+  |  33.0 | 2013-04-17T04:45:14 |
+  |  33.0 | 2013-04-17T07:30:05 |
+  |  40.0 | 2013-04-17T11:35:12 |
+  |  40.0 | 2013-04-18T05:35:04 |
+  |  37.0 | 2013-04-18T06:25:09 |
+  |  29.0 | 2013-04-18T09:20:17 |
+  |  28.0 | 2013-04-18T09:25:17 |
+  |  27.0 | 2013-04-18T15:10:12 |
+  |  32.0 | 2013-04-19T05:45:05 |
+  |  25.0 | 2013-04-19T14:30:19 |
+  |  24.0 | 2013-04-19T16:10:16 |
+  |  24.0 | 2013-04-19T17:35:12 |
+  |  42.0 | 2013-04-20T02:05:10 |
+  |  42.0 | 2013-04-20T10:45:12 |
+  |  45.0 | 2013-04-20T20:05:05 |
+  |  45.0 | 2013-04-21T00:15:12 |
+  |  44.0 | 2013-04-21T08:15:04 |
+  |  54.0 | 2013-04-21T22:05:08 |
+  |  33.0 | 2013-04-22T14:05:15 |
+  |  49.0 | 2013-04-22T16:10:06 |
+  |  50.0 | 2013-04-22T19:10:11 |
+  |  39.0 | 2013-04-22T20:15:17 |
+  |  53.0 | 2013-04-22T22:00:10 |
+  |  51.0 | 2013-04-23T01:15:07 |
+  |  51.0 | 2013-04-23T08:05:12 |
+  |  51.0 | 2013-04-23T16:25:05 |
+  |  38.0 | 2013-04-23T18:25:18 |
+  |  38.0 | 2013-04-23T19:10:10 |
+  |  52.0 | 2013-04-24T01:35:14 |
+  |  40.0 | 2013-04-24T02:35:39 |
+  |  52.0 | 2013-04-24T06:45:08 |
+  |  42.0 | 2013-04-24T11:50:27 |
+  |  44.0 | 2013-04-24T17:35:29 |
+  |  53.0 | 2013-04-24T18:20:05 |
+  |  44.0 | 2013-04-24T20:10:21 |
+  |  55.0 | 2013-04-25T08:00:11 |
+  |  43.0 | 2013-04-25T10:40:22 |
+  |  55.0 | 2013-04-25T20:45:15 |
+  |  60.0 | 2013-04-25T22:25:16 |
+  |  53.0 | 2013-04-26T02:15:14 |
+  |  42.0 | 2013-04-26T07:45:15 |
+  |  51.0 | 2013-04-26T07:55:05 |
+  |  45.0 | 2013-04-26T23:35:18 |
+  |  27.0 | 2013-04-27T02:40:18 |
+  |  27.0 | 2013-04-27T02:55:31 |
+  |  42.0 | 2013-04-27T13:25:25 |
+  |  43.0 | 2013-04-27T13:40:18 |
+  |  43.0 | 2013-04-27T15:05:12 |
+  |  28.0 | 2013-04-27T18:45:22 |
+  |  28.0 | 2013-04-27T21:56:04 |
+  |  44.0 | 2013-04-27T23:30:07 |
+  |  29.0 | 2013-04-28T05:55:37 |
+  |  45.0 | 2013-04-28T08:00:08 |
+  |  30.0 | 2013-04-28T11:00:19 |
+  |  46.0 | 2013-04-28T13:50:19 |
+  |  29.0 | 2013-04-28T16:25:05 |
+  |  47.0 | 2013-04-28T18:40:09 |
+  |  31.0 | 2013-04-28T22:15:14 |
+  |  46.0 | 2013-04-29T00:25:11 |
+  |  48.0 | 2013-04-29T04:25:13 |
+  |  31.0 | 2013-04-29T05:40:09 |
+  |  27.0 | 2013-04-29T08:45:15 |
+  |  27.0 | 2013-04-29T09:55:23 |
+  |  27.0 | 2013-04-29T14:25:12 |
+  |  28.0 | 2013-04-29T18:30:23 |
+  |  46.0 | 2013-04-29T19:45:05 |
+  |  46.0 | 2013-04-29T20:25:12 |
+  |  30.0 | 2013-04-29T23:00:11 |
+  |  30.0 | 2013-04-30T00:30:21 |
+  |  26.0 | 2013-04-30T12:15:26 |
+  |  45.0 | 2013-04-30T12:20:17 |
+  |  23.0 | 2013-04-30T18:55:25 |
+  |  26.0 | 2013-04-30T22:00:15 |
+  |  45.0 | 2013-04-30T22:20:12 |
+
+# #+PLOT: title:"April humidities" ind:2 type:2d with:lines
+# #+PLOT: labels:("Time" "Humidity")
+#   #+RESULTS:
+#   | value | tstring             |
+#   |-------+---------------------|
+#   |  35.0 | 2013-04-01T16:34:31 |
+#   |  37.0 | 2013-04-01T17:31:30 |
+#   |  37.0 | 2013-04-01T17:34:07 |
+#   |  33.0 | 2013-04-01T20:01:28 |
+#   |  35.0 | 2013-04-01T22:32:23 |
+#   |  29.0 | 2013-04-02T01:50:04 |
+#   |  30.0 | 2013-04-02T05:45:35 |
+#   |  32.0 | 2013-04-02T07:12:17 |
+#   |  30.0 | 2013-04-02T07:57:25 |
+#   |  29.0 | 2013-04-02T12:52:37 |
+#   |  29.0 | 2013-04-02T13:44:48 |
+#   |  29.0 | 2013-04-02T15:01:45 |
+#   |  28.0 | 2013-04-02T15:56:19 |
+#   |  28.0 | 2013-04-02T17:23:41 |
+#   |  28.0 | 2013-04-02T18:01:29 |
+#   |  28.0 | 2013-04-02T21:34:35 |
+#   |  28.0 | 2013-04-03T06:32:26 |
+#   |  31.0 | 2013-04-03T08:27:09 |
+#   |  25.0 | 2013-04-04T01:21:52 |
+#   |  28.0 | 2013-04-04T06:45:44 |
+#   |  29.0 | 2013-04-04T08:24:31 |
+#   |  27.0 | 2013-04-04T11:07:56 |
+#   |  28.0 | 2013-04-04T15:23:21 |
+#   |  26.0 | 2013-04-04T20:10:54 |
+#   |  29.0 | 2013-04-05T07:03:04 |
+#   |  27.0 | 2013-04-05T09:53:39 |
+#   |  27.0 | 2013-04-05T14:38:13 |
+#   |  29.0 | 2013-04-05T22:48:36 |
+#   |  28.0 | 2013-04-05T23:30:38 |
+#   |  27.0 | 2013-04-06T03:00:28 |
+#   |  29.0 | 2013-04-06T06:27:22 |
+#   |  29.0 | 2013-04-06T06:34:00 |
+#   |  30.0 | 2013-04-06T14:44:18 |
+#   |  31.0 | 2013-04-06T14:50:17 |
+#   |  31.0 | 2013-04-06T14:53:57 |
+#   |  29.0 | 2013-04-07T00:26:00 |
+#   |  30.0 | 2013-04-07T11:53:26 |
+#   |  35.0 | 2013-04-11T22:25:19 |
+#   |  35.0 | 2013-04-11T23:00:29 |
+#   |  35.0 | 2013-04-12T12:35:09 |
+#   |  45.0 | 2013-04-12T17:35:12 |
+#   |  32.0 | 2013-04-12T18:30:14 |
+#   |  45.0 | 2013-04-13T00:25:21 |
+#   |  44.0 | 2013-04-13T01:40:46 |
+#   |  33.0 | 2013-04-13T07:30:12 |
+#   |  34.0 | 2013-04-13T11:10:15 |
+#   |  37.0 | 2013-04-13T16:10:05 |
+#   |  38.0 | 2013-04-13T18:35:16 |
+#   |  38.0 | 2013-04-13T21:10:10 |
+#   |  38.0 | 2013-04-13T23:50:11 |
+#   |  51.0 | 2013-04-14T07:55:04 |
+#   |  50.0 | 2013-04-14T09:50:15 |
+#   |  37.0 | 2013-04-14T10:20:08 |
+#   |  51.0 | 2013-04-14T12:20:12 |
+#   |  54.0 | 2013-04-14T21:15:21 |
+#   |  58.0 | 2013-04-14T23:05:11 |
+#   |  38.0 | 2013-04-15T11:00:09 |
+#   |  35.0 | 2013-04-16T10:05:05 |
+#   |  29.0 | 2013-04-16T13:30:19 |
+#   |  29.0 | 2013-04-16T18:00:08 |
+#   |  28.0 | 2013-04-16T20:15:36 |
+#   |  29.0 | 2013-04-16T21:15:15 |
+#   |  30.0 | 2013-04-16T22:05:07 |
+#   |  36.0 | 2013-04-17T15:45:13 |
+#   |  40.0 | 2013-04-17T21:25:07 |
+#   |  41.0 | 2013-04-17T23:20:07 |
+#   |  41.0 | 2013-04-17T23:25:15 |
+#   |  31.0 | 2013-04-19T03:05:17 |
+#   |  31.0 | 2013-04-19T03:55:14 |
+#   |  24.0 | 2013-04-19T17:55:13 |
+#   |  42.0 | 2013-04-19T20:35:08 |
+#   |  47.0 | 2013-04-20T13:05:09 |
+#   |  44.0 | 2013-04-21T03:00:07 |
+#   |  43.0 | 2013-04-21T07:10:08 |
+#   |  45.0 | 2013-04-21T09:45:04 |
+#   |  46.0 | 2013-04-21T13:50:04 |
+#   |  46.0 | 2013-04-21T14:30:16 |
+#   |  45.0 | 2013-04-21T15:55:11 |
+#   |  32.0 | 2013-04-22T07:40:04 |
+#   |  31.0 | 2013-04-22T08:45:25 |
+#   |  53.0 | 2013-04-22T23:35:07 |
+#   |  52.0 | 2013-04-23T06:00:05 |
+#   |  51.0 | 2013-04-23T07:55:05 |
+#   |  36.0 | 2013-04-23T08:45:18 |
+#   |  52.0 | 2013-04-23T12:20:05 |
+#   |  51.0 | 2013-04-23T15:30:13 |
+#   |  39.0 | 2013-04-23T21:25:18 |
+#   |  41.0 | 2013-04-24T00:05:25 |
+#   |  40.0 | 2013-04-24T03:30:18 |
+#   |  52.0 | 2013-04-24T07:30:11 |
+#   |  39.0 | 2013-04-24T09:05:15 |
+#   |  53.0 | 2013-04-24T15:00:09 |
+#   |  53.0 | 2013-04-24T15:05:04 |
+#   |  54.0 | 2013-04-24T16:00:10 |
+#   |  53.0 | 2013-04-24T18:40:06 |
+#   |  54.0 | 2013-04-24T19:05:22 |
+#   |  43.0 | 2013-04-25T03:45:39 |
+#   |  42.0 | 2013-04-25T08:40:08 |
+#   |  43.0 | 2013-04-25T09:45:19 |
+#   |  55.0 | 2013-04-25T10:15:12 |
+#   |  55.0 | 2013-04-25T17:10:11 |
+#   |  40.0 | 2013-04-25T21:05:28 |
+#   |  41.0 | 2013-04-25T21:25:26 |
+#   |  53.0 | 2013-04-26T01:35:06 |
+#   |  53.0 | 2013-04-26T02:05:11 |
+#   |  42.0 | 2013-04-26T08:00:22 |
+#   |  42.0 | 2013-04-26T08:20:08 |
+#   |  41.0 | 2013-04-26T08:30:33 |
+#   |  51.0 | 2013-04-26T09:00:15 |
+#   |  46.0 | 2013-04-26T15:50:12 |
+#   |  46.0 | 2013-04-26T17:05:09 |
+#   |  21.0 | 2013-04-26T18:20:23 |
+#   |  21.0 | 2013-04-26T19:20:36 |
+#   |  45.0 | 2013-04-26T21:55:14 |
+#   |  28.0 | 2013-04-27T08:50:58 |
+#   |  28.0 | 2013-04-27T09:25:08 |
+#   |  28.0 | 2013-04-27T11:45:15 |
+#   |  28.0 | 2013-04-27T15:20:20 |
+#   |  28.0 | 2013-04-27T16:05:16 |
+#   |  28.0 | 2013-04-27T16:30:19 |
+#   |  28.0 | 2013-04-27T21:20:39 |
+#   |  29.0 | 2013-04-28T01:25:18 |
+#   |  44.0 | 2013-04-28T01:35:14 |
+#   |  29.0 | 2013-04-28T03:25:07 |
+#   |  29.0 | 2013-04-28T07:00:12 |
+#   |  29.0 | 2013-04-28T12:20:15 |
+#   |  29.0 | 2013-04-28T13:35:19 |
+#   |  29.0 | 2013-04-28T15:40:05 |
+#   |  46.0 | 2013-04-28T16:40:12 |
+#   |  27.0 | 2013-04-29T16:45:25 |
+#   |  46.0 | 2013-04-29T17:10:05 |
+
+This query binds a random number to each result, then filters them down to only the results with random numbers below a certain threshold (0.01 in this case), taken from a pool of 1000 results. The final "LIMIT 25" is just to print the first 25 results in the table below:
+
+  #+RESULTS:
+  | value | tstring             |
+  |-------+---------------------|
+  |  36.0 | 2013-04-01T19:02:51 |
+  |  34.0 | 2013-04-01T21:34:04 |
+  |  30.0 | 2013-04-02T05:07:41 |
+  |  29.0 | 2013-04-03T10:02:21 |
+  |  28.0 | 2013-04-03T13:44:34 |
+  |  26.0 | 2013-04-04T01:33:58 |
+  |  27.0 | 2013-04-04T12:27:14 |
+  |  26.0 | 2013-04-04T21:58:27 |
+  |  27.0 | 2013-04-04T22:21:40 |
+  |  27.0 | 2013-04-04T23:34:54 |
+  |  28.0 | 2013-04-05T05:53:54 |
+  |  28.0 | 2013-04-05T06:37:30 |
+  |  27.0 | 2013-04-05T11:07:21 |
+  |  26.0 | 2013-04-05T15:51:52 |
+  |  27.0 | 2013-04-05T21:50:54 |
+  |  30.0 | 2013-04-07T05:33:25 |
+  |  30.0 | 2013-04-07T11:12:42 |
+  |  31.0 | 2013-04-07T13:39:15 |
+  |  30.0 | 2013-04-07T20:59:29 |
+  |  34.0 | 2013-04-07T23:41:44 |
+  |  35.0 | 2013-04-11T23:40:29 |
+  |  35.0 | 2013-04-12T02:15:14 |
+  |  35.0 | 2013-04-12T03:45:14 |
+  |  35.0 | 2013-04-12T04:05:08 |
+  |  44.0 | 2013-04-12T22:45:25 |
+
+Plotting all 1000 results gives us a nice visualisation of the humidity levels over the month:
+
+[[file:img/april-hums.png]]
+
+This is orders of magnitude faster, returning our results in under 2 seconds. Some tweaking is still needed, however. How can we be sure that the results obtained are randomly sampled from the whole range of the data we have, and not just the first /n/ results? To do this, we need to adjust our FILTER threshold and LIMIT numbers based on the number of readings we have for that month:
+
+TODO: Make this SPARQL query
+
+# ** Power
+
+# *** All homes, August 2013
+#   #+BEGIN_SRC sparql :url http://mist.cs.bath.ac.uk/enliten/query :format text/csv
+#  PREFIX seas: <https://w3id.org/seas/>
+#   PREFIX sear: <https://w3id.org/seas#>
+#   PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+#   PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+#   PREFIX home: <http://www.cs.bath.ac.uk/dm4t/enliten/home/>
+#   PREFIX enliten: <http://www.cs.bath.ac.uk/dm4t/enliten/>
+
+# SELECT ?value ?tstring
+# WHERE {
+#   {
+#   SELECT ?value ?time ?r
+#   WHERE {
+#           ?uri rdf:type seas:PowerQuantity;
+#                 enliten:meanValue ?value;
+#                 sear:measurementStart ?time .
+#         BIND ( rand() AS ?r )
+#         FILTER ( ?r < 0.001 )
+#         }
+#   LIMIT 1000
+#   }
+#   FILTER( year(?time) = 2013) 
+#   BIND (xsd:string(?time) AS ?tstring)
+# }
+#   #+END_SRC
+
+#   #+RESULTS:
+
+# #+PLOT: title:"August power usage (all homes)" ind:2 type:2d with:lines
+# #+PLOT: labels:("Time" "Power")
+
+# *** Home 1, 2014
+#   #+BEGIN_SRC sparql :url http://mist.cs.bath.ac.uk/enliten/query :format text/csv
+#  PREFIX seas: <https://w3id.org/seas/>
+#   PREFIX sear: <https://w3id.org/seas#>
+#   PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+#   PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+#   PREFIX home: <http://www.cs.bath.ac.uk/dm4t/enliten/home/>
+#   PREFIX enliten: <http://www.cs.bath.ac.uk/dm4t/enliten/>
+#   PREFIX refit: <http://www.cs.bath.ac.uk/dm4t/refit/>
+
+# SELECT ?value ?tstring
+# WHERE {
+#   {
+#   SELECT ?value ?time ?r
+#   WHERE {
+#           ?uri rdf:type seas:PowerQuantity;
+#                 sear:measurementSite ?device;
+#                 enliten:meanValue ?value;
+#                 sear:measurementStart ?time .
+#           home:1 sear:contains ?device.
+#         BIND ( rand() AS ?r )
+#         FILTER ( ?r < 0.01 )
+#         }
+#   LIMIT 1000000
+#   }
+#   FILTER( year(?time) = 2014 && month(?time) = 1) 
+#   BIND (xsd:string(?time) AS ?tstring)
+# }
+# LIMIT 100
+#   #+END_SRC
+
+#   #+RESULTS:
+#   | value | tstring |
+#   |-------+---------|
+  
+# *** One day, Home 1
+#   #+BEGIN_SRC sparql :url http://mist.cs.bath.ac.uk/enliten/query :format text/csv
+#  PREFIX seas: <https://w3id.org/seas/>
+#   PREFIX sear: <https://w3id.org/seas#>
+#   PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+#   PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+#   PREFIX home: <http://www.cs.bath.ac.uk/dm4t/enliten/home/>
+#   PREFIX enliten: <http://www.cs.bath.ac.uk/dm4t/enliten/>
+#   PREFIX refit: <http://www.cs.bath.ac.uk/dm4t/refit/>
+
+#   SELECT DISTINCT ?home ?device
+#   WHERE {
+#             ?uri rdf:type seas:PowerQuantity;
+#                 sear:measurementSite ?device.
+#             ?home sear:contains ?device.
+#         }
+#   LIMIT 100
+#   #+END_SRC
+
+#   #+RESULTS:
+#   | home | device |
+#   |------+--------|
+
+
+# *** REFIT data
+#   #+BEGIN_SRC sparql :url http://mist.cs.bath.ac.uk/refit/query :format text/csv
+#  PREFIX seas: <https://w3id.org/seas/>
+#   PREFIX sear: <https://w3id.org/seas#>
+#   PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+#   PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+#   PREFIX home: <http://www.cs.bath.ac.uk/dm4t/enliten/home/>
+#   PREFIX refit: <http://www.cs.bath.ac.uk/dm4t/refit/>
+
+# SELECT ?value ?tstring
+# WHERE {
+#   {
+#   SELECT ?value ?time ?r
+#   WHERE {
+#           ?uri rdf:type seas:PowerQuantity;
+#                 seas:value ?value;
+#                 sear:measurementStart ?time .
+#         BIND ( rand() AS ?r )
+#         FILTER ( ?r < 0.001 )
+#         }
+#   LIMIT 1000
+#   }
+#   FILTER( year(?time) = 2014) 
+#   BIND (xsd:string(?time) AS ?tstring)
+# }
+#   #+END_SRC
+
+#   #+RESULTS:
+#   | value | tstring |
+#   |-------+---------|
+
+# #+PLOT: title:"August power usage (all homes)" ind:2 type:2d with:lines
+# #+PLOT: labels:("Time" "Power")
+
+** Federated
+*** General
+
+One of the main goals of our project is to query across multiple datasets at once.
+
+  #+BEGIN_SRC sparql :url http://mist.cs.bath.ac.uk/enliten/query :format text/csv
+ SELECT ?s ?p ?o {
+   { SERVICE <http://mist.cs.bath.ac.uk/enliten/query>
+       { SELECT ?s ?p ?o WHERE
+                           { ?s ?p ?o }
+                           LIMIT 20 }}
+   UNION
+   { SERVICE <http://mist.cs.bath.ac.uk/refitdb/query>
+       { SELECT ?s ?p ?o WHERE
+                           { ?s ?p ?o }
+                           LIMIT 20 }}
+}
+  #+END_SRC
+
+
+Returns the following results:
+
+  #+RESULTS:
+  | s                                                            | p                                               | o                                                            |
+  |--------------------------------------------------------------+-------------------------------------------------+--------------------------------------------------------------|
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2            | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Appliance                              |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2            | https://w3id.org/seas#contains                  | http://www.cs.bath.ac.uk/dm4t/enliten/device/275             |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2            | http://www.w3.org/2000/01/rdf-schema#label      | Kettle                                                       |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/275             | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Device                                 |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/275             | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | http://www.cs.bath.ac.uk/dm4t/enliten/device/type/8          |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/275             | http://www.w3.org/2000/01/rdf-schema#label      | 3ZU-V6Q-K3J-NVV-WV                                           |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/275             | http://purl.org/dc/terms/description            | A                                                            |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3            | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Appliance                              |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3            | https://w3id.org/seas#contains                  | http://www.cs.bath.ac.uk/dm4t/enliten/device/276             |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3            | http://www.w3.org/2000/01/rdf-schema#label      | Microwave                                                    |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/276             | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Device                                 |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/276             | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | http://www.cs.bath.ac.uk/dm4t/enliten/device/type/8          |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/276             | http://www.w3.org/2000/01/rdf-schema#label      | 3ZU-V6V-Y3J-NVI-H2                                           |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/276             | http://purl.org/dc/terms/description            | B                                                            |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/4            | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Appliance                              |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/4            | https://w3id.org/seas#contains                  | http://www.cs.bath.ac.uk/dm4t/enliten/device/277             |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/appliance/4            | http://www.w3.org/2000/01/rdf-schema#label      | Washing Machine                                              |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/277             | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Device                                 |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/277             | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | http://www.cs.bath.ac.uk/dm4t/enliten/device/type/8          |
+  | http://www.cs.bath.ac.uk/dm4t/enliten/device/277             | http://www.w3.org/2000/01/rdf-schema#label      | 3ZU-VDN-W3J-NWG-4N                                           |
+  | http://www.cs.bath.ac.uk/dm4t/refit/home/house_10/Appliance1 | http://www.w3.org/2000/01/rdf-schema#label      | Magimix (Blender)                                            |
+  | http://www.cs.bath.ac.uk/dm4t/refit/home/house_10/Appliance2 | http://www.w3.org/2000/01/rdf-schema#label      | Freezer                                                      |
+  | http://www.cs.bath.ac.uk/dm4t/refit/home/house_10/Appliance3 | http://www.w3.org/2000/01/rdf-schema#label      | Chest Freezer (In Garage)                                    |
+  | http://www.cs.bath.ac.uk/dm4t/refit/home/house_10/Appliance4 | http://www.w3.org/2000/01/rdf-schema#label      | Fridge-Freezer                                               |
+  | http://www.cs.bath.ac.uk/dm4t/refit/home/house_10/Appliance5 | http://www.w3.org/2000/01/rdf-schema#label      | Washing Machine                                              |
+  | http://www.cs.bath.ac.uk/dm4t/refit/home/house_10/Appliance6 | http://www.w3.org/2000/01/rdf-schema#label      | Dishwasher                                                   |
+  | http://www.cs.bath.ac.uk/dm4t/refit/home/house_10/Appliance7 | http://www.w3.org/2000/01/rdf-schema#label      | Television Site                                              |
+  | http://www.cs.bath.ac.uk/dm4t/refit/home/house_10/Appliance8 | http://www.w3.org/2000/01/rdf-schema#label      | Microwave                                                    |
+  | http://www.cs.bath.ac.uk/dm4t/refit/home/house_10/Appliance9 | http://www.w3.org/2000/01/rdf-schema#label      | Kenwood KMix                                                 |
+  | http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574         | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Observation                            |
+  | http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574         | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/PowerQuantity                          |
+  | http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574         | http://purl.oclc.org/NET/ssnx/ssn#hasLocation   | http://www.cs.bath.ac.uk/dm4t/refit/home/house_10            |
+  | http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574         | https://w3id.org/seas#value                     | 70                                                           |
+  | http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574         | https://w3id.org/seas#measurementSite           | http://www.cs.bath.ac.uk/dm4t/refit/home/house_10/Appliance2 |
+  | http://www.cs.bath.ac.uk/dm4t/refit/reading/15998575         | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Observation                            |
+  | http://www.cs.bath.ac.uk/dm4t/refit/reading/15998575         | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/PowerQuantity                          |
+  | http://www.cs.bath.ac.uk/dm4t/refit/reading/15998575         | http://purl.oclc.org/NET/ssnx/ssn#hasLocation   | http://www.cs.bath.ac.uk/dm4t/refit/home/house_10            |
+  | http://www.cs.bath.ac.uk/dm4t/refit/reading/15998575         | https://w3id.org/seas#value                     | 2                                                            |
+  | http://www.cs.bath.ac.uk/dm4t/refit/reading/15998575         | https://w3id.org/seas#measurementSite           | http://www.cs.bath.ac.uk/dm4t/refit/home/house_10/Appliance6 |
+  | http://www.cs.bath.ac.uk/dm4t/refit/reading/15998576         | http://www.w3.org/1999/02/22-rdf-syntax-ns#type | https://w3id.org/seas/Observation                            |
+
+-----
+
+#+HTML:<div align=center>
+[[http://mthompson.org][Home]]
+#+HTML:</div>
+
