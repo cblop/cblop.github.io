@@ -3,6 +3,8 @@
 
 [[file:img/dm4t@2x.png]]
 
+
+
 This page contains information about my work as Research Associate on the [[http://www.cs.bath.ac.uk/dm4t/index.shtml][DM4T]] project. The aim of the project is to find uniform ways to store and query across gigabytes of power readings collected from sensors in home appliances.
 
 The following blog posts describe the evaluation of various technologies to determine their suitability for our project:
