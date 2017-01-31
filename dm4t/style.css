@@ -28,13 +28,26 @@ img {
     display: block;
     margin: 0 auto;
 }
+.src {
+    color: #fff;
+    background-color: #333;
+    padding: 20px;
+    box-shadow: 1px 1px 5px #333;
+    border-radius: 3px;
+}
 .src a {
-    color: #000;  
+    color: #fff;
     underline: none;
 }
 
 .src-ttl {
-    font-size: 12px;
+    font-size: 14px;
+    float: left;
+}
+
+.src-ttl {
+    font-size: 14px;
+    float: left;
 }
 /*
 ul

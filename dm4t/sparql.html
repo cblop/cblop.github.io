@@ -59,15 +59,15 @@ for the JavaScript code in this tag.
 <h1 class="title">DM4T PROJECT</h1>
 </header><hr >
 
-<div id="outline-container-orgb07250e" class="outline-2">
-<h2 id="orgb07250e">Querying Home Sensor Data with SPARQL</h2>
-<div class="outline-text-2" id="text-orgb07250e">
+<div id="outline-container-org642a079" class="outline-2">
+<h2 id="org642a079">Querying Home Sensor Data with SPARQL</h2>
+<div class="outline-text-2" id="text-org642a079">
 <p>
 <i>Matt Thompson</i>
 </p>
 
 <p>
-<a href="https://teddinet.org/">TEDDINET</a> is a multi-disciplinary research project to monitor the energy usage of homes and appliances, and work out ways to reduce it. From 2013 up until 2016, millions of sensor readings have been taken from hundreds of homes, recording data such as power usage, temperature, humidity, and sound levels. Now that all the data have been gathered, we have to figure out how to process it to make it easy to query and visualise.
+<a href="https://teddinet.org">TEDDINET</a> is a multi-disciplinary research project to monitor the energy usage of homes and appliances, and work out ways to reduce it. From 2013 up until 2016, millions of sensor readings have been taken from hundreds of homes, recording data such as power usage, temperature, humidity, and sound levels. Now that all the data have been gathered, we have to figure out how to process it to make it easy to query and visualise.
 </p>
 
 <p>
@@ -101,31 +101,7 @@ Examples of RDF triples are:
 "Appliance 2 is an appliance":
 </p>
 <div class="org-src-container">
-<pre class="src src-xml"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt;
-&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;
-&lt;https://w3id.org/seas/Appliance">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt;
-&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;
-&lt;https://w3id.org/seas/Appliance">http</a></span><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt;
-&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;
-&lt;https://w3id.org/seas/Appliance">://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt;</a><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt;
-&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;
-&lt;https://w3id.org/seas/Appliance">
-</a><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt;
-&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;
-&lt;https://w3id.org/seas/Appliance">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt;
-&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;
-&lt;https://w3id.org/seas/Appliance">http</a></span><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt;
-&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;
-&lt;https://w3id.org/seas/Appliance">://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;</a><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt;
-&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;
-&lt;https://w3id.org/seas/Appliance">
-</a><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt;
-&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;
-&lt;https://w3id.org/seas/Appliance">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt;
-&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;
-&lt;https://w3id.org/seas/Appliance">https</a></span><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt;
-&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;
-&lt;https://w3id.org/seas/Appliance">://w3id.org/seas/Appliance&gt;</a>
+<pre class="src src-xml"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://w3id.org/seas/Appliance">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://w3id.org/seas/Appliance">http</a></span><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://w3id.org/seas/Appliance">://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt; </a><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://w3id.org/seas/Appliance">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://w3id.org/seas/Appliance">http</a></span><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://w3id.org/seas/Appliance">://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; </a><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://w3id.org/seas/Appliance">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://w3id.org/seas/Appliance">https</a></span><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/2&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;https://w3id.org/seas/Appliance">://w3id.org/seas/Appliance&gt;</a>
 </pre>
 </div>
 
@@ -133,31 +109,7 @@ Examples of RDF triples are:
 "Appliance 3 contains device 276":
 </p>
 <div class="org-src-container">
-<pre class="src src-xml"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt;
-&lt;https://w3id.org/seas#contains&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt;
-&lt;https://w3id.org/seas#contains&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">http</a></span><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt;
-&lt;https://w3id.org/seas#contains&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt;</a><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt;
-&lt;https://w3id.org/seas#contains&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">
-</a><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt;
-&lt;https://w3id.org/seas#contains&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt;
-&lt;https://w3id.org/seas#contains&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">https</a></span><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt;
-&lt;https://w3id.org/seas#contains&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">://w3id.org/seas#contains&gt;</a><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt;
-&lt;https://w3id.org/seas#contains&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">
-</a><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt;
-&lt;https://w3id.org/seas#contains&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt;
-&lt;https://w3id.org/seas#contains&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">http</a></span><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt;
-&lt;https://w3id.org/seas#contains&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">://www.cs.bath.ac.uk/dm4t/enliten/device/276&gt;</a>
+<pre class="src src-xml"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt; &lt;https://w3id.org/seas#contains&gt; &lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt; &lt;https://w3id.org/seas#contains&gt; &lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">http</a></span><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt; &lt;https://w3id.org/seas#contains&gt; &lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt; </a><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt; &lt;https://w3id.org/seas#contains&gt; &lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt; &lt;https://w3id.org/seas#contains&gt; &lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">https</a></span><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt; &lt;https://w3id.org/seas#contains&gt; &lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">://w3id.org/seas#contains&gt; </a><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt; &lt;https://w3id.org/seas#contains&gt; &lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt; &lt;https://w3id.org/seas#contains&gt; &lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">http</a></span><a href="http://www.cs.bath.ac.uk/dm4t/enliten/appliance/3&gt; &lt;https://w3id.org/seas#contains&gt; &lt;http://www.cs.bath.ac.uk/dm4t/enliten/device/276">://www.cs.bath.ac.uk/dm4t/enliten/device/276&gt;</a>
 </pre>
 </div>
 
@@ -165,31 +117,7 @@ Examples of RDF triples are:
 "Reading 15998574 came from house 10":
 </p>
 <div class="org-src-container">
-<pre class="src src-xml"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt;
-&lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt;
-&lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">http</a></span><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt;
-&lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt;</a><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt;
-&lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">
-</a><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt;
-&lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt;
-&lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">http</a></span><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt;
-&lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt;</a><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt;
-&lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">
-</a><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt;
-&lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt;
-&lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">http</a></span><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt;
-&lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt;
-&lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">://www.cs.bath.ac.uk/dm4t/refit/home/house_10&gt;</a>
+<pre class="src src-xml"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt; &lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt; &lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt; &lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt; &lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">http</a></span><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt; &lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt; &lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt; </a><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt; &lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt; &lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt; &lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt; &lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">http</a></span><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt; &lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt; &lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt; </a><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt; &lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt; &lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">&lt;</a><span style="color: #A6E22E;"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt; &lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt; &lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">http</a></span><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574&gt; &lt;http://purl.oclc.org/NET/ssnx/ssn#hasLocation&gt; &lt;http://www.cs.bath.ac.uk/dm4t/refit/home/house_10">://www.cs.bath.ac.uk/dm4t/refit/home/house_10&gt;</a>
 </pre>
 </div>
 
@@ -240,9 +168,9 @@ Due to the expression of our data in terms of triples, we must query them with a
 </p>
 </div>
 
-<div id="outline-container-org61896a6" class="outline-3">
-<h3 id="org61896a6">The ENLITEN Dataset</h3>
-<div class="outline-text-3" id="text-org61896a6">
+<div id="outline-container-org8c97094" class="outline-3">
+<h3 id="org8c97094">The ENLITEN Dataset</h3>
+<div class="outline-text-3" id="text-org8c97094">
 <p>
 These SPARQL queries use the <a href="http://www.cs.bath.ac.uk/enliten/">ENLITEN</a> dataset gathered by the University of Bath. These data were gathered from 23 homes around the UK, taking readings on:
 </p>
@@ -264,9 +192,9 @@ These data were originally gathered using sensors attached to Raspberry PIs, and
 </div>
 </div>
 
-<div id="outline-container-org401e083" class="outline-3">
-<h3 id="org401e083">A General SPARQL Query</h3>
-<div class="outline-text-3" id="text-org401e083">
+<div id="outline-container-org0606bad" class="outline-3">
+<h3 id="org0606bad">A General SPARQL Query</h3>
+<div class="outline-text-3" id="text-org0606bad">
 <p>
 The most basic SPARQL query possible would be:
 </p>
@@ -280,7 +208,7 @@ Here is how we express that as a SPARQL query:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sparql"><span style="color: #F92672;">SELECT</span> <span style="color: #FD971F;">?s</span> <span style="color: #FD971F;">?p</span> <span style="color: #FD971F;">?o</span> <span style="color: #F92672;">WHERE</span> <span style="color: #AE81FF;">{</span> <span style="color: #FD971F;">?s</span> <span style="color: #FD971F;">?p</span> <span style="color: #FD971F;">?o</span> <span style="color: #AE81FF;">}</span> <span style="color: #F92672;">LIMIT</span> <span style="color: #AE81FF;">10</span>
+<pre class="src src-sparql"><span style="color: #F92672;">SELECT</span> <span style="color: #FD971F;">?subject</span> <span style="color: #FD971F;">?predicate</span> <span style="color: #FD971F;">?object</span> <span style="color: #F92672;">WHERE</span> <span style="color: #AE81FF;">{</span> <span style="color: #FD971F;">?subject</span> <span style="color: #FD971F;">?predicate</span> <span style="color: #FD971F;">?object</span> <span style="color: #AE81FF;">}</span> <span style="color: #F92672;">LIMIT</span> <span style="color: #AE81FF;">20</span>
 </pre>
 </div>
 
@@ -378,9 +306,9 @@ It is clear that these are the first ten triples of millions (1.25 billion, to b
 </div>
 </div>
 
-<div id="outline-container-orgf3aa071" class="outline-3">
-<h3 id="orgf3aa071">Returning a Random Sample of Data</h3>
-<div class="outline-text-3" id="text-orgf3aa071">
+<div id="outline-container-orga223ce0" class="outline-3">
+<h3 id="orga223ce0">Returning a Random Sample of Data</h3>
+<div class="outline-text-3" id="text-orga223ce0">
 <p>
 Let's try querying a subset of the data that returns millions of results: the humidity level readings. A good example query to try would be to get all humidity readings across all homes for April 2013.
 </p>
@@ -450,6 +378,73 @@ PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#">&lt;http://www.w3.o
 However, this query will result in a timeout on most SPARQL endpoints, taking more than 10 minutes to return a result. This is because it must order our (potentially millions of) humidity readings randomly before returning 25 of them. This is too expensive. Can we do better?
 </p>
 
+
+<div class="org-src-container">
+<pre class="src src-sparql"><span style="color: #F92672;">PREFIX</span> seas: <span style="color: #AE81FF;"><a href="https://w3id.org/seas/&gt;
+ PREFIX sear: &lt;https://w3id.org/seas#&gt;
+ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+ PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#">&lt;https://w3id.org/seas/&gt;</a></span><a href="https://w3id.org/seas/&gt;
+ PREFIX sear: &lt;https://w3id.org/seas#&gt;
+ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+ PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ </a><span style="color: #F92672;"><a href="https://w3id.org/seas/&gt;
+ PREFIX sear: &lt;https://w3id.org/seas#&gt;
+ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+ PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#">PREFIX</a></span><a href="https://w3id.org/seas/&gt;
+ PREFIX sear: &lt;https://w3id.org/seas#&gt;
+ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+ PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#"> sear: </a><span style="color: #AE81FF;"><a href="https://w3id.org/seas/&gt;
+ PREFIX sear: &lt;https://w3id.org/seas#&gt;
+ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+ PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#">&lt;https://w3id.org/seas#&gt;</a></span><a href="https://w3id.org/seas/&gt;
+ PREFIX sear: &lt;https://w3id.org/seas#&gt;
+ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+ PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ </a><span style="color: #F92672;"><a href="https://w3id.org/seas/&gt;
+ PREFIX sear: &lt;https://w3id.org/seas#&gt;
+ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+ PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#">PREFIX</a></span><a href="https://w3id.org/seas/&gt;
+ PREFIX sear: &lt;https://w3id.org/seas#&gt;
+ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+ PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#"> xsd: </a><span style="color: #AE81FF;"><a href="https://w3id.org/seas/&gt;
+ PREFIX sear: &lt;https://w3id.org/seas#&gt;
+ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+ PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#">&lt;http://www.w3.org/2001/XMLSchema#&gt;</a></span><a href="https://w3id.org/seas/&gt;
+ PREFIX sear: &lt;https://w3id.org/seas#&gt;
+ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+ PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ </a><span style="color: #F92672;"><a href="https://w3id.org/seas/&gt;
+ PREFIX sear: &lt;https://w3id.org/seas#&gt;
+ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+ PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#">PREFIX</a></span><a href="https://w3id.org/seas/&gt;
+ PREFIX sear: &lt;https://w3id.org/seas#&gt;
+ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+ PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#"> rdf: </a><span style="color: #AE81FF;"><a href="https://w3id.org/seas/&gt;
+ PREFIX sear: &lt;https://w3id.org/seas#&gt;
+ PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+ PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</a></span>
+
+ <span style="color: #F92672;">SELECT</span> <span style="color: #FD971F;">?value</span> <span style="color: #FD971F;">?time</span> <span style="color: #FD971F;">?r</span>
+ <span style="color: #F92672;">WHERE</span> <span style="color: #AE81FF;">{</span>
+         <span style="color: #FD971F;">?uri</span> rdf:type seas:RelativeHumidity;
+               sear:value <span style="color: #FD971F;">?value</span>;
+               sear:measurementStart <span style="color: #FD971F;">?time</span> .
+       <span style="color: #F92672;">BIND</span> <span style="color: #66D9EF;">(</span> rand<span style="color: #A6E22E;">()</span> <span style="color: #F92672;">AS</span> <span style="color: #FD971F;">?r</span> <span style="color: #66D9EF;">)</span>
+       <span style="color: #F92672;">FILTER</span> <span style="color: #66D9EF;">(</span> <span style="color: #FD971F;">?r</span> &lt; <span style="color: #AE81FF;">0</span>.<span style="color: #AE81FF;">01</span> &amp;&amp; year<span style="color: #A6E22E;">(</span><span style="color: #FD971F;">?time</span><span style="color: #A6E22E;">)</span> = <span style="color: #AE81FF;">2013</span> &amp;&amp; month<span style="color: #A6E22E;">(</span><span style="color: #FD971F;">?time</span><span style="color: #A6E22E;">)</span> = <span style="color: #AE81FF;">4</span> <span style="color: #66D9EF;">)</span>
+       <span style="color: #AE81FF;">}</span>
+ <span style="color: #F92672;">LIMIT</span> <span style="color: #AE81FF;">1000</span>
+</pre>
+</div>
+
+<p>
+This query binds a random number to each result, then filters them down to only the results with random numbers below a certain threshold (0.01 in this case). This query will take too long and time out, however (with our server timeout threshold set to 30 seconds). This is because it is still going through every triple in the database, binding a random number to it, and also applying the filter comparators to find only the readings that match the month we want.
+</p>
+
+<p>
+This is far too expensive! How can we make this more efficient?
+</p>
+
+
 <div class="org-src-container">
 <pre class="src src-sparql"> <span style="color: #F92672;">PREFIX</span> seas: <span style="color: #AE81FF;"><a href="https://w3id.org/seas/&gt;
   PREFIX sear: &lt;https://w3id.org/seas#&gt;
@@ -495,28 +490,26 @@ However, this query will result in a timeout on most SPARQL endpoints, taking mo
   PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
   PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</a></span>
 
-<span style="color: #F92672;">SELECT</span> <span style="color: #FD971F;">?value</span> <span style="color: #FD971F;">?tstring</span>
+<span style="color: #F92672;">SELECT</span> <span style="color: #FD971F;">?value</span> <span style="color: #FD971F;">?time</span> <span style="color: #FD971F;">?r</span>
 <span style="color: #F92672;">WHERE</span> <span style="color: #AE81FF;">{</span>
   <span style="color: #66D9EF;">{</span>
-  <span style="color: #F92672;">SELECT</span> <span style="color: #FD971F;">?value</span> <span style="color: #FD971F;">?time</span> <span style="color: #FD971F;">?r</span>
+  <span style="color: #F92672;">SELECT</span> <span style="color: #FD971F;">?value</span> <span style="color: #FD971F;">?time</span>
   <span style="color: #F92672;">WHERE</span> <span style="color: #A6E22E;">{</span>
           <span style="color: #FD971F;">?uri</span> rdf:type seas:RelativeHumidity;
                 sear:value <span style="color: #FD971F;">?value</span>;
                 sear:measurementStart <span style="color: #FD971F;">?time</span> .
-        <span style="color: #F92672;">BIND</span> <span style="color: #E6DB74;">(</span> rand<span style="color: #FD971F;">()</span> <span style="color: #F92672;">AS</span> <span style="color: #FD971F;">?r</span> <span style="color: #E6DB74;">)</span>
-        <span style="color: #F92672;">FILTER</span> <span style="color: #E6DB74;">(</span> <span style="color: #FD971F;">?r</span> &lt; <span style="color: #AE81FF;">0</span>.<span style="color: #AE81FF;">01</span> <span style="color: #E6DB74;">)</span>
+  <span style="color: #F92672;">FILTER</span><span style="color: #E6DB74;">(</span> year<span style="color: #FD971F;">(</span><span style="color: #FD971F;">?time</span><span style="color: #FD971F;">)</span> = <span style="color: #AE81FF;">2014</span> &amp;&amp; month<span style="color: #FD971F;">(</span><span style="color: #FD971F;">?time</span><span style="color: #FD971F;">)</span> = <span style="color: #AE81FF;">1</span> <span style="color: #E6DB74;">)</span>
         <span style="color: #A6E22E;">}</span>
-  <span style="color: #F92672;">LIMIT</span> <span style="color: #AE81FF;">1000</span>
   <span style="color: #66D9EF;">}</span>
-  <span style="color: #F92672;">FILTER</span><span style="color: #66D9EF;">(</span> year<span style="color: #A6E22E;">(</span><span style="color: #FD971F;">?time</span><span style="color: #A6E22E;">)</span> = <span style="color: #AE81FF;">2013</span> &amp;&amp; month<span style="color: #A6E22E;">(</span><span style="color: #FD971F;">?time</span><span style="color: #A6E22E;">)</span> = <span style="color: #AE81FF;">4</span> <span style="color: #66D9EF;">)</span>
-  <span style="color: #F92672;">BIND</span> <span style="color: #66D9EF;">(</span>xsd:string<span style="color: #A6E22E;">(</span><span style="color: #FD971F;">?time</span><span style="color: #A6E22E;">)</span> <span style="color: #F92672;">AS</span> <span style="color: #FD971F;">?tstring</span><span style="color: #66D9EF;">)</span>
+        <span style="color: #F92672;">BIND</span> <span style="color: #66D9EF;">(</span> rand<span style="color: #A6E22E;">()</span> <span style="color: #F92672;">AS</span> <span style="color: #FD971F;">?r</span> <span style="color: #66D9EF;">)</span>
+        <span style="color: #F92672;">FILTER</span> <span style="color: #66D9EF;">(</span> <span style="color: #FD971F;">?r</span> &lt; <span style="color: #AE81FF;">0</span>.<span style="color: #AE81FF;">001</span> <span style="color: #66D9EF;">)</span>
 <span style="color: #AE81FF;">}</span>
-<span style="color: #F92672;">LIMIT</span> <span style="color: #AE81FF;">1000</span>
+<span style="color: #F92672;">LIMIT</span> <span style="color: #AE81FF;">100</span>
 </pre>
 </div>
 
 <p>
-This query binds a random number to each result, then filters them down to only the results with random numbers below a certain threshold (0.01 in this case), taken from a pool of 1000 results. The final "LIMIT 25" is just to print the first 25 results in the table below:
+The above query first filters the data so that we only have the humidity readings from January 2014. Then it assigns a random number to each result, and filters those results so that only the random numbers below 0.001 are returned. Finally, we limit the results to 100 to show them in the following table:
 </p>
 
 <table>
@@ -526,143 +519,632 @@ This query binds a random number to each result, then filters them down to only 
 <col  class="org-right">
 
 <col  class="org-left">
+
+<col  class="org-right">
 </colgroup>
 <thead>
 <tr>
 <th scope="col" class="org-right">value</th>
-<th scope="col" class="org-left">tstring</th>
+<th scope="col" class="org-left">time</th>
+<th scope="col" class="org-right">r</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td class="org-right">35.0</td>
+<td class="org-left">2014-01-02T00:05:10</td>
+<td class="org-right">2.8322766466004623E-4</td>
+</tr>
+
+<tr>
 <td class="org-right">36.0</td>
-<td class="org-left">2013-04-01T19:02:51</td>
+<td class="org-left">2014-01-02T20:45:05</td>
+<td class="org-right">4.601868144032961E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">32.0</td>
+<td class="org-left">2014-01-02T21:10:14</td>
+<td class="org-right">8.132609329500884E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">30.0</td>
+<td class="org-left">2014-01-03T03:35:09</td>
+<td class="org-right">8.591418591802347E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">38.0</td>
+<td class="org-left">2014-01-03T06:21:01</td>
+<td class="org-right">9.060736738766284E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">26.0</td>
+<td class="org-left">2014-01-03T22:20:16</td>
+<td class="org-right">8.596794224369209E-4</td>
 </tr>
 
 <tr>
 <td class="org-right">34.0</td>
-<td class="org-left">2013-04-01T21:34:04</td>
+<td class="org-left">2014-01-04T07:20:09</td>
+<td class="org-right">4.487831413418908E-4</td>
 </tr>
 
 <tr>
-<td class="org-right">30.0</td>
-<td class="org-left">2013-04-02T05:07:41</td>
+<td class="org-right">56.0</td>
+<td class="org-left">2014-01-05T02:55:08</td>
+<td class="org-right">1.026092729500272E-4</td>
 </tr>
 
 <tr>
-<td class="org-right">29.0</td>
-<td class="org-left">2013-04-03T10:02:21</td>
+<td class="org-right">39.0</td>
+<td class="org-left">2014-01-05T05:55:09</td>
+<td class="org-right">9.590279442017735E-5</td>
 </tr>
 
 <tr>
-<td class="org-right">28.0</td>
-<td class="org-left">2013-04-03T13:44:34</td>
+<td class="org-right">32.0</td>
+<td class="org-left">2014-01-05T11:25:06</td>
+<td class="org-right">3.521631447538365E-4</td>
 </tr>
 
 <tr>
-<td class="org-right">26.0</td>
-<td class="org-left">2013-04-04T01:33:58</td>
+<td class="org-right">36.0</td>
+<td class="org-left">2014-01-05T16:05:05</td>
+<td class="org-right">9.316775287986356E-4</td>
 </tr>
 
 <tr>
-<td class="org-right">27.0</td>
-<td class="org-left">2013-04-04T12:27:14</td>
-</tr>
-
-<tr>
-<td class="org-right">26.0</td>
-<td class="org-left">2013-04-04T21:58:27</td>
-</tr>
-
-<tr>
-<td class="org-right">27.0</td>
-<td class="org-left">2013-04-04T22:21:40</td>
-</tr>
-
-<tr>
-<td class="org-right">27.0</td>
-<td class="org-left">2013-04-04T23:34:54</td>
-</tr>
-
-<tr>
-<td class="org-right">28.0</td>
-<td class="org-left">2013-04-05T05:53:54</td>
-</tr>
-
-<tr>
-<td class="org-right">28.0</td>
-<td class="org-left">2013-04-05T06:37:30</td>
-</tr>
-
-<tr>
-<td class="org-right">27.0</td>
-<td class="org-left">2013-04-05T11:07:21</td>
-</tr>
-
-<tr>
-<td class="org-right">26.0</td>
-<td class="org-left">2013-04-05T15:51:52</td>
-</tr>
-
-<tr>
-<td class="org-right">27.0</td>
-<td class="org-left">2013-04-05T21:50:54</td>
-</tr>
-
-<tr>
-<td class="org-right">30.0</td>
-<td class="org-left">2013-04-07T05:33:25</td>
-</tr>
-
-<tr>
-<td class="org-right">30.0</td>
-<td class="org-left">2013-04-07T11:12:42</td>
+<td class="org-right">35.0</td>
+<td class="org-left">2014-01-05T18:15:09</td>
+<td class="org-right">6.857756220918221E-4</td>
 </tr>
 
 <tr>
 <td class="org-right">31.0</td>
-<td class="org-left">2013-04-07T13:39:15</td>
+<td class="org-left">2014-01-05T20:35:15</td>
+<td class="org-right">6.319040832732936E-4</td>
 </tr>
 
 <tr>
-<td class="org-right">30.0</td>
-<td class="org-left">2013-04-07T20:59:29</td>
+<td class="org-right">39.0</td>
+<td class="org-left">2014-01-06T03:45:11</td>
+<td class="org-right">9.075765234803912E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">32.0</td>
+<td class="org-left">2014-01-06T11:55:08</td>
+<td class="org-right">1.9077939485623308E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">37.0</td>
+<td class="org-left">2014-01-06T13:35:07</td>
+<td class="org-right">5.061647786218648E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">36.0</td>
+<td class="org-left">2014-01-06T20:05:09</td>
+<td class="org-right">8.797623098150131E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">40.0</td>
+<td class="org-left">2014-01-07T15:30:05</td>
+<td class="org-right">2.420547496551073E-6</td>
+</tr>
+
+<tr>
+<td class="org-right">61.0</td>
+<td class="org-left">2014-01-08T12:45:06</td>
+<td class="org-right">6.508380731595764E-5</td>
+</tr>
+
+<tr>
+<td class="org-right">40.0</td>
+<td class="org-left">2014-01-08T16:05:06</td>
+<td class="org-right">6.731353735501822E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">63.0</td>
+<td class="org-left">2014-01-08T17:30:12</td>
+<td class="org-right">8.903736054207689E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">38.0</td>
+<td class="org-left">2014-01-09T00:55:09</td>
+<td class="org-right">5.864460369248148E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">65.0</td>
+<td class="org-left">2014-01-09T02:20:07</td>
+<td class="org-right">6.419733271380013E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">60.0</td>
+<td class="org-left">2014-01-09T12:45:06</td>
+<td class="org-right">1.7341391682856866E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">40.0</td>
+<td class="org-left">2014-01-09T18:05:05</td>
+<td class="org-right">6.639591887303009E-5</td>
+</tr>
+
+<tr>
+<td class="org-right">36.0</td>
+<td class="org-left">2014-01-09T21:05:04</td>
+<td class="org-right">2.7681285290703794E-4</td>
 </tr>
 
 <tr>
 <td class="org-right">34.0</td>
-<td class="org-left">2013-04-07T23:41:44</td>
+<td class="org-left">2014-01-10T00:40:08</td>
+<td class="org-right">6.85223198533258E-5</td>
+</tr>
+
+<tr>
+<td class="org-right">40.0</td>
+<td class="org-left">2014-01-10T12:45:07</td>
+<td class="org-right">3.4359669006067683E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">34.0</td>
+<td class="org-left">2014-01-10T15:05:07</td>
+<td class="org-right">5.470659489175134E-4</td>
 </tr>
 
 <tr>
 <td class="org-right">35.0</td>
-<td class="org-left">2013-04-11T23:40:29</td>
+<td class="org-left">2014-01-10T21:10:07</td>
+<td class="org-right">8.485163901100767E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">29.0</td>
+<td class="org-left">2014-01-11T03:00:14</td>
+<td class="org-right">2.947057897448868E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">29.0</td>
+<td class="org-left">2014-01-11T03:50:11</td>
+<td class="org-right">2.986511900227029E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">36.0</td>
+<td class="org-left">2014-01-11T07:50:08</td>
+<td class="org-right">6.53555096203351E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">27.0</td>
+<td class="org-left">2014-01-11T13:45:08</td>
+<td class="org-right">6.137402336661157E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">36.0</td>
+<td class="org-left">2014-01-11T16:05:07</td>
+<td class="org-right">3.273127376068885E-5</td>
+</tr>
+
+<tr>
+<td class="org-right">43.0</td>
+<td class="org-left">2014-01-12T04:20:08</td>
+<td class="org-right">6.951243645735294E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">43.0</td>
+<td class="org-left">2014-01-12T04:25:05</td>
+<td class="org-right">7.425175356293723E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">26.0</td>
+<td class="org-left">2014-01-12T11:55:57</td>
+<td class="org-right">4.612326086619323E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">27.0</td>
+<td class="org-left">2014-01-12T16:06:13</td>
+<td class="org-right">5.28955550659238E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">32.0</td>
+<td class="org-left">2014-01-13T20:55:06</td>
+<td class="org-right">4.1139152687330593E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">43.0</td>
+<td class="org-left">2014-01-14T06:30:06</td>
+<td class="org-right">5.876203830592619E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">34.0</td>
+<td class="org-left">2014-01-14T07:35:09</td>
+<td class="org-right">1.5501776970738845E-5</td>
+</tr>
+
+<tr>
+<td class="org-right">52.0</td>
+<td class="org-left">2014-01-15T03:25:11</td>
+<td class="org-right">7.79044558529618E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">37.0</td>
+<td class="org-left">2014-01-15T20:00:09</td>
+<td class="org-right">5.538244812035575E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">42.0</td>
+<td class="org-left">2014-01-16T02:30:06</td>
+<td class="org-right">7.839649762750867E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">50.0</td>
+<td class="org-left">2014-01-16T17:35:10</td>
+<td class="org-right">8.856445010158032E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">34.0</td>
+<td class="org-left">2014-01-16T20:55:09</td>
+<td class="org-right">9.627708452097927E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">47.0</td>
+<td class="org-left">2014-01-16T23:50:09</td>
+<td class="org-right">3.442595044020891E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">30.0</td>
+<td class="org-left">2014-01-17T04:40:06</td>
+<td class="org-right">9.214721164364503E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">28.0</td>
+<td class="org-left">2014-01-17T05:25:12</td>
+<td class="org-right">6.275974406071416E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">33.0</td>
+<td class="org-left">2014-01-17T06:00:07</td>
+<td class="org-right">9.308123539838453E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">28.0</td>
+<td class="org-left">2014-01-19T17:20:04</td>
+<td class="org-right">5.632737511830355E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">37.0</td>
+<td class="org-left">2014-01-20T18:15:03</td>
+<td class="org-right">8.584575972837571E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">23.0</td>
+<td class="org-left">2014-01-21T09:00:08</td>
+<td class="org-right">6.355172988836699E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">42.0</td>
+<td class="org-left">2014-01-21T17:15:08</td>
+<td class="org-right">4.950288259149005E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">47.0</td>
+<td class="org-left">2014-01-21T19:35:11</td>
+<td class="org-right">3.518174918257788E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">42.0</td>
+<td class="org-left">2014-01-22T04:35:07</td>
+<td class="org-right">8.483287254245075E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">27.0</td>
+<td class="org-left">2014-01-22T09:55:13</td>
+<td class="org-right">5.96095139709929E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">40.0</td>
+<td class="org-left">2014-01-22T11:25:13</td>
+<td class="org-right">5.231280217328216E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">40.0</td>
+<td class="org-left">2014-01-23T00:35:08</td>
+<td class="org-right">2.392805430497802E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">28.0</td>
+<td class="org-left">2014-01-23T00:45:10</td>
+<td class="org-right">9.727079686323581E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">29.0</td>
+<td class="org-left">2014-01-23T01:35:13</td>
+<td class="org-right">3.247227225061655E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">41.0</td>
+<td class="org-left">2014-01-23T05:40:05</td>
+<td class="org-right">3.4068789649155384E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">38.0</td>
+<td class="org-left">2014-01-23T10:00:13</td>
+<td class="org-right">5.141512757136368E-4</td>
 </tr>
 
 <tr>
 <td class="org-right">35.0</td>
-<td class="org-left">2013-04-12T02:15:14</td>
+<td class="org-left">2014-01-23T12:00:06</td>
+<td class="org-right">3.1720147036384816E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">46.0</td>
+<td class="org-left">2014-01-23T23:15:06</td>
+<td class="org-right">6.17720012774936E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">49.0</td>
+<td class="org-left">2014-01-24T00:40:10</td>
+<td class="org-right">2.8276711642638563E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">40.0</td>
+<td class="org-left">2014-01-24T01:45:05</td>
+<td class="org-right">4.964913989609077E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">37.0</td>
+<td class="org-left">2014-01-24T03:15:06</td>
+<td class="org-right">8.922096934100843E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">46.0</td>
+<td class="org-left">2014-01-24T10:20:08</td>
+<td class="org-right">4.2194473487922046E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">40.0</td>
+<td class="org-left">2014-01-24T10:20:13</td>
+<td class="org-right">5.096783784465098E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">34.0</td>
+<td class="org-left">2014-01-24T12:40:09</td>
+<td class="org-right">3.222631851128588E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">30.0</td>
+<td class="org-left">2014-01-24T13:35:17</td>
+<td class="org-right">8.866756008862886E-5</td>
+</tr>
+
+<tr>
+<td class="org-right">32.0</td>
+<td class="org-left">2014-01-24T19:00:10</td>
+<td class="org-right">6.20408142798401E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">31.0</td>
+<td class="org-left">2014-01-24T21:20:12</td>
+<td class="org-right">6.274575884074318E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">50.0</td>
+<td class="org-left">2014-01-25T01:20:04</td>
+<td class="org-right">5.519610024051769E-5</td>
+</tr>
+
+<tr>
+<td class="org-right">26.0</td>
+<td class="org-left">2014-01-25T07:40:14</td>
+<td class="org-right">8.388070009690551E-7</td>
+</tr>
+
+<tr>
+<td class="org-right">36.0</td>
+<td class="org-left">2014-01-25T12:01:08</td>
+<td class="org-right">8.57608120524711E-5</td>
+</tr>
+
+<tr>
+<td class="org-right">33.0</td>
+<td class="org-left">2014-01-25T08:31:07</td>
+<td class="org-right">7.940288132642914E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">24.0</td>
+<td class="org-left">2014-01-25T15:20:06</td>
+<td class="org-right">6.1099587937119E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">26.0</td>
+<td class="org-left">2014-01-25T12:12:11</td>
+<td class="org-right">9.63437031454073E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">33.0</td>
+<td class="org-left">2014-01-25T18:10:08</td>
+<td class="org-right">1.1161702391981887E-4</td>
 </tr>
 
 <tr>
 <td class="org-right">35.0</td>
-<td class="org-left">2013-04-12T03:45:14</td>
+<td class="org-left">2014-01-25T20:40:04</td>
+<td class="org-right">8.911383979124388E-4</td>
 </tr>
 
 <tr>
 <td class="org-right">35.0</td>
-<td class="org-left">2013-04-12T04:05:08</td>
+<td class="org-left">2014-01-25T21:30:12</td>
+<td class="org-right">9.688857201561873E-4</td>
 </tr>
 
 <tr>
-<td class="org-right">44.0</td>
-<td class="org-left">2013-04-12T22:45:25</td>
+<td class="org-right">29.0</td>
+<td class="org-left">2014-01-26T00:25:08</td>
+<td class="org-right">3.6608364935408755E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">43.0</td>
+<td class="org-left">2014-01-26T02:05:07</td>
+<td class="org-right">3.679905533462424E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">47.0</td>
+<td class="org-left">2014-01-26T08:35:12</td>
+<td class="org-right">7.259037407786328E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">39.0</td>
+<td class="org-left">2014-01-26T09:15:14</td>
+<td class="org-right">4.8596172752324307E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">40.0</td>
+<td class="org-left">2014-01-26T17:30:07</td>
+<td class="org-right">4.8101548431045416E-6</td>
+</tr>
+
+<tr>
+<td class="org-right">40.0</td>
+<td class="org-left">2014-01-26T19:25:06</td>
+<td class="org-right">5.523523046824241E-5</td>
+</tr>
+
+<tr>
+<td class="org-right">39.0</td>
+<td class="org-left">2014-01-27T02:25:10</td>
+<td class="org-right">8.393601802924033E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">40.0</td>
+<td class="org-left">2014-01-27T02:35:07</td>
+<td class="org-right">9.566105571912065E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">42.0</td>
+<td class="org-left">2014-01-27T05:25:06</td>
+<td class="org-right">1.2014326561415878E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">42.0</td>
+<td class="org-left">2014-01-27T06:35:11</td>
+<td class="org-right">8.720766357539489E-5</td>
+</tr>
+
+<tr>
+<td class="org-right">31.0</td>
+<td class="org-left">2014-01-27T10:05:12</td>
+<td class="org-right">4.22383960900774E-5</td>
+</tr>
+
+<tr>
+<td class="org-right">33.0</td>
+<td class="org-left">2014-01-27T10:30:09</td>
+<td class="org-right">9.176846284034701E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">31.0</td>
+<td class="org-left">2014-01-27T12:10:13</td>
+<td class="org-right">3.71034675041626E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">35.0</td>
+<td class="org-left">2014-01-27T12:25:11</td>
+<td class="org-right">2.9767609927167094E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">29.0</td>
+<td class="org-left">2014-01-27T21:45:09</td>
+<td class="org-right">9.749017723319486E-4</td>
+</tr>
+
+<tr>
+<td class="org-right">37.0</td>
+<td class="org-left">2014-01-27T23:20:07</td>
+<td class="org-right">4.7436378403353796E-4</td>
 </tr>
 </tbody>
 </table>
 
+
 <p>
-Plotting all 1000 results gives us a nice visualisation of the humidity levels over the month:
+As you can see, we have a nice spread of results over the entirety of the month of January. The "threshold" value of 0.001 determines the number of random samples that the query returns. In this case, it is about 100. Setting the threshold to 0.01 returns about 1000 results, but the query takes longer to complete. Here is a plot of the combined humidity readings for all enliten homes in January 2013, with the LIMIT set to 1000 and random sample threshold raised to 0.01:
+</p>
+
+
+<figure>
+<p><img src="img/jan-hums.png" alt="jan-hums.png">
+</p>
+</figure>
+
+<p>
+And here are all humidities for the month of April, for all homes (100 random samples):
 </p>
 
 
@@ -672,23 +1154,27 @@ Plotting all 1000 results gives us a nice visualisation of the humidity levels o
 </figure>
 
 <p>
-This is orders of magnitude faster, returning our results in under 2 seconds. Some tweaking is still needed, however. How can we be sure that the results obtained are randomly sampled from the whole range of the data we have, and not just the first <i>n</i> results? To do this, we need to adjust our FILTER threshold and LIMIT numbers based on the number of readings we have for that month:
-</p>
-
-<p>
-TODO: Make this SPARQL query
+This random sampling method is orders of magnitude faster than the ORDER BY RAND() method, returning our results in under 2 seconds.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org8de0926" class="outline-3">
-<h3 id="org8de0926">Federated</h3>
-<div class="outline-text-3" id="text-org8de0926">
-</div><div id="outline-container-orge3bf948" class="outline-4">
-<h4 id="orge3bf948">General</h4>
-<div class="outline-text-4" id="text-orge3bf948">
+<div id="outline-container-orgd659088" class="outline-3">
+<h3 id="orgd659088">Federated</h3>
+<div class="outline-text-3" id="text-orgd659088">
+</div><div id="outline-container-org3e2fc89" class="outline-4">
+<h4 id="org3e2fc89">General</h4>
+<div class="outline-text-4" id="text-org3e2fc89">
 <p>
-One of the main goals of our project is to query across multiple datasets at once.
+One of the main goals of our project is to query across multiple datasets at once. We can test this out by querying the <a href="https://pure.strath.ac.uk/portal/en/datasets/refit-electrical-load-measurements(31da3ece-f902-4e95-a093-e0a9536983c4).html">REFIT</a> dataset from the University of Strathclyde.
+</p>
+
+<p>
+We've converted this data from the CSV source to RDF triples, using the same ontology as the ENLITEN dataset (the SEAS ontology), and put them on a separate SPARQL endpoint called "refit".
+</p>
+
+<p>
+The following query gets the first 20 triples out of both SPARQL endpoints and joins them together:
 </p>
 
 <div class="org-src-container">
@@ -897,7 +1383,7 @@ One of the main goals of our project is to query across multiple datasets at onc
 </div>
 
 <p>
-Returns the following results:
+With the following results:
 </p>
 
 <table>
@@ -1118,6 +1604,12 @@ Returns the following results:
 
 <tr>
 <td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574">http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574</a></td>
+<td class="org-left"><a href="https://w3id.org/seas#measurementStart">https://w3id.org/seas#measurementStart</a></td>
+<td class="org-left">2013-11-20T11:31:18</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574">http://www.cs.bath.ac.uk/dm4t/refit/reading/15998574</a></td>
 <td class="org-left"><a href="https://w3id.org/seas#measurementSite">https://w3id.org/seas#measurementSite</a></td>
 <td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/home/house_10/Appliance2">http://www.cs.bath.ac.uk/dm4t/refit/home/house_10/Appliance2</a></td>
 </tr>
@@ -1148,25 +1640,355 @@ Returns the following results:
 
 <tr>
 <td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998575">http://www.cs.bath.ac.uk/dm4t/refit/reading/15998575</a></td>
-<td class="org-left"><a href="https://w3id.org/seas#measurementSite">https://w3id.org/seas#measurementSite</a></td>
-<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/home/house_10/Appliance6">http://www.cs.bath.ac.uk/dm4t/refit/home/house_10/Appliance6</a></td>
-</tr>
-
-<tr>
-<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/15998576">http://www.cs.bath.ac.uk/dm4t/refit/reading/15998576</a></td>
-<td class="org-left"><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</a></td>
-<td class="org-left"><a href="https://w3id.org/seas/Observation">https://w3id.org/seas/Observation</a></td>
+<td class="org-left"><a href="https://w3id.org/seas#measurementStart">https://w3id.org/seas#measurementStart</a></td>
+<td class="org-left">2013-11-20T11:31:18</td>
 </tr>
 </tbody>
 </table>
+
+
+<p>
+This is quite nice, but what would be even better would be to get the combined power usage for all houses for January 2014:
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-sparql"> <span style="color: #F92672;">PREFIX</span> seas: <span style="color: #AE81FF;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">&lt;https://w3id.org/seas/&gt;</a></span><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">
+  </a><span style="color: #F92672;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">PREFIX</a></span><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query"> sear: </a><span style="color: #AE81FF;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">&lt;https://w3id.org/seas#&gt;</a></span><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">
+  </a><span style="color: #F92672;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">PREFIX</a></span><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query"> xsd: </a><span style="color: #AE81FF;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">&lt;http://www.w3.org/2001/XMLSchema#&gt;</a></span><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">
+  </a><span style="color: #F92672;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">PREFIX</a></span><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query"> rdf: </a><span style="color: #AE81FF;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</a></span><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">
+  </a><span style="color: #F92672;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">PREFIX</a></span><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query"> enliten: </a><span style="color: #AE81FF;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">&lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;</a></span><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">
+
+
+</a><span style="color: #F92672;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">SELECT</a></span><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query"> </a><span style="color: #FD971F;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">?uri</a></span><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query"> </a><span style="color: #FD971F;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">?value</a></span><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query"> </a><span style="color: #FD971F;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">?time</a></span><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query"> </a><span style="color: #AE81FF;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">{</a></span><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">
+</a><span style="color: #66D9EF;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">{</a></span><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query"> </a><span style="color: #F92672;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">SERVICE</a></span><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query"> </a><span style="color: #AE81FF;"><a href="https://w3id.org/seas/&gt;
+  PREFIX sear: &lt;https://w3id.org/seas#&gt;
+  PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+  PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+  PREFIX enliten: &lt;http://www.cs.bath.ac.uk/dm4t/enliten/&gt;
+
+
+SELECT ?uri ?value ?time {
+{ SERVICE &lt;http://mist.cs.bath.ac.uk/enliten/query">&lt;http://mist.cs.bath.ac.uk/enliten/query&gt;</a></span>
+<span style="color: #A6E22E;">{</span> <span style="color: #F92672;">SELECT</span> <span style="color: #FD971F;">?value</span> <span style="color: #FD971F;">?time</span> <span style="color: #FD971F;">?r</span> <span style="color: #FD971F;">?uri</span>
+<span style="color: #F92672;">WHERE</span> <span style="color: #E6DB74;">{</span>
+  <span style="color: #FD971F;">{</span>
+  <span style="color: #F92672;">SELECT</span> <span style="color: #FD971F;">?value</span> <span style="color: #FD971F;">?time</span> <span style="color: #FD971F;">?uri</span>
+  <span style="color: #F92672;">WHERE</span> <span style="color: #F92672;">{</span>
+          <span style="color: #FD971F;">?uri</span> rdf:type seas:PowerQuantity;
+                enliten:meanValue <span style="color: #FD971F;">?value</span>;
+                sear:measurementStart <span style="color: #FD971F;">?time</span> .
+  <span style="color: #F92672;">FILTER</span><span style="color: #AE81FF;">(</span> year<span style="color: #66D9EF;">(</span><span style="color: #FD971F;">?time</span><span style="color: #66D9EF;">)</span> = <span style="color: #AE81FF;">2014</span> &amp;&amp; month<span style="color: #66D9EF;">(</span><span style="color: #FD971F;">?time</span><span style="color: #66D9EF;">)</span> = <span style="color: #AE81FF;">1</span> <span style="color: #AE81FF;">)</span>
+        <span style="color: #F92672;">}</span>
+  <span style="color: #FD971F;">}</span>
+        <span style="color: #F92672;">BIND</span> <span style="color: #FD971F;">(</span> rand<span style="color: #F92672;">()</span> <span style="color: #F92672;">AS</span> <span style="color: #FD971F;">?r</span> <span style="color: #FD971F;">)</span>
+        <span style="color: #F92672;">FILTER</span> <span style="color: #FD971F;">(</span> <span style="color: #FD971F;">?r</span> &lt; <span style="color: #AE81FF;">0</span>.<span style="color: #AE81FF;">01</span> <span style="color: #FD971F;">)</span>
+<span style="color: #E6DB74;">}</span>
+<span style="color: #F92672;">LIMIT</span> <span style="color: #AE81FF;">100</span> <span style="color: #A6E22E;">}</span><span style="color: #66D9EF;">}</span>
+<span style="color: #F92672;">UNION</span>
+<span style="color: #66D9EF;">{</span><span style="color: #F92672;">SERVICE</span> <span style="color: #AE81FF;"><a href="http://mist.cs.bath.ac.uk/refit/query">&lt;http://mist.cs.bath.ac.uk/refit/query&gt;</a></span>
+<span style="color: #A6E22E;">{</span> <span style="color: #F92672;">SELECT</span> <span style="color: #FD971F;">?value</span> <span style="color: #FD971F;">?time</span> <span style="color: #FD971F;">?r</span> <span style="color: #FD971F;">?uri</span>
+<span style="color: #F92672;">WHERE</span> <span style="color: #E6DB74;">{</span>
+  <span style="color: #FD971F;">{</span>
+  <span style="color: #F92672;">SELECT</span> <span style="color: #FD971F;">?value</span> <span style="color: #FD971F;">?time</span> <span style="color: #FD971F;">?uri</span>
+  <span style="color: #F92672;">WHERE</span> <span style="color: #F92672;">{</span>
+          <span style="color: #FD971F;">?uri</span> rdf:type seas:PowerQuantity;
+                sear:value <span style="color: #FD971F;">?value</span>;
+                sear:measurementStart <span style="color: #FD971F;">?time</span> .
+  <span style="color: #F92672;">FILTER</span><span style="color: #AE81FF;">(</span> year<span style="color: #66D9EF;">(</span><span style="color: #FD971F;">?time</span><span style="color: #66D9EF;">)</span> = <span style="color: #AE81FF;">2014</span> &amp;&amp; month<span style="color: #66D9EF;">(</span><span style="color: #FD971F;">?time</span><span style="color: #66D9EF;">)</span> = <span style="color: #AE81FF;">1</span> <span style="color: #AE81FF;">)</span>
+        <span style="color: #F92672;">}</span>
+  <span style="color: #FD971F;">}</span>
+        <span style="color: #F92672;">BIND</span> <span style="color: #FD971F;">(</span> rand<span style="color: #F92672;">()</span> <span style="color: #F92672;">AS</span> <span style="color: #FD971F;">?r</span> <span style="color: #FD971F;">)</span>
+        <span style="color: #F92672;">FILTER</span> <span style="color: #FD971F;">(</span> <span style="color: #FD971F;">?r</span> &lt; <span style="color: #AE81FF;">0</span>.<span style="color: #AE81FF;">001</span> <span style="color: #FD971F;">)</span>
+<span style="color: #E6DB74;">}</span>
+<span style="color: #F92672;">LIMIT</span> <span style="color: #AE81FF;">100</span><span style="color: #A6E22E;">}</span><span style="color: #66D9EF;">}</span>
+<span style="color: #AE81FF;">}</span>
+<span style="color: #F92672;">ORDER</span> <span style="color: #F92672;">BY</span> <span style="color: #F92672;">ASC</span><span style="color: #AE81FF;">(</span><span style="color: #FD971F;">?time</span><span style="color: #AE81FF;">)</span>
+</pre>
+</div>
+
+<p>
+Though we are able to query across datasets, there are a number of issues with this approach:
+</p>
+
+<ul class="org-ul">
+<li>The query is quite complicated to formulate and understand, especially when trying to randomly sample the data</li>
+<li>We have to guess the threshold values to select the random samples from. These values should be proportional to the number of triples being sampled from, so in theory we could use SPARQL's COUNT() aggregator function to get this information. In practice, however, the COUNT() function takes a long time to return a value, too long to be practical for our uses.</li>
+<li>Even with a lower threshold value, the data from the refit dataset are skewed towards the days at the start of the month. Lowering the threshold should solve this in theory, but again in practice it proves to be impractical: lowering the number to the point where it should return a good spread of data increases the time required to process the query to at least 10 minutes</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org88ad219" class="outline-3">
+<h3 id="org88ad219">Conclusion</h3>
+<div class="outline-text-3" id="text-org88ad219">
+<p>
+SPARQL and RDF have many strengths for semantic querying of data. However, for our purposes it has presented several challenges. The largest is that we need a quick way to get a random sample of the data, which is both difficult to describe in SPARQL and takes a long time for any triple store to return. The takeaway from this experiment is that we need to explore hybrid systems that combine the flexible semantic querying capabilities of RDF and SPARQL with the streaming capabilities of other data formats.
+</p>
 
 <hr >
 
 <div align=center>
 <p>
-<a href="http://mthompson.org/">Home</a>
+<a href="http://mthompson.org">Home</a>
 </p>
-</div>
 </div>
 </div>
 </div>

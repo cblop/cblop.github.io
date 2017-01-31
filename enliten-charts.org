@@ -39,6 +39,10 @@ As well as monitoring the energy use in each appliance of the homes examined, th
 
 The chart shows...
 
+#+HTML: <br>
+#+HTML: <canvas id="gas2015" width="200" height="100"></canvas>
+#+HTML: <br>
+
 We can also see if there is a correlation between power usage and humidity levels:
 
 Or carbon dioxide levels:
