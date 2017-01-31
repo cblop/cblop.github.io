@@ -89,7 +89,9 @@ The most basic SPARQL query possible would be:
 Here is how we express that as a SPARQL query:
 
   #+BEGIN_SRC sparql :url http://mist.cs.bath.ac.uk/enliten/query :format text/csv
- SELECT ?subject ?predicate ?object WHERE { ?subject ?predicate ?object } LIMIT 20
+ SELECT ?subject ?predicate ?object
+ WHERE { ?subject ?predicate ?object }
+ LIMIT 20
   #+END_SRC
 
   #+RESULTS:

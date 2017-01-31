@@ -59,9 +59,9 @@ for the JavaScript code in this tag.
 <h1 class="title">DM4T PROJECT</h1>
 </header><hr >
 
-<div id="outline-container-org642a079" class="outline-2">
-<h2 id="org642a079">Querying Home Sensor Data with SPARQL</h2>
-<div class="outline-text-2" id="text-org642a079">
+<div id="outline-container-org778ed9f" class="outline-2">
+<h2 id="org778ed9f">Querying Home Sensor Data with SPARQL</h2>
+<div class="outline-text-2" id="text-org778ed9f">
 <p>
 <i>Matt Thompson</i>
 </p>
@@ -168,9 +168,9 @@ Due to the expression of our data in terms of triples, we must query them with a
 </p>
 </div>
 
-<div id="outline-container-org8c97094" class="outline-3">
-<h3 id="org8c97094">The ENLITEN Dataset</h3>
-<div class="outline-text-3" id="text-org8c97094">
+<div id="outline-container-org7c829f6" class="outline-3">
+<h3 id="org7c829f6">The ENLITEN Dataset</h3>
+<div class="outline-text-3" id="text-org7c829f6">
 <p>
 These SPARQL queries use the <a href="http://www.cs.bath.ac.uk/enliten/">ENLITEN</a> dataset gathered by the University of Bath. These data were gathered from 23 homes around the UK, taking readings on:
 </p>
@@ -192,9 +192,9 @@ These data were originally gathered using sensors attached to Raspberry PIs, and
 </div>
 </div>
 
-<div id="outline-container-org0606bad" class="outline-3">
-<h3 id="org0606bad">A General SPARQL Query</h3>
-<div class="outline-text-3" id="text-org0606bad">
+<div id="outline-container-org7c87824" class="outline-3">
+<h3 id="org7c87824">A General SPARQL Query</h3>
+<div class="outline-text-3" id="text-org7c87824">
 <p>
 The most basic SPARQL query possible would be:
 </p>
@@ -208,7 +208,9 @@ Here is how we express that as a SPARQL query:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sparql"><span style="color: #F92672;">SELECT</span> <span style="color: #FD971F;">?subject</span> <span style="color: #FD971F;">?predicate</span> <span style="color: #FD971F;">?object</span> <span style="color: #F92672;">WHERE</span> <span style="color: #AE81FF;">{</span> <span style="color: #FD971F;">?subject</span> <span style="color: #FD971F;">?predicate</span> <span style="color: #FD971F;">?object</span> <span style="color: #AE81FF;">}</span> <span style="color: #F92672;">LIMIT</span> <span style="color: #AE81FF;">20</span>
+<pre class="src src-sparql"><span style="color: #F92672;">SELECT</span> <span style="color: #FD971F;">?subject</span> <span style="color: #FD971F;">?predicate</span> <span style="color: #FD971F;">?object</span>
+<span style="color: #F92672;">WHERE</span> <span style="color: #AE81FF;">{</span> <span style="color: #FD971F;">?subject</span> <span style="color: #FD971F;">?predicate</span> <span style="color: #FD971F;">?object</span> <span style="color: #AE81FF;">}</span>
+<span style="color: #F92672;">LIMIT</span> <span style="color: #AE81FF;">20</span>
 </pre>
 </div>
 
@@ -306,9 +308,9 @@ It is clear that these are the first ten triples of millions (1.25 billion, to b
 </div>
 </div>
 
-<div id="outline-container-orga223ce0" class="outline-3">
-<h3 id="orga223ce0">Returning a Random Sample of Data</h3>
-<div class="outline-text-3" id="text-orga223ce0">
+<div id="outline-container-orgdee7b05" class="outline-3">
+<h3 id="orgdee7b05">Returning a Random Sample of Data</h3>
+<div class="outline-text-3" id="text-orgdee7b05">
 <p>
 Let's try querying a subset of the data that returns millions of results: the humidity level readings. A good example query to try would be to get all humidity readings across all homes for April 2013.
 </p>
@@ -1159,12 +1161,12 @@ This random sampling method is orders of magnitude faster than the ORDER BY RAND
 </div>
 </div>
 
-<div id="outline-container-orgd659088" class="outline-3">
-<h3 id="orgd659088">Federated</h3>
-<div class="outline-text-3" id="text-orgd659088">
-</div><div id="outline-container-org3e2fc89" class="outline-4">
-<h4 id="org3e2fc89">General</h4>
-<div class="outline-text-4" id="text-org3e2fc89">
+<div id="outline-container-org6a5d50a" class="outline-3">
+<h3 id="org6a5d50a">Federated</h3>
+<div class="outline-text-3" id="text-org6a5d50a">
+</div><div id="outline-container-org8187e57" class="outline-4">
+<h4 id="org8187e57">General</h4>
+<div class="outline-text-4" id="text-org8187e57">
 <p>
 One of the main goals of our project is to query across multiple datasets at once. We can test this out by querying the <a href="https://pure.strath.ac.uk/portal/en/datasets/refit-electrical-load-measurements(31da3ece-f902-4e95-a093-e0a9536983c4).html">REFIT</a> dataset from the University of Strathclyde.
 </p>
@@ -1976,9 +1978,9 @@ Though we are able to query across datasets, there are a number of issues with t
 </div>
 </div>
 
-<div id="outline-container-org88ad219" class="outline-3">
-<h3 id="org88ad219">Conclusion</h3>
-<div class="outline-text-3" id="text-org88ad219">
+<div id="outline-container-org7f05f30" class="outline-3">
+<h3 id="org7f05f30">Conclusion</h3>
+<div class="outline-text-3" id="text-org7f05f30">
 <p>
 SPARQL and RDF have many strengths for semantic querying of data. However, for our purposes it has presented several challenges. The largest is that we need a quick way to get a random sample of the data, which is both difficult to describe in SPARQL and takes a long time for any triple store to return. The takeaway from this experiment is that we need to explore hybrid systems that combine the flexible semantic querying capabilities of RDF and SPARQL with the streaming capabilities of other data formats.
 </p>
