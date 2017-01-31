@@ -96,7 +96,7 @@ Here is how we express that as a SPARQL query:
 
 Certain keywords (SELECT and LIMIT) are used in much the same way as their SQL counterparts, but the naming of variables to be returned with the question mark (?) operator is new, as is their arrangement in triples. Once a user becomes familiar with SPARQL, it becomes a powerful, expressive and flexible way to query RDF triples. A good way to start learning the basics of SPARQL is with the Apache Jena [[https://jena.apache.org/tutorials/sparql.html][SPARQL tutorial]].
 
-Sending the above query to our SPARQL endpoint located at http://mist.cs.bath.ac.uk/enliten/query returns the following 10 results:
+Sending the above query to our SPARQL endpoint located at http://mist.cs.bath.ac.uk/enliten/query returns the following 20 results:
 
   #+RESULTS:
   | subject                                           | predicate                                       | object                                              |
@@ -123,7 +123,7 @@ Sending the above query to our SPARQL endpoint located at http://mist.cs.bath.ac
   | http://www.cs.bath.ac.uk/dm4t/enliten/device/277  | http://www.w3.org/2000/01/rdf-schema#label      | 3ZU-VDN-W3J-NWG-4N                                  |
 
 
-It is clear that these are the first ten triples of millions (1.25 billion, to be exact). What if we want to query just a sample of the data, in order to get just enough for a representative visualisation without having to process millions of results?
+It is clear that these are the first twenty triples of millions (1.25 billion, to be exact). What if we want to query just a sample of the data, in order to get just enough for a representative visualisation without having to process millions of results?
 
 ** Returning a Random Sample of Data
 Let's try querying a subset of the data that returns millions of results: the humidity level readings. A good example query to try would be to get all humidity readings across all homes for April 2013.
