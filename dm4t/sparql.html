@@ -59,9 +59,9 @@ for the JavaScript code in this tag.
 <h1 class="title">DM4T PROJECT</h1>
 </header><hr >
 
-<div id="outline-container-org30ecc09" class="outline-2">
-<h2 id="org30ecc09">Querying Home Sensor Data with SPARQL</h2>
-<div class="outline-text-2" id="text-org30ecc09">
+<div id="outline-container-orgc93d85d" class="outline-2">
+<h2 id="orgc93d85d">Querying Home Sensor Data with SPARQL</h2>
+<div class="outline-text-2" id="text-orgc93d85d">
 <p>
 <i>Matt Thompson</i>
 </p>
@@ -168,9 +168,9 @@ Due to the expression of our data in terms of triples, we must query them with a
 </p>
 </div>
 
-<div id="outline-container-org5b157dd" class="outline-3">
-<h3 id="org5b157dd">The ENLITEN Dataset</h3>
-<div class="outline-text-3" id="text-org5b157dd">
+<div id="outline-container-orge85e0ac" class="outline-3">
+<h3 id="orge85e0ac">The ENLITEN Dataset</h3>
+<div class="outline-text-3" id="text-orge85e0ac">
 <p>
 These SPARQL queries use the <a href="http://www.cs.bath.ac.uk/enliten/">ENLITEN</a> dataset gathered by the University of Bath. These data were gathered from 23 homes around the UK, taking readings on:
 </p>
@@ -192,9 +192,9 @@ These data were originally gathered using sensors attached to Raspberry PIs, and
 </div>
 </div>
 
-<div id="outline-container-orgab7f62b" class="outline-3">
-<h3 id="orgab7f62b">A General SPARQL Query</h3>
-<div class="outline-text-3" id="text-orgab7f62b">
+<div id="outline-container-org1cc9d89" class="outline-3">
+<h3 id="org1cc9d89">A General SPARQL Query</h3>
+<div class="outline-text-3" id="text-org1cc9d89">
 <p>
 The most basic SPARQL query possible would be:
 </p>
@@ -219,7 +219,7 @@ Certain keywords (SELECT and LIMIT) are used in much the same way as their SQL c
 </p>
 
 <p>
-Sending the above query to our SPARQL endpoint located at <a href="http://mist.cs.bath.ac.uk/enliten/query">http://mist.cs.bath.ac.uk/enliten/query</a> returns the following 10 results:
+Sending the above query to our SPARQL endpoint located at <a href="http://mist.cs.bath.ac.uk/enliten/query">http://mist.cs.bath.ac.uk/enliten/query</a> returns the following 20 results:
 </p>
 
 <table>
@@ -364,14 +364,14 @@ Sending the above query to our SPARQL endpoint located at <a href="http://mist.c
 
 
 <p>
-It is clear that these are the first ten triples of millions (1.25 billion, to be exact). What if we want to query just a sample of the data, in order to get just enough for a representative visualisation without having to process millions of results?
+It is clear that these are the first twenty triples of millions (1.25 billion, to be exact). What if we want to query just a sample of the data, in order to get just enough for a representative visualisation without having to process millions of results?
 </p>
 </div>
 </div>
 
-<div id="outline-container-org9dd1d7b" class="outline-3">
-<h3 id="org9dd1d7b">Returning a Random Sample of Data</h3>
-<div class="outline-text-3" id="text-org9dd1d7b">
+<div id="outline-container-orgfa47409" class="outline-3">
+<h3 id="orgfa47409">Returning a Random Sample of Data</h3>
+<div class="outline-text-3" id="text-orgfa47409">
 <p>
 Let's try querying a subset of the data that returns millions of results: the humidity level readings. A good example query to try would be to get all humidity readings across all homes for April 2013.
 </p>
@@ -1222,12 +1222,12 @@ This random sampling method is orders of magnitude faster than the ORDER BY RAND
 </div>
 </div>
 
-<div id="outline-container-orgd794f47" class="outline-3">
-<h3 id="orgd794f47">Federated</h3>
-<div class="outline-text-3" id="text-orgd794f47">
-</div><div id="outline-container-orgb2dca88" class="outline-4">
-<h4 id="orgb2dca88">General</h4>
-<div class="outline-text-4" id="text-orgb2dca88">
+<div id="outline-container-orgc6eaa18" class="outline-3">
+<h3 id="orgc6eaa18">Federated</h3>
+<div class="outline-text-3" id="text-orgc6eaa18">
+</div><div id="outline-container-orge42f26c" class="outline-4">
+<h4 id="orge42f26c">General</h4>
+<div class="outline-text-4" id="text-orge42f26c">
 <p>
 One of the main goals of our project is to query across multiple datasets at once. We can test this out by querying the <a href="https://pure.strath.ac.uk/portal/en/datasets/refit-electrical-load-measurements(31da3ece-f902-4e95-a093-e0a9536983c4).html">REFIT</a> dataset from the University of Strathclyde.
 </p>
@@ -2039,9 +2039,9 @@ Though we are able to query across datasets, there are a number of issues with t
 </div>
 </div>
 
-<div id="outline-container-orgf7518b8" class="outline-3">
-<h3 id="orgf7518b8">Conclusion</h3>
-<div class="outline-text-3" id="text-orgf7518b8">
+<div id="outline-container-org526bfa7" class="outline-3">
+<h3 id="org526bfa7">Conclusion</h3>
+<div class="outline-text-3" id="text-org526bfa7">
 <p>
 SPARQL and RDF have many strengths for semantic querying of data. However, for our purposes it has presented several challenges. The largest is that we need a quick way to get a random sample of the data, which is both difficult to describe in SPARQL and takes a long time for any triple store to return. The takeaway from this experiment is that we need to explore hybrid systems that combine the flexible semantic querying capabilities of RDF and SPARQL with the streaming capabilities of other data formats.
 </p>
