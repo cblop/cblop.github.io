@@ -1564,6 +1564,8 @@ LIMIT 100}}
 ORDER BY ASC(?time)
   #+END_SRC
 
+With the following results:
+
   #+RESULTS:
   | uri                                                         |  value | time                |
   |-------------------------------------------------------------+--------+---------------------|
@@ -1767,6 +1769,7 @@ ORDER BY ASC(?time)
   | http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413618 |   74.0 | 2014-01-28T17:48:00 |
   | http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413644 |   73.0 | 2014-01-28T18:14:00 |
   | http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413679 |   77.0 | 2014-01-29T11:46:00 |
+
 
 Though we are able to query across datasets, there are a number of issues with this approach:
 

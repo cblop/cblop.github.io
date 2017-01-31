@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DM4T PROJECT</title>
 <meta name="generator" content="Org mode">
+<meta name="author" content="Matt Thompson">
 <link rel="stylesheet" type="text/css" href="style.css" />
 <script type="text/javascript">
 /*
@@ -59,9 +60,9 @@ for the JavaScript code in this tag.
 <h1 class="title">DM4T PROJECT</h1>
 </header><hr >
 
-<div id="outline-container-orgc93d85d" class="outline-2">
-<h2 id="orgc93d85d">Querying Home Sensor Data with SPARQL</h2>
-<div class="outline-text-2" id="text-orgc93d85d">
+<div id="outline-container-orgb04b6af" class="outline-2">
+<h2 id="orgb04b6af">Querying Home Sensor Data with SPARQL</h2>
+<div class="outline-text-2" id="text-orgb04b6af">
 <p>
 <i>Matt Thompson</i>
 </p>
@@ -168,9 +169,9 @@ Due to the expression of our data in terms of triples, we must query them with a
 </p>
 </div>
 
-<div id="outline-container-orge85e0ac" class="outline-3">
-<h3 id="orge85e0ac">The ENLITEN Dataset</h3>
-<div class="outline-text-3" id="text-orge85e0ac">
+<div id="outline-container-orge0fedb8" class="outline-3">
+<h3 id="orge0fedb8">The ENLITEN Dataset</h3>
+<div class="outline-text-3" id="text-orge0fedb8">
 <p>
 These SPARQL queries use the <a href="http://www.cs.bath.ac.uk/enliten/">ENLITEN</a> dataset gathered by the University of Bath. These data were gathered from 23 homes around the UK, taking readings on:
 </p>
@@ -192,9 +193,9 @@ These data were originally gathered using sensors attached to Raspberry PIs, and
 </div>
 </div>
 
-<div id="outline-container-org1cc9d89" class="outline-3">
-<h3 id="org1cc9d89">A General SPARQL Query</h3>
-<div class="outline-text-3" id="text-org1cc9d89">
+<div id="outline-container-org897404e" class="outline-3">
+<h3 id="org897404e">A General SPARQL Query</h3>
+<div class="outline-text-3" id="text-org897404e">
 <p>
 The most basic SPARQL query possible would be:
 </p>
@@ -369,9 +370,9 @@ It is clear that these are the first twenty triples of millions (1.25 billion, t
 </div>
 </div>
 
-<div id="outline-container-orgfa47409" class="outline-3">
-<h3 id="orgfa47409">Returning a Random Sample of Data</h3>
-<div class="outline-text-3" id="text-orgfa47409">
+<div id="outline-container-orgffb5608" class="outline-3">
+<h3 id="orgffb5608">Returning a Random Sample of Data</h3>
+<div class="outline-text-3" id="text-orgffb5608">
 <p>
 Let's try querying a subset of the data that returns millions of results: the humidity level readings. A good example query to try would be to get all humidity readings across all homes for April 2013.
 </p>
@@ -1222,12 +1223,12 @@ This random sampling method is orders of magnitude faster than the ORDER BY RAND
 </div>
 </div>
 
-<div id="outline-container-orgc6eaa18" class="outline-3">
-<h3 id="orgc6eaa18">Federated</h3>
-<div class="outline-text-3" id="text-orgc6eaa18">
-</div><div id="outline-container-orge42f26c" class="outline-4">
-<h4 id="orge42f26c">General</h4>
-<div class="outline-text-4" id="text-orge42f26c">
+<div id="outline-container-orgabce114" class="outline-3">
+<h3 id="orgabce114">Federated</h3>
+<div class="outline-text-3" id="text-orgabce114">
+</div><div id="outline-container-org91f6fb9" class="outline-4">
+<h4 id="org91f6fb9">General</h4>
+<div class="outline-text-4" id="text-org91f6fb9">
 <p>
 One of the main goals of our project is to query across multiple datasets at once. We can test this out by querying the <a href="https://pure.strath.ac.uk/portal/en/datasets/refit-electrical-load-measurements(31da3ece-f902-4e95-a093-e0a9536983c4).html">REFIT</a> dataset from the University of Strathclyde.
 </p>
@@ -2027,6 +2028,1231 @@ SELECT ?uri ?value ?time {
 </div>
 
 <p>
+With the following results:
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-right">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">uri</th>
+<th scope="col" class="org-right">value</th>
+<th scope="col" class="org-left">time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18089500">http://www.cs.bath.ac.uk/dm4t/refit/reading/18089500</a></td>
+<td class="org-right">69</td>
+<td class="org-left">2014-01-01T01:44:30</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18091317">http://www.cs.bath.ac.uk/dm4t/refit/reading/18091317</a></td>
+<td class="org-right">47</td>
+<td class="org-left">2014-01-01T02:28:17</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18091731">http://www.cs.bath.ac.uk/dm4t/refit/reading/18091731</a></td>
+<td class="org-right">18</td>
+<td class="org-left">2014-01-01T02:41:36</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18091985">http://www.cs.bath.ac.uk/dm4t/refit/reading/18091985</a></td>
+<td class="org-right">72</td>
+<td class="org-left">2014-01-01T02:46:57</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18092215">http://www.cs.bath.ac.uk/dm4t/refit/reading/18092215</a></td>
+<td class="org-right">73</td>
+<td class="org-left">2014-01-01T02:51:36</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18093590">http://www.cs.bath.ac.uk/dm4t/refit/reading/18093590</a></td>
+<td class="org-right">2</td>
+<td class="org-left">2014-01-01T03:23:39</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18093635">http://www.cs.bath.ac.uk/dm4t/refit/reading/18093635</a></td>
+<td class="org-right">72</td>
+<td class="org-left">2014-01-01T03:24:23</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18094839">http://www.cs.bath.ac.uk/dm4t/refit/reading/18094839</a></td>
+<td class="org-right">2</td>
+<td class="org-left">2014-01-01T03:54:57</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18095634">http://www.cs.bath.ac.uk/dm4t/refit/reading/18095634</a></td>
+<td class="org-right">71</td>
+<td class="org-left">2014-01-01T04:12:31</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18095678">http://www.cs.bath.ac.uk/dm4t/refit/reading/18095678</a></td>
+<td class="org-right">70</td>
+<td class="org-left">2014-01-01T04:13:37</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18095760">http://www.cs.bath.ac.uk/dm4t/refit/reading/18095760</a></td>
+<td class="org-right">21</td>
+<td class="org-left">2014-01-01T04:15:37</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18096068">http://www.cs.bath.ac.uk/dm4t/refit/reading/18096068</a></td>
+<td class="org-right">1</td>
+<td class="org-left">2014-01-01T04:25:03</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18096445">http://www.cs.bath.ac.uk/dm4t/refit/reading/18096445</a></td>
+<td class="org-right">81</td>
+<td class="org-left">2014-01-01T04:35:44</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18096961">http://www.cs.bath.ac.uk/dm4t/refit/reading/18096961</a></td>
+<td class="org-right">2</td>
+<td class="org-left">2014-01-01T04:46:16</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18097184">http://www.cs.bath.ac.uk/dm4t/refit/reading/18097184</a></td>
+<td class="org-right">70</td>
+<td class="org-left">2014-01-01T04:51:16</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18097659">http://www.cs.bath.ac.uk/dm4t/refit/reading/18097659</a></td>
+<td class="org-right">21</td>
+<td class="org-left">2014-01-01T05:01:57</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18098321">http://www.cs.bath.ac.uk/dm4t/refit/reading/18098321</a></td>
+<td class="org-right">2</td>
+<td class="org-left">2014-01-01T05:16:49</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18099614">http://www.cs.bath.ac.uk/dm4t/refit/reading/18099614</a></td>
+<td class="org-right">87</td>
+<td class="org-left">2014-01-01T05:50:30</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18100168">http://www.cs.bath.ac.uk/dm4t/refit/reading/18100168</a></td>
+<td class="org-right">70</td>
+<td class="org-left">2014-01-01T06:02:17</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18102030">http://www.cs.bath.ac.uk/dm4t/refit/reading/18102030</a></td>
+<td class="org-right">97</td>
+<td class="org-left">2014-01-01T06:46:23</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18106918">http://www.cs.bath.ac.uk/dm4t/refit/reading/18106918</a></td>
+<td class="org-right">71</td>
+<td class="org-left">2014-01-01T08:40:57</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18110417">http://www.cs.bath.ac.uk/dm4t/refit/reading/18110417</a></td>
+<td class="org-right">70</td>
+<td class="org-left">2014-01-01T10:10:04</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18110544">http://www.cs.bath.ac.uk/dm4t/refit/reading/18110544</a></td>
+<td class="org-right">24</td>
+<td class="org-left">2014-01-01T10:13:16</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18111848">http://www.cs.bath.ac.uk/dm4t/refit/reading/18111848</a></td>
+<td class="org-right">25</td>
+<td class="org-left">2014-01-01T10:53:49</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18113244">http://www.cs.bath.ac.uk/dm4t/refit/reading/18113244</a></td>
+<td class="org-right">25</td>
+<td class="org-left">2014-01-01T11:37:44</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18113510">http://www.cs.bath.ac.uk/dm4t/refit/reading/18113510</a></td>
+<td class="org-right">69</td>
+<td class="org-left">2014-01-01T11:43:10</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18115712">http://www.cs.bath.ac.uk/dm4t/refit/reading/18115712</a></td>
+<td class="org-right">1</td>
+<td class="org-left">2014-01-01T12:50:26</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18116375">http://www.cs.bath.ac.uk/dm4t/refit/reading/18116375</a></td>
+<td class="org-right">74</td>
+<td class="org-left">2014-01-01T13:11:33</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18116966">http://www.cs.bath.ac.uk/dm4t/refit/reading/18116966</a></td>
+<td class="org-right">25</td>
+<td class="org-left">2014-01-01T13:28:41</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18117325">http://www.cs.bath.ac.uk/dm4t/refit/reading/18117325</a></td>
+<td class="org-right">81</td>
+<td class="org-left">2014-01-01T13:36:48</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18117337">http://www.cs.bath.ac.uk/dm4t/refit/reading/18117337</a></td>
+<td class="org-right">2</td>
+<td class="org-left">2014-01-01T13:37:05</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1480425">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1480425</a></td>
+<td class="org-right">494.0</td>
+<td class="org-left">2014-01-01T13:55:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1480427">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1480427</a></td>
+<td class="org-right">495.0</td>
+<td class="org-left">2014-01-01T13:57:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18119554">http://www.cs.bath.ac.uk/dm4t/refit/reading/18119554</a></td>
+<td class="org-right">64</td>
+<td class="org-left">2014-01-01T14:48:16</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1480496">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1480496</a></td>
+<td class="org-right">467.0</td>
+<td class="org-left">2014-01-01T15:06:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18121180">http://www.cs.bath.ac.uk/dm4t/refit/reading/18121180</a></td>
+<td class="org-right">64</td>
+<td class="org-left">2014-01-01T15:32:03</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18122158">http://www.cs.bath.ac.uk/dm4t/refit/reading/18122158</a></td>
+<td class="org-right">70</td>
+<td class="org-left">2014-01-01T16:05:06</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1480613">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1480613</a></td>
+<td class="org-right">677.0</td>
+<td class="org-left">2014-01-01T17:03:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1480677">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1480677</a></td>
+<td class="org-right">632.0</td>
+<td class="org-left">2014-01-01T18:07:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1480721">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1480721</a></td>
+<td class="org-right">701.0</td>
+<td class="org-left">2014-01-01T18:51:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18127763">http://www.cs.bath.ac.uk/dm4t/refit/reading/18127763</a></td>
+<td class="org-right">1</td>
+<td class="org-left">2014-01-01T18:51:23</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18128628">http://www.cs.bath.ac.uk/dm4t/refit/reading/18128628</a></td>
+<td class="org-right">2094</td>
+<td class="org-left">2014-01-01T19:13:56</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1480756">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1480756</a></td>
+<td class="org-right">710.0</td>
+<td class="org-left">2014-01-01T19:26:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18129398">http://www.cs.bath.ac.uk/dm4t/refit/reading/18129398</a></td>
+<td class="org-right">69</td>
+<td class="org-left">2014-01-01T19:33:35</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18130060">http://www.cs.bath.ac.uk/dm4t/refit/reading/18130060</a></td>
+<td class="org-right">23</td>
+<td class="org-left">2014-01-01T19:50:50</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1480834">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1480834</a></td>
+<td class="org-right">570.0</td>
+<td class="org-left">2014-01-01T20:44:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18133442">http://www.cs.bath.ac.uk/dm4t/refit/reading/18133442</a></td>
+<td class="org-right">85</td>
+<td class="org-left">2014-01-01T21:11:51</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18133616">http://www.cs.bath.ac.uk/dm4t/refit/reading/18133616</a></td>
+<td class="org-right">80</td>
+<td class="org-left">2014-01-01T21:15:17</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18134192">http://www.cs.bath.ac.uk/dm4t/refit/reading/18134192</a></td>
+<td class="org-right">69</td>
+<td class="org-left">2014-01-01T21:29:57</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18135547">http://www.cs.bath.ac.uk/dm4t/refit/reading/18135547</a></td>
+<td class="org-right">76</td>
+<td class="org-left">2014-01-01T22:01:37</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18136288">http://www.cs.bath.ac.uk/dm4t/refit/reading/18136288</a></td>
+<td class="org-right">61</td>
+<td class="org-left">2014-01-01T22:18:17</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18136612">http://www.cs.bath.ac.uk/dm4t/refit/reading/18136612</a></td>
+<td class="org-right">2</td>
+<td class="org-left">2014-01-01T22:29:10</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18136880">http://www.cs.bath.ac.uk/dm4t/refit/reading/18136880</a></td>
+<td class="org-right">71</td>
+<td class="org-left">2014-01-01T22:35:50</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18138772">http://www.cs.bath.ac.uk/dm4t/refit/reading/18138772</a></td>
+<td class="org-right">25</td>
+<td class="org-left">2014-01-01T23:47:49</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18139120">http://www.cs.bath.ac.uk/dm4t/refit/reading/18139120</a></td>
+<td class="org-right">25</td>
+<td class="org-left">2014-01-01T23:56:31</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481029">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481029</a></td>
+<td class="org-right">428.0</td>
+<td class="org-left">2014-01-01T23:59:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18139260">http://www.cs.bath.ac.uk/dm4t/refit/reading/18139260</a></td>
+<td class="org-right">1</td>
+<td class="org-left">2014-01-02T00:00:43</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18139614">http://www.cs.bath.ac.uk/dm4t/refit/reading/18139614</a></td>
+<td class="org-right">77</td>
+<td class="org-left">2014-01-02T00:11:10</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481053">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481053</a></td>
+<td class="org-right">416.0</td>
+<td class="org-left">2014-01-02T00:23:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405581">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405581</a></td>
+<td class="org-right">3506.0</td>
+<td class="org-left">2014-01-02T01:36:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405589">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405589</a></td>
+<td class="org-right">3516.0</td>
+<td class="org-left">2014-01-02T01:44:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18144248">http://www.cs.bath.ac.uk/dm4t/refit/reading/18144248</a></td>
+<td class="org-right">1</td>
+<td class="org-left">2014-01-02T02:37:50</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405657">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405657</a></td>
+<td class="org-right">1845.0</td>
+<td class="org-left">2014-01-02T02:52:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18144917">http://www.cs.bath.ac.uk/dm4t/refit/reading/18144917</a></td>
+<td class="org-right">71</td>
+<td class="org-left">2014-01-02T03:00:10</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481247">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481247</a></td>
+<td class="org-right">294.0</td>
+<td class="org-left">2014-01-02T03:37:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405691">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405691</a></td>
+<td class="org-right">149.0</td>
+<td class="org-left">2014-01-02T03:39:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18147400">http://www.cs.bath.ac.uk/dm4t/refit/reading/18147400</a></td>
+<td class="org-right">2</td>
+<td class="org-left">2014-01-02T04:16:03</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18148463">http://www.cs.bath.ac.uk/dm4t/refit/reading/18148463</a></td>
+<td class="org-right">25</td>
+<td class="org-left">2014-01-02T04:46:02</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18148925">http://www.cs.bath.ac.uk/dm4t/refit/reading/18148925</a></td>
+<td class="org-right">84</td>
+<td class="org-left">2014-01-02T04:58:30</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18149091">http://www.cs.bath.ac.uk/dm4t/refit/reading/18149091</a></td>
+<td class="org-right">25</td>
+<td class="org-left">2014-01-02T05:02:50</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18149475">http://www.cs.bath.ac.uk/dm4t/refit/reading/18149475</a></td>
+<td class="org-right">1</td>
+<td class="org-left">2014-01-02T05:11:30</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18150935">http://www.cs.bath.ac.uk/dm4t/refit/reading/18150935</a></td>
+<td class="org-right">71</td>
+<td class="org-left">2014-01-02T05:51:57</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18151000">http://www.cs.bath.ac.uk/dm4t/refit/reading/18151000</a></td>
+<td class="org-right">25</td>
+<td class="org-left">2014-01-02T05:53:17</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18151482">http://www.cs.bath.ac.uk/dm4t/refit/reading/18151482</a></td>
+<td class="org-right">25</td>
+<td class="org-left">2014-01-02T06:12:03</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405761">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405761</a></td>
+<td class="org-right">1795.0</td>
+<td class="org-left">2014-01-02T06:14:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18152181">http://www.cs.bath.ac.uk/dm4t/refit/reading/18152181</a></td>
+<td class="org-right">1</td>
+<td class="org-left">2014-01-02T06:33:30</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405790">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405790</a></td>
+<td class="org-right">3524.0</td>
+<td class="org-left">2014-01-02T06:52:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18152822">http://www.cs.bath.ac.uk/dm4t/refit/reading/18152822</a></td>
+<td class="org-right">25</td>
+<td class="org-left">2014-01-02T06:59:17</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18153807">http://www.cs.bath.ac.uk/dm4t/refit/reading/18153807</a></td>
+<td class="org-right">2</td>
+<td class="org-left">2014-01-02T07:31:58</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18153874">http://www.cs.bath.ac.uk/dm4t/refit/reading/18153874</a></td>
+<td class="org-right">24</td>
+<td class="org-left">2014-01-02T07:34:17</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18154926">http://www.cs.bath.ac.uk/dm4t/refit/reading/18154926</a></td>
+<td class="org-right">1</td>
+<td class="org-left">2014-01-02T08:00:36</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481542">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481542</a></td>
+<td class="org-right">547.0</td>
+<td class="org-left">2014-01-02T08:32:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481555">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481555</a></td>
+<td class="org-right">1979.0</td>
+<td class="org-left">2014-01-02T08:45:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18156408">http://www.cs.bath.ac.uk/dm4t/refit/reading/18156408</a></td>
+<td class="org-right">2</td>
+<td class="org-left">2014-01-02T08:51:31</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18156678">http://www.cs.bath.ac.uk/dm4t/refit/reading/18156678</a></td>
+<td class="org-right">2</td>
+<td class="org-left">2014-01-02T09:00:43</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405306">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405306</a></td>
+<td class="org-right">2300.0</td>
+<td class="org-left">2014-01-02T09:11:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481595">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481595</a></td>
+<td class="org-right">952.0</td>
+<td class="org-left">2014-01-02T09:25:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18157549">http://www.cs.bath.ac.uk/dm4t/refit/reading/18157549</a></td>
+<td class="org-right">1</td>
+<td class="org-left">2014-01-02T09:28:18</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481629">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481629</a></td>
+<td class="org-right">889.0</td>
+<td class="org-left">2014-01-02T09:59:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18159865">http://www.cs.bath.ac.uk/dm4t/refit/reading/18159865</a></td>
+<td class="org-right">24</td>
+<td class="org-left">2014-01-02T10:22:03</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18159972">http://www.cs.bath.ac.uk/dm4t/refit/reading/18159972</a></td>
+<td class="org-right">8</td>
+<td class="org-left">2014-01-02T10:25:23</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18160104">http://www.cs.bath.ac.uk/dm4t/refit/reading/18160104</a></td>
+<td class="org-right">3</td>
+<td class="org-left">2014-01-02T10:28:44</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481676">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481676</a></td>
+<td class="org-right">561.0</td>
+<td class="org-left">2014-01-02T10:46:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481700">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481700</a></td>
+<td class="org-right">1116.0</td>
+<td class="org-left">2014-01-02T11:10:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481739">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481739</a></td>
+<td class="org-right">487.0</td>
+<td class="org-left">2014-01-02T11:49:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18163942">http://www.cs.bath.ac.uk/dm4t/refit/reading/18163942</a></td>
+<td class="org-right">125</td>
+<td class="org-left">2014-01-02T11:57:57</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18165184">http://www.cs.bath.ac.uk/dm4t/refit/reading/18165184</a></td>
+<td class="org-right">80</td>
+<td class="org-left">2014-01-02T12:31:03</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18167274">http://www.cs.bath.ac.uk/dm4t/refit/reading/18167274</a></td>
+<td class="org-right">70</td>
+<td class="org-left">2014-01-02T13:31:03</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18167884">http://www.cs.bath.ac.uk/dm4t/refit/reading/18167884</a></td>
+<td class="org-right">25</td>
+<td class="org-left">2014-01-02T13:51:17</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18170533">http://www.cs.bath.ac.uk/dm4t/refit/reading/18170533</a></td>
+<td class="org-right">1</td>
+<td class="org-left">2014-01-02T14:54:50</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18171478">http://www.cs.bath.ac.uk/dm4t/refit/reading/18171478</a></td>
+<td class="org-right">79</td>
+<td class="org-left">2014-01-02T15:17:30</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481948">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481948</a></td>
+<td class="org-right">983.0</td>
+<td class="org-left">2014-01-02T15:18:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481957">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1481957</a></td>
+<td class="org-right">1050.0</td>
+<td class="org-left">2014-01-02T15:27:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18172466">http://www.cs.bath.ac.uk/dm4t/refit/reading/18172466</a></td>
+<td class="org-right">2</td>
+<td class="org-left">2014-01-02T15:36:23</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18172850">http://www.cs.bath.ac.uk/dm4t/refit/reading/18172850</a></td>
+<td class="org-right">61</td>
+<td class="org-left">2014-01-02T15:46:10</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482012">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482012</a></td>
+<td class="org-right">1004.0</td>
+<td class="org-left">2014-01-02T16:22:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18174983">http://www.cs.bath.ac.uk/dm4t/refit/reading/18174983</a></td>
+<td class="org-right">24</td>
+<td class="org-left">2014-01-02T16:38:24</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18175201">http://www.cs.bath.ac.uk/dm4t/refit/reading/18175201</a></td>
+<td class="org-right">94</td>
+<td class="org-left">2014-01-02T16:42:57</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1408039">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1408039</a></td>
+<td class="org-right">76.0</td>
+<td class="org-left">2014-01-02T16:47:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18176619">http://www.cs.bath.ac.uk/dm4t/refit/reading/18176619</a></td>
+<td class="org-right">3</td>
+<td class="org-left">2014-01-02T17:26:41</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18177404">http://www.cs.bath.ac.uk/dm4t/refit/reading/18177404</a></td>
+<td class="org-right">174</td>
+<td class="org-left">2014-01-02T17:43:44</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18177925">http://www.cs.bath.ac.uk/dm4t/refit/reading/18177925</a></td>
+<td class="org-right">1991</td>
+<td class="org-left">2014-01-02T17:54:02</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18178726">http://www.cs.bath.ac.uk/dm4t/refit/reading/18178726</a></td>
+<td class="org-right">95</td>
+<td class="org-left">2014-01-02T18:06:24</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18180695">http://www.cs.bath.ac.uk/dm4t/refit/reading/18180695</a></td>
+<td class="org-right">349</td>
+<td class="org-left">2014-01-02T18:57:50</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482178">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482178</a></td>
+<td class="org-right">579.0</td>
+<td class="org-left">2014-01-02T19:08:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18182340">http://www.cs.bath.ac.uk/dm4t/refit/reading/18182340</a></td>
+<td class="org-right">2</td>
+<td class="org-left">2014-01-02T19:41:21</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18182519">http://www.cs.bath.ac.uk/dm4t/refit/reading/18182519</a></td>
+<td class="org-right">95</td>
+<td class="org-left">2014-01-02T19:45:53</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482267">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482267</a></td>
+<td class="org-right">703.0</td>
+<td class="org-left">2014-01-02T20:37:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18184281">http://www.cs.bath.ac.uk/dm4t/refit/reading/18184281</a></td>
+<td class="org-right">81</td>
+<td class="org-left">2014-01-02T20:42:58</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18186390">http://www.cs.bath.ac.uk/dm4t/refit/reading/18186390</a></td>
+<td class="org-right">64</td>
+<td class="org-left">2014-01-02T21:40:30</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18187273">http://www.cs.bath.ac.uk/dm4t/refit/reading/18187273</a></td>
+<td class="org-right">1</td>
+<td class="org-left">2014-01-02T22:03:50</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18188048">http://www.cs.bath.ac.uk/dm4t/refit/reading/18188048</a></td>
+<td class="org-right">2</td>
+<td class="org-left">2014-01-02T22:28:10</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18188580">http://www.cs.bath.ac.uk/dm4t/refit/reading/18188580</a></td>
+<td class="org-right">1</td>
+<td class="org-left">2014-01-02T22:49:02</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18188973">http://www.cs.bath.ac.uk/dm4t/refit/reading/18188973</a></td>
+<td class="org-right">76</td>
+<td class="org-left">2014-01-02T22:58:49</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18189033">http://www.cs.bath.ac.uk/dm4t/refit/reading/18189033</a></td>
+<td class="org-right">75</td>
+<td class="org-left">2014-01-02T23:00:02</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405810">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405810</a></td>
+<td class="org-right">3474.0</td>
+<td class="org-left">2014-01-03T00:11:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18191337">http://www.cs.bath.ac.uk/dm4t/refit/reading/18191337</a></td>
+<td class="org-right">25</td>
+<td class="org-left">2014-01-03T00:13:04</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18191666">http://www.cs.bath.ac.uk/dm4t/refit/reading/18191666</a></td>
+<td class="org-right">70</td>
+<td class="org-left">2014-01-03T00:21:45</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18192018">http://www.cs.bath.ac.uk/dm4t/refit/reading/18192018</a></td>
+<td class="org-right">2</td>
+<td class="org-left">2014-01-03T00:32:16</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18193318">http://www.cs.bath.ac.uk/dm4t/refit/reading/18193318</a></td>
+<td class="org-right">2</td>
+<td class="org-left">2014-01-03T01:08:57</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18193330">http://www.cs.bath.ac.uk/dm4t/refit/reading/18193330</a></td>
+<td class="org-right">1</td>
+<td class="org-left">2014-01-03T01:09:16</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/refit/reading/18194503">http://www.cs.bath.ac.uk/dm4t/refit/reading/18194503</a></td>
+<td class="org-right">68</td>
+<td class="org-left">2014-01-03T01:45:03</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405921">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405921</a></td>
+<td class="org-right">3502.0</td>
+<td class="org-left">2014-01-03T02:02:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405956">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405956</a></td>
+<td class="org-right">3517.0</td>
+<td class="org-left">2014-01-03T02:37:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405995">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405995</a></td>
+<td class="org-right">1811.0</td>
+<td class="org-left">2014-01-03T03:16:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406035">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406035</a></td>
+<td class="org-right">137.0</td>
+<td class="org-left">2014-01-03T04:26:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406036">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406036</a></td>
+<td class="org-right">141.0</td>
+<td class="org-left">2014-01-03T04:46:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482799">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482799</a></td>
+<td class="org-right">347.0</td>
+<td class="org-left">2014-01-03T05:29:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482828">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482828</a></td>
+<td class="org-right">351.0</td>
+<td class="org-left">2014-01-03T05:58:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482833">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482833</a></td>
+<td class="org-right">279.0</td>
+<td class="org-left">2014-01-03T06:03:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482919">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482919</a></td>
+<td class="org-right">2287.0</td>
+<td class="org-left">2014-01-03T07:29:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482920">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482920</a></td>
+<td class="org-right">2304.0</td>
+<td class="org-left">2014-01-03T07:30:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482923">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1482923</a></td>
+<td class="org-right">2312.0</td>
+<td class="org-left">2014-01-03T07:33:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1408176">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1408176</a></td>
+<td class="org-right">74.0</td>
+<td class="org-left">2014-01-03T12:51:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1408211">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1408211</a></td>
+<td class="org-right">73.0</td>
+<td class="org-left">2014-01-03T13:26:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1408613">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1408613</a></td>
+<td class="org-right">74.0</td>
+<td class="org-left">2014-01-04T21:19:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1408625">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1408625</a></td>
+<td class="org-right">74.0</td>
+<td class="org-left">2014-01-04T21:31:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406425">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406425</a></td>
+<td class="org-right">3464.0</td>
+<td class="org-left">2014-01-05T00:08:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406491">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406491</a></td>
+<td class="org-right">3518.0</td>
+<td class="org-left">2014-01-05T01:14:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406509">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406509</a></td>
+<td class="org-right">3531.0</td>
+<td class="org-left">2014-01-05T01:32:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406544">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406544</a></td>
+<td class="org-right">3503.0</td>
+<td class="org-left">2014-01-05T02:07:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406639">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406639</a></td>
+<td class="org-right">3536.0</td>
+<td class="org-left">2014-01-05T03:42:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406664">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406664</a></td>
+<td class="org-right">3552.0</td>
+<td class="org-left">2014-01-05T04:07:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405382">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1405382</a></td>
+<td class="org-right">2338.0</td>
+<td class="org-left">2014-01-05T13:35:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1408721">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1408721</a></td>
+<td class="org-right">77.0</td>
+<td class="org-left">2014-01-05T18:37:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1408821">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1408821</a></td>
+<td class="org-right">73.0</td>
+<td class="org-left">2014-01-05T20:17:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406781">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406781</a></td>
+<td class="org-right">3494.0</td>
+<td class="org-left">2014-01-06T00:48:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406809">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1406809</a></td>
+<td class="org-right">3512.0</td>
+<td class="org-left">2014-01-06T01:16:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1407000">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1407000</a></td>
+<td class="org-right">1804.0</td>
+<td class="org-left">2014-01-06T04:27:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1407015">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1407015</a></td>
+<td class="org-right">171.0</td>
+<td class="org-left">2014-01-06T04:51:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1408952">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1408952</a></td>
+<td class="org-right">77.0</td>
+<td class="org-left">2014-01-06T12:15:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1409017">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1409017</a></td>
+<td class="org-right">73.0</td>
+<td class="org-left">2014-01-06T13:20:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1409186">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1409186</a></td>
+<td class="org-right">76.0</td>
+<td class="org-left">2014-01-06T19:43:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1407333">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1407333</a></td>
+<td class="org-right">1798.0</td>
+<td class="org-left">2014-01-07T04:33:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1407349">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1407349</a></td>
+<td class="org-right">293.0</td>
+<td class="org-left">2014-01-07T04:50:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1409317">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1409317</a></td>
+<td class="org-right">75.0</td>
+<td class="org-left">2014-01-07T12:33:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1409467">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1409467</a></td>
+<td class="org-right">74.0</td>
+<td class="org-left">2014-01-07T17:42:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1407425">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1407425</a></td>
+<td class="org-right">3461.0</td>
+<td class="org-left">2014-01-08T00:00:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1411888">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1411888</a></td>
+<td class="org-right">74.0</td>
+<td class="org-left">2014-01-22T18:05:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1409801">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1409801</a></td>
+<td class="org-right">3492.0</td>
+<td class="org-left">2014-01-23T00:34:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1412157">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1412157</a></td>
+<td class="org-right">74.0</td>
+<td class="org-left">2014-01-23T16:59:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1412176">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1412176</a></td>
+<td class="org-right">74.0</td>
+<td class="org-left">2014-01-23T17:18:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1412271">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1412271</a></td>
+<td class="org-right">74.0</td>
+<td class="org-left">2014-01-23T18:53:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410042">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410042</a></td>
+<td class="org-right">3490.0</td>
+<td class="org-left">2014-01-24T00:23:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410055">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410055</a></td>
+<td class="org-right">3490.0</td>
+<td class="org-left">2014-01-24T00:36:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410111">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410111</a></td>
+<td class="org-right">3530.0</td>
+<td class="org-left">2014-01-24T01:32:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410125">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410125</a></td>
+<td class="org-right">3501.0</td>
+<td class="org-left">2014-01-24T01:46:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1412518">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1412518</a></td>
+<td class="org-right">74.0</td>
+<td class="org-left">2014-01-24T16:58:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410413">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410413</a></td>
+<td class="org-right">1830.0</td>
+<td class="org-left">2014-01-25T01:26:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410439">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410439</a></td>
+<td class="org-right">1843.0</td>
+<td class="org-left">2014-01-25T01:52:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1412676">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1412676</a></td>
+<td class="org-right">74.0</td>
+<td class="org-left">2014-01-25T16:58:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1412790">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1412790</a></td>
+<td class="org-right">73.0</td>
+<td class="org-left">2014-01-25T18:52:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1412818">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1412818</a></td>
+<td class="org-right">73.0</td>
+<td class="org-left">2014-01-25T19:20:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410611">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410611</a></td>
+<td class="org-right">3478.0</td>
+<td class="org-left">2014-01-26T00:04:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410830">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410830</a></td>
+<td class="org-right">1792.0</td>
+<td class="org-left">2014-01-26T06:26:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410876">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410876</a></td>
+<td class="org-right">3504.0</td>
+<td class="org-left">2014-01-27T00:29:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410893">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410893</a></td>
+<td class="org-right">3501.0</td>
+<td class="org-left">2014-01-27T00:46:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410964">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1410964</a></td>
+<td class="org-right">3512.0</td>
+<td class="org-left">2014-01-27T01:57:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1411053">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1411053</a></td>
+<td class="org-right">3523.0</td>
+<td class="org-left">2014-01-27T03:26:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413157">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413157</a></td>
+<td class="org-right">77.0</td>
+<td class="org-left">2014-01-27T11:47:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413166">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413166</a></td>
+<td class="org-right">76.0</td>
+<td class="org-left">2014-01-27T11:56:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413304">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413304</a></td>
+<td class="org-right">74.0</td>
+<td class="org-left">2014-01-27T17:18:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413342">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413342</a></td>
+<td class="org-right">74.0</td>
+<td class="org-left">2014-01-27T17:56:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413377">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413377</a></td>
+<td class="org-right">73.0</td>
+<td class="org-left">2014-01-27T18:31:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413452">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413452</a></td>
+<td class="org-right">77.0</td>
+<td class="org-left">2014-01-27T21:05:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1411295">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1411295</a></td>
+<td class="org-right">3499.0</td>
+<td class="org-left">2014-01-28T01:12:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1411350">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1411350</a></td>
+<td class="org-right">3535.0</td>
+<td class="org-left">2014-01-28T02:07:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413618">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413618</a></td>
+<td class="org-right">74.0</td>
+<td class="org-left">2014-01-28T17:48:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413644">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413644</a></td>
+<td class="org-right">73.0</td>
+<td class="org-left">2014-01-28T18:14:00</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413679">http://www.cs.bath.ac.uk/dm4t/enliten/reading/power/1413679</a></td>
+<td class="org-right">77.0</td>
+<td class="org-left">2014-01-29T11:46:00</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
 Though we are able to query across datasets, there are a number of issues with this approach:
 </p>
 
@@ -2039,9 +3265,9 @@ Though we are able to query across datasets, there are a number of issues with t
 </div>
 </div>
 
-<div id="outline-container-org526bfa7" class="outline-3">
-<h3 id="org526bfa7">Conclusion</h3>
-<div class="outline-text-3" id="text-org526bfa7">
+<div id="outline-container-orgf4e6c40" class="outline-3">
+<h3 id="orgf4e6c40">Conclusion</h3>
+<div class="outline-text-3" id="text-orgf4e6c40">
 <p>
 SPARQL and RDF have many strengths for semantic querying of data. However, for our purposes it has presented several challenges. The largest is that we need a quick way to get a random sample of the data, which is both difficult to describe in SPARQL and takes a long time for any triple store to return. The takeaway from this experiment is that we need to explore hybrid systems that combine the flexible semantic querying capabilities of RDF and SPARQL with the streaming capabilities of other data formats.
 </p>
@@ -2058,6 +3284,7 @@ SPARQL and RDF have many strengths for semantic querying of data. However, for o
 </div>
 </div>
 <div id="postamble" class="status">
+<p class="author">Author: Matt Thompson</p>
 <p class="validation"></p>
 </div>
 </body>
