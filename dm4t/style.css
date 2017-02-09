@@ -38,6 +38,7 @@ img {
 .src a {
     color: #fff;
     underline: none;
+    text-decoration: none;
 }
 
 .src-ttl {
