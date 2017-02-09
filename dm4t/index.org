@@ -9,6 +9,8 @@ This page contains information about my work as Research Associate on the [[http
 
 The following blog posts describe the evaluation of various technologies to determine their suitability for our project:
 
+- [[energy-ontologies/energy-ontologies.html][A Survey of Energy-Related Ontologies]]
+- [[triples.html][Converting CSV Tables into RDF Triples with Grafter]]
 - [[./sparql.html][Querying Home Sensor Data with SPARQL]]
 
 -----

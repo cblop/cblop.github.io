@@ -79,6 +79,7 @@ These SPARQL queries use the [[http://www.cs.bath.ac.uk/enliten/][ENLITEN]] data
 - temperature inside the home
 - motion data from inside the home
 
+# These data were originally gathered using sensors attached to Raspberry PIs, and stored in a mySQL database. In order for us to query them with SPARQL, we converted them into RDF triples to load into a Jena triple store (the process is described in [[http://mthompson.org/dm4t/triples.html][this blog post]]). This allowed us to create a "SPARQL endpoint", a web service to which we can send SPARQL queries to retrieve our data.
 These data were originally gathered using sensors attached to Raspberry PIs, and stored in a mySQL database. In order for us to query them with SPARQL, we converted them into RDF triples to load into a Jena triple store (the process is described in [[http://mthompson.org/dm4t/triples.html][this blog post]]). This allowed us to create a "SPARQL endpoint", a web service to which we can send SPARQL queries to retrieve our data.
 
 ** A General SPARQL Query

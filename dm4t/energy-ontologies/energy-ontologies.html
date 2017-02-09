@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DM4T PROJECT</title>
+<meta name="generator" content="Org mode">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">DM4T PROJECT</h1>
+</header><hr >
+
+<div id="outline-container-orgc067da9" class="outline-2">
+<h2 id="orgc067da9">A Survey of Energy-related Ontologies</h2>
+<div class="outline-text-2" id="text-orgc067da9">
+</div><div id="outline-container-orgd9b7a51" class="outline-3">
+<h3 id="orgd9b7a51">Executive Summary Table</h3>
+<div class="outline-text-3" id="text-orgd9b7a51">
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-left">Domain</th>
+<th scope="col" class="org-left">Organisation</th>
+<th scope="col" class="org-left">OWL?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">DogOnt</td>
+<td class="org-left">Smart Homes</td>
+<td class="org-left">Turin Polytechnic</td>
+<td class="org-left">Y</td>
+</tr>
+
+<tr>
+<td class="org-left">BONSAI</td>
+<td class="org-left">Smart Homes</td>
+<td class="org-left">Aristotle &amp; International Hellenic Universities</td>
+<td class="org-left">Y</td>
+</tr>
+
+<tr>
+<td class="org-left">COSE</td>
+<td class="org-left">Smart Homes/Environments</td>
+<td class="org-left">Washington State University</td>
+<td class="org-left">Y</td>
+</tr>
+
+<tr>
+<td class="org-left">SEAS</td>
+<td class="org-left">Sensors, Smart Homes</td>
+<td class="org-left">SEAS consortium</td>
+<td class="org-left">Y</td>
+</tr>
+
+<tr>
+<td class="org-left">DEHEMS</td>
+<td class="org-left">Home Appliances</td>
+<td class="org-left">Coventry University</td>
+<td class="org-left">N</td>
+</tr>
+
+<tr>
+<td class="org-left">ThinkHOME</td>
+<td class="org-left">Smart Homes</td>
+<td class="org-left">Vienna Tech</td>
+<td class="org-left">Y</td>
+</tr>
+
+<tr>
+<td class="org-left">Urban Energy Ontology (SEMANCO)</td>
+<td class="org-left">Smart Homes</td>
+<td class="org-left">SEMANCO</td>
+<td class="org-left">Broken Link</td>
+</tr>
+
+<tr>
+<td class="org-left">DomoML</td>
+<td class="org-left">Smart Homes</td>
+<td class="org-left">Univ. of Applied Sciences, Switzerland</td>
+<td class="org-left">Broken Link</td>
+</tr>
+
+<tr>
+<td class="org-left">SynCity (UES)</td>
+<td class="org-left">Smart Homes/Cities</td>
+<td class="org-left">Imperial College London</td>
+<td class="org-left">N</td>
+</tr>
+
+<tr>
+<td class="org-left">ENVISION</td>
+<td class="org-left">Sensors</td>
+<td class="org-left">University of Muenster</td>
+<td class="org-left">N</td>
+</tr>
+
+<tr>
+<td class="org-left">AMON</td>
+<td class="org-left">Sensors</td>
+<td class="org-left">AMEE Ltd, Mastodon Ltd, Digital Catapult</td>
+<td class="org-left">N (JSON)</td>
+</tr>
+
+<tr>
+<td class="org-left">STS</td>
+<td class="org-left">Smart Homes (social focus)</td>
+<td class="org-left">Delft Tech</td>
+<td class="org-left">N</td>
+</tr>
+
+<tr>
+<td class="org-left">SESAME</td>
+<td class="org-left">Smart Homes</td>
+<td class="org-left">FTW Telecommunications Research Centre, Vienna</td>
+<td class="org-left">N</td>
+</tr>
+
+<tr>
+<td class="org-left">OPTIMUS</td>
+<td class="org-left">Sensors</td>
+<td class="org-left">Ramon Llull, Barcelona &amp; Torino Polytechnic</td>
+<td class="org-left">N</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org2d02061" class="outline-3">
+<h3 id="org2d02061">ENVISION Ontology</h3>
+<div class="outline-text-3" id="text-org2d02061">
+<p>
+<a href="https://www.researchgate.net/publication/220727277_SESAME_Demonstrator_Ontologies_Services_and_Policies_for_Energy_Efficiency">https://www.researchgate.net/publication/220727277_SESAME_Demonstrator_Ontologies_Services_and_Policies_for_Energy_Efficiency</a>
+</p>
+
+
+<figure>
+<p><img src="ENVISION.png" alt="ENVISION.png">
+</p>
+</figure>
+
+<p>
+Event-based Sensor Service System.
+</p>
+
+<p>
+Uses:
+</p>
+<ul class="org-ul">
+<li>W3C's Semantic Sensor Network ontology</li>
+<li>SOA4All (WSML, IRIS Reasoner)</li>
+</ul>
+
+<p>
+Introduces:
+</p>
+<ul class="org-ul">
+<li>A Service Ontology (SOS)</li>
+<li>POSM (Operations, Preconditions, Effects)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd41dec0" class="outline-3">
+<h3 id="orgd41dec0">BONSAI Ontology</h3>
+<div class="outline-text-3" id="text-orgd41dec0">
+<p>
+BONSAI: A Smart Building Ontology for Ambient Intelligence 
+<a href="http://dl.acm.org/citation.cfm?doid=2254129.2254166">http://dl.acm.org/citation.cfm?doid=2254129.2254166</a>
+</p>
+
+<p>
+Part of the ThinkHOME project, but instantiated in the Smart IHU (International Hellenic University) project
+(Smart Building project that targets energy savings, automation and quality of life in a University)
+</p>
+
+
+<figure>
+<p><img src="bonsai.png" alt="bonsai.png">
+</p>
+</figure>
+
+<p>
+Slideshow: <a href="http://lpis.csd.auth.gr/people/thanosgstavr/storage/publications/thanosWIMS2012ppt.pdf">http://lpis.csd.auth.gr/people/thanosgstavr/storage/publications/thanosWIMS2012ppt.pdf</a>
+</p>
+
+<p>
+Hardware (Devices)
+</p>
+<ul class="org-ul">
+<li>Device Role
+<ul class="org-ul">
+<li>Sensor, Actuator, (MultiSensor, SensorActuator)</li>
+</ul></li>
+<li>Device Communication protocol
+<ul class="org-ul">
+<li>Wired, Wireless (PLC, ZigBee, Z-Wave, RF, etc)</li>
+</ul></li>
+<li>Context
+<ul class="org-ul">
+<li>Location, Environment params, time</li>
+</ul></li>
+<li>Funcionality of services:
+<ul class="org-ul">
+<li>Sensor parameter readings (environment and more)</li>
+<li>Actuator Effects (actions)</li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-orgc96469d" class="outline-4">
+<h4 id="orgc96469d">Alignment</h4>
+<div class="outline-text-4" id="text-orgc96469d">
+<p>
+21 correspondences with DogOnt: <a href="http://al4sc.inrialpes.fr/alid/1441722391874/9187">http://al4sc.inrialpes.fr/alid/1441722391874/9187</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org24612d8" class="outline-3">
+<h3 id="org24612d8">OPTIMUS Ontology</h3>
+<div class="outline-text-3" id="text-org24612d8">
+<p>
+<a href="https://www.researchgate.net/publication/283087380_A_Semantic_Decision_Support_System_to_optimize_the_energy_use_of_public_buildings">https://www.researchgate.net/publication/283087380_A_Semantic_Decision_Support_System_to_optimize_the_energy_use_of_public_buildings</a>
+</p>
+
+
+<figure>
+<p><img src="optimus.png" alt="optimus.png">
+</p>
+</figure>
+
+<p>
+Under the bigger umbrella of the OPTIMUS project, this ontology is supplemented by a Decision Support System (DSS) to optimise CO2 usage.
+</p>
+
+<p>
+Makes use of the SEMANCO platform (see the "Urban Energy Ontology" section).
+</p>
+
+<p>
+OPTIMUS ontology was designed to capture and model information from different data sources.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgae802b1" class="outline-3">
+<h3 id="orgae802b1">AMON</h3>
+<div class="outline-text-3" id="text-orgae802b1">
+<p>
+Developed by <a href="http://www.amee.com/">AMEE UK ltd</a>, now maintained by <a href="http://www.mastodonc.com/">Mastodon C Ltd</a>, used by Digital Catapult to store their "embed" data.
+</p>
+
+<p>
+I actually like this a lot, it is very simple and pragmatic.
+</p>
+
+<p>
+From the Github site:
+</p>
+
+<p>
+The AMON data format has been developed with the following goals in mind:
+</p>
+
+<p>
+To be suitable for the description and exchange of metering/monitoring device data;
+To be human readable and self-documenting;
+To be able to be widely supported;
+To be bandwidth sensitive;
+To be simple; and
+To be extensible, easily supporting new data types.
+</p>
+
+<p>
+To this end:
+</p>
+
+<p>
+The data format defines a number of commonly used data fields for devices (such as the device name, its location etc.), and a number of commonly used data fields for device readings. This ensures that the data format is suitable for the description and exchange of metering/monitoring device data and is simple to use.
+The data format uses JSON encoding.  This ensures that the data format balances the need to be human readable and self-documenting against the need to be bandwidth sensitive. Additionally, as most languages have library support for JSON encoding, AMON is able to be widely supported.
+Finally, although the data format does define commonly used data fields for devices and device readings, it does not exclude the use of custom device data or reading data. These can be described and exchanged using the AMON data format without modification to the data format, ensuring that the format is extensible.
+</p>
+</div>
+
+<div id="outline-container-orgb943d4a" class="outline-4">
+<h4 id="orgb943d4a">Example: temperature readings</h4>
+<div class="outline-text-4" id="text-orgb943d4a">
+<p>
+This example shows a "device", with ID "d46ec860-fc7d-012c-25a6-0017f2cd3574".
+</p>
+
+<p>
+The device is associated with the entity with ID "50af27e0-e61a-11e1-aff1-0800200c9a66".
+</p>
+
+<p>
+The "device" has a "location", and has been defined with one "reading".
+</p>
+
+<p>
+Two "measurements" for the defined "reading" exist.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-json"><span style="color: #AE81FF;">{</span>
+  <span style="color: #F92672;">"devices"</span>: <span style="color: #66D9EF;">[</span>
+    <span style="color: #A6E22E;">{</span>
+      <span style="color: #F92672;">"deviceId"</span>: "d<span style="color: #AE81FF;">46</span>ec<span style="color: #AE81FF;">860</span>-fc<span style="color: #AE81FF;">7</span>d-<span style="color: #AE81FF;">012c</span>-<span style="color: #AE81FF;">25a6</span>-<span style="color: #AE81FF;">0017f2cd3574</span>",
+      <span style="color: #F92672;">"entityId"</span>: "<span style="color: #AE81FF;">50af27e0</span>-e<span style="color: #AE81FF;">61</span>a-<span style="color: #AE81FF;">11e1</span>-aff<span style="color: #AE81FF;">1</span>-<span style="color: #AE81FF;">0800200c9a66</span>",
+      <span style="color: #F92672;">"description"</span>: "Example <span style="color: #AE81FF;">1</span> Device",
+      <span style="color: #F92672;">"location"</span>: <span style="color: #E6DB74;">{</span>
+        <span style="color: #F92672;">"name"</span>: <span style="color: #E6DB74;">"kitchen"</span>
+      <span style="color: #E6DB74;">}</span>,
+      <span style="color: #F92672;">"readings"</span>: <span style="color: #E6DB74;">[</span>
+        <span style="color: #FD971F;">{</span>
+          <span style="color: #F92672;">"type"</span>: <span style="color: #E6DB74;">"temperature"</span>,
+          <span style="color: #F92672;">"unit"</span>: <span style="color: #E6DB74;">"C"</span>,
+          <span style="color: #F92672;">"accuracy"</span>: <span style="color: #AE81FF;">0</span>.<span style="color: #AE81FF;">01</span>
+        <span style="color: #FD971F;">}</span>
+      <span style="color: #E6DB74;">]</span>,
+      <span style="color: #F92672;">"measurements"</span>: <span style="color: #E6DB74;">[</span>
+        <span style="color: #FD971F;">{</span>
+          <span style="color: #F92672;">"type"</span>: <span style="color: #E6DB74;">"temperature"</span>,
+          <span style="color: #F92672;">"timestamp"</span>: "<span style="color: #AE81FF;">2010</span>-<span style="color: #AE81FF;">07</span>-<span style="color: #AE81FF;">02T11</span>:<span style="color: #AE81FF;">39</span>:<span style="color: #AE81FF;">09Z</span>",
+          <span style="color: #F92672;">"value"</span>: <span style="color: #AE81FF;">23</span>.<span style="color: #AE81FF;">5</span>
+        <span style="color: #FD971F;">}</span>,
+        <span style="color: #FD971F;">{</span>
+          <span style="color: #F92672;">"type"</span>: <span style="color: #E6DB74;">"temperature"</span>,
+          <span style="color: #F92672;">"timestamp"</span>: "<span style="color: #AE81FF;">2010</span>-<span style="color: #AE81FF;">07</span>-<span style="color: #AE81FF;">02T11</span>:<span style="color: #AE81FF;">44</span>:<span style="color: #AE81FF;">09Z</span>",
+          <span style="color: #F92672;">"value"</span>: <span style="color: #AE81FF;">23</span>.<span style="color: #AE81FF;">8</span>
+        <span style="color: #FD971F;">}</span>
+      <span style="color: #E6DB74;">]</span>
+    <span style="color: #A6E22E;">}</span>
+  <span style="color: #66D9EF;">]</span>
+<span style="color: #AE81FF;">}</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org1c914bc" class="outline-3">
+<h3 id="org1c914bc">SESAME</h3>
+<div class="outline-text-3" id="text-org1c914bc">
+<p>
+<a href="http://www.sciencedirect.com/science/article/pii/S0378778811005901">http://www.sciencedirect.com/science/article/pii/S0378778811005901</a>
+</p>
+
+<p>
+(No image or OWL)
+</p>
+
+<p>
+Includes general concepts, such as:
+</p>
+
+<ul class="org-ul">
+<li>resident</li>
+<li>location</li>
+</ul>
+
+<p>
+Also, concepts in the automation/energy domain:
+</p>
+
+<ul class="org-ul">
+<li>device</li>
+<li>tariff</li>
+<li>energy usage profile</li>
+<li>account</li>
+</ul>
+
+<p>
+And devices:
+</p>
+
+<ul class="org-ul">
+<li>appliance</li>
+<li>sensor</li>
+<li>UI device</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb9fb7a7" class="outline-3">
+<h3 id="orgb9fb7a7">ThinkHome</h3>
+<div class="outline-text-3" id="text-orgb9fb7a7">
+<p>
+<a href="http://www.sciencedirect.com/science/article/pii/S0378778811005901">http://www.sciencedirect.com/science/article/pii/S0378778811005901</a>
+</p>
+
+<p>
+High-level ontology diagram:
+</p>
+
+
+<figure>
+<p><img src="thinkhome.png" alt="thinkhome.png">
+</p>
+</figure>
+
+
+<p>
+Just the Energy Resource Ontology:
+</p>
+
+
+<figure>
+<p><img src="thinkhom2.png" alt="thinkhom2.png">
+</p>
+</figure>
+
+
+<p>
+An example energy provider:
+</p>
+
+
+<figure>
+<p><img src="thinkhome3.jpg" alt="thinkhome3.jpg">
+</p>
+</figure>
+
+
+<p>
+Modelling state of a DVD recorder:
+</p>
+
+
+<figure>
+<p><img src="thinkhome4.jpg" alt="thinkhome4.jpg">
+</p>
+</figure>
+
+<ul class="org-ul">
+<li>Actually consists of several ontologies. The one we'd be most interested in (to start with) is the "Energy Resource Ontology". Others could also be useful for describing user preferences &amp; behaviour, though.</li>
+<li>Designed with multi-agent systems in mind (there is mention of BDI agents in the paper).</li>
+</ul>
+
+<p>
+Energy Resource Ontology:
+</p>
+<ul class="org-ul">
+<li>It was created using DogOnt as a starting point, so could be good for us to use this instead (if it IS an improvement)</li>
+<li>The paper claims that DogOnt focuses on energy consumers, whereas ThinkHome also looks at energy producing facilities (sources)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1b32700" class="outline-3">
+<h3 id="org1b32700">DEHEMS</h3>
+<div class="outline-text-3" id="text-org1b32700">
+<p>
+<a href="https://www.researchgate.net/profile/Kuo-Ming_Chao/publication/221014286_Ontology_for_Home_Energy_Management_Domain/links/54b977660cf2d11571a49eef.pdf">https://www.researchgate.net/profile/Kuo-Ming_Chao/publication/221014286_Ontology_for_Home_Energy_Management_Domain/links/54b977660cf2d11571a49eef.pdf</a>
+<a href="http://link.springer.com/10.1007/978-3-642-22027-2_28">http://link.springer.com/10.1007/978-3-642-22027-2_28</a>
+</p>
+
+<p>
+Project name is DEHEMS: Digital Environment Home Energy Management System
+</p>
+
+<p>
+Actual ontology is the "Home Appliances Ontology"
+</p>
+
+<p>
+Designed as part of an energy-saving project. SUMO-compatible.
+</p>
+
+<p>
+Knowledge base:
+</p>
+<ul class="org-ul">
+<li>Various Household appliances</li>
+<li>Consumption measurements</li>
+<li>Energy Classes</li>
+<li>Reasoning on the above</li>
+</ul>
+
+<p>
+However:
+</p>
+<ul class="org-ul">
+<li>Does not model services/sensors</li>
+<li>Cannot be found online</li>
+</ul>
+</div>
+
+<div id="outline-container-org4a43d34" class="outline-4">
+<h4 id="org4a43d34">Image</h4>
+<div class="outline-text-4" id="text-org4a43d34">
+
+<figure>
+<p><img src="dehems.png" alt="dehems.png">
+</p>
+</figure>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgee42337" class="outline-3">
+<h3 id="orgee42337">COSE</h3>
+<div class="outline-text-3" id="text-orgee42337">
+<p>
+The Casas Ontology for Smart Environments
+</p>
+
+<p>
+Sensor class hierarchy:
+<img src="cose.png" alt="cose.png">
+</p>
+
+<p>
+The COSE Ontology: Bringing the Semantic Web to Smart Environments
+<a href="http://link.springer.com/chapter/10.1007/978-3-642-21535-3_27">http://link.springer.com/chapter/10.1007/978-3-642-21535-3_27</a>
+</p>
+
+<p>
+Main concepts are:
+</p>
+
+<ul class="org-ul">
+<li>buildings</li>
+<li>occupants</li>
+<li>senors</li>
+<li>human activities</li>
+</ul>
+
+<p>
+OWL <a href="http://casas.wsu.edu/owl/cose.owl">link</a> is broken, but I managed to find a copy on a university course website.
+</p>
+
+<p>
+Has mappings to OpenCyc.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf58f107" class="outline-3">
+<h3 id="orgf58f107">SEAS (Smart Energy Aware Systems)</h3>
+<div class="outline-text-3" id="text-orgf58f107">
+<p>
+Part of the Smart Energy project: <a href="https://the-smart-energy.com/">https://the-smart-energy.com/</a>
+</p>
+
+<p>
+Well documented. Ontologies and wiki are hosted here: <a href="http://ci.emse.fr/seas/">http://ci.emse.fr/seas/</a>
+</p>
+
+<p>
+Consists of three main modules:
+</p>
+
+<ul class="org-ul">
+<li>Feature of Interest Ontology (features of interest and their properties)</li>
+<li>Evaluation Ontology (evaluations of these properties)</li>
+<li>System Ontology (virtually isolated systems that share connections with other systems)</li>
+</ul>
+
+<p>
+Imports a lot of other ontologies, and seems awfully complicated.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org28b4a50" class="outline-3">
+<h3 id="org28b4a50">Urban Energy Ontology (SEMANCO)</h3>
+<div class="outline-text-3" id="text-org28b4a50">
+<p>
+<a href="http://www.semanco-tools.eu/urban-enery-ontology">http://www.semanco-tools.eu/urban-enery-ontology</a>
+</p>
+</div>
+
+<div id="outline-container-org78e270c" class="outline-4">
+<h4 id="org78e270c">Pros:</h4>
+<div class="outline-text-4" id="text-org78e270c">
+<ul class="org-ul">
+<li>First link for Google search: "energy ontology"</li>
+<li>Defined in OWL</li>
+<li>SUMO-compatible</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org612ac6a" class="outline-4">
+<h4 id="org612ac6a">Cons:</h4>
+<div class="outline-text-4" id="text-org612ac6a">
+<ul class="org-ul">
+<li>Every single link to the OWL is broken</li>
+<li>Will have to email someone to get the ontology</li>
+</ul>
+
+<p>
+Actually, there does appear to be OWL in a listing at the end of this file:
+<a href="http://semanco-project.eu/index_htm_files/SEMANCO_D4.2_20130321.pdf">http://semanco-project.eu/index_htm_files/SEMANCO_D4.2_20130321.pdf</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3324ad1" class="outline-3">
+<h3 id="org3324ad1">SynCity</h3>
+<div class="outline-text-3" id="text-org3324ad1">
+<p>
+"Synthetic City"
+</p>
+
+<p>
+Modelled as a library of domain-specific components.
+</p>
+
+<p>
+<a href="http://siteresources.worldbank.org/INTURBANDEVELOPMENT/Resources/336387-1256566800920/6505269-1268260567624/Keirstead.pdf">http://siteresources.worldbank.org/INTURBANDEVELOPMENT/Resources/336387-1256566800920/6505269-1268260567624/Keirstead.pdf</a>
+</p>
+
+<p>
+James Keirstead compares it to the STS ontology:
+<a href="http://users.ecs.soton.ac.uk/acr/ates2010/Paper_04.pdf">http://users.ecs.soton.ac.uk/acr/ates2010/Paper_04.pdf</a>
+</p>
+
+<p>
+Superclasses within the ontology are:
+</p>
+
+<ul class="org-ul">
+<li>Resources (energy resources, such as electricity or natural gas)</li>
+<li>Infrastructures (physical structure of a city, including buildings and networks)</li>
+<li>Processes (technologies that convert one set of resources to another)</li>
+
+<li>UES (urban energy systems, Imperial College London) project. The UES ontology covers electricity and heat.</li>
+<li>Aim is to: “identify the benefits of a systematic, integrated approach to the design and operation of urban energy systems, with a view to at least halving the energy intensity of cities”.</li>
+</ul>
+
+<p>
+SynCity is more to do with "Processes" of converting energy from an input to an output.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2d9e38b" class="outline-3">
+<h3 id="org2d9e38b">STS</h3>
+<div class="outline-text-3" id="text-org2d9e38b">
+
+<figure>
+<p><img src="sts.png" alt="sts.png">
+</p>
+</figure>
+
+<p>
+James Keirstead compares it to SynCity:
+<a href="http://users.ecs.soton.ac.uk/acr/ates2010/Paper_04.pdf">http://users.ecs.soton.ac.uk/acr/ates2010/Paper_04.pdf</a>
+</p>
+
+<p>
+Everything appears to be a "node", connected with an "edge".
+</p>
+
+<p>
+Scope is very wide: aims to bring together the social and physical aspects of infrastructure systems.
+</p>
+
+<p>
+Integrates with agents: technologies are owned by an agent, who makes decisions on how to use the technology. Their choices are constrained according to the properties of the tech they use.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge474c20" class="outline-3">
+<h3 id="orge474c20">DogOnt: Ontology Modeling for Intelligent Domotic Environments</h3>
+<div class="outline-text-3" id="text-orge474c20">
+<p>
+<a href="http://elite.polito.it/ontologies/dogont.owl">http://elite.polito.it/ontologies/dogont.owl</a>
+<a href="http://lov.okfn.org/dataset/lov/vocabs/dogont">http://lov.okfn.org/dataset/lov/vocabs/dogont</a>
+</p>
+
+<p>
+<a href="http://porto.polito.it/1838746/1/paper31_camera_ready.pdf">http://porto.polito.it/1838746/1/paper31_camera_ready.pdf</a>
+<a href="http://link.springer.com/chapter/10.1007/978-3-540-88564-1_51">http://link.springer.com/chapter/10.1007/978-3-540-88564-1_51</a>
+</p>
+
+<p>
+Turin Polytechnic
+</p>
+
+<p>
+Can be seen as an advancement of DomoML, reusing parts of it.
+</p>
+
+<p>
+Provides house modelling and reasoning capabilities to the DOG (Domotic OSGi Gateway)
+</p>
+
+<p>
+Homepage link is dead
+</p>
+
+<p>
+5 main hierarchy trees:
+</p>
+<ul class="org-ul">
+<li>building thing: modelling available things</li>
+<li>building environment: modelling where things are located</li>
+<li>state: stable configs that (controllable) things can assume</li>
+<li>functionality: modelling what controllable things can do</li>
+<li>domotic network component: modelling features peculiar of each domotic plant</li>
+</ul>
+
+<p>
+Appears to be a very extensive and relevant ontology for what we want.
+</p>
+
+
+<figure>
+<p><img src="dogont.png" alt="dogont.png">
+</p>
+</figure>
+</div>
+</div>
+<div id="outline-container-org0cb990a" class="outline-3">
+<h3 id="org0cb990a">DomoML</h3>
+<div class="outline-text-3" id="text-org0cb990a">
+<p>
+<a href="http://ceur-ws.org/Vol-166/34.pdf">http://ceur-ws.org/Vol-166/34.pdf</a>
+ Ontology for Human Home Interaction
+</p>
+
+<p>
+Main taxonomy elements:
+<img src="domoml.png" alt="domoml.png">
+</p>
+
+
+<p>
+Household appliances:
+<img src="domoml2.png" alt="domoml2.png">
+</p>
+
+
+<p>
+A suite of XML-based languages that cover:
+</p>
+
+<ul class="org-ul">
+<li>environmental elements (DomoML-env)</li>
+<li>functions of elements (DomoML-fun)</li>
+<li>communications of elements (DomoML-com)</li>
+</ul>
+
+<p>
+Main superclasses of DomoML-env are:
+</p>
+
+<ul class="org-ul">
+<li>Building-Equipment (house appliances)</li>
+<li>Component (switches, valves, sensors, etc)</li>
+<li>Core-Foundation (technical/base elements of components)</li>
+<li>Building-Environment (rooms: kitchen, dining room, etc)</li>
+<li><p>
+Location (location of element within domestic environment)
+</p>
+
+<p>
+No state modelling (as criticised by DogOnt creators)
+</p></li>
+</ul>
+
+<p>
+It <b>is</b> specified in OWL (200 OWL classes), though there doesn't appear to be any online
+</p>
+
+<div align=center>
+<p>
+<a href="http://mthompson.org">Home</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+#+TITLE: DM4T PROJECT
+-----
+
+* Converting CSV Tables into RDF Triples with Grafter
+
+** Context: The DM4T Project
+
+[[https://teddinet.org][TEDDINET]] is a multi-disciplinary research project to monitor the energy usage of homes and appliances, and work out ways to reduce it. From 2013 up until 2016, millions of sensor readings have been taken from hundreds of homes, recording data such as power usage, temperature, humidity, and sound levels. Now that all the data have been gathered, we have to figure out how to process it to make it easy to query and visualise.
+
+[[http://www.cs.bath.ac.uk/dm4t/index.shtml][DM4T]] is a sub-project of TEDDINET with the aim to manage these data
+
+** The CSV Problem
+** Tools to Solve the Problem
+** Generating RDF from CSV
+** Grafter: Industrial-strength RDF Production
+*** What is Grafter?
+*** Table Conversions
+*** Graph Generation
+*** Pipeline Generation
+
+** Datasets Used
+** Choosing an Ontology
+** Example Triples
+** Setting up a SPARQL Endpoint
+The process of converting our TSV files into n-triple (nt) format is ballooning their size by a factor of 10. Take, for example, the light readings dataset:
+
+- Original TSV size: 890MB
+- Converted N-Triples size: 19GB
+
+As well as taking up all this space, it is impractical to load these triples into memory for use in a SPARQL endpoint.
+
+
+
+-----
+
+#+HTML:<div align=center>
+[[http://mthompson.org][Home]]
+#+HTML:</div>
