@@ -85,7 +85,7 @@ These data were originally gathered using sensors attached to Raspberry PIs, and
 ** A General SPARQL Query
 The most basic SPARQL query possible would be:
 
-/"Get every subject, predicate and object in our datastore, and return them as "s", "p" and "o" variables. But we only want the first 10!"/
+/"Get every subject, predicate and object in our datastore, and return them as "s", "p" and "o" variables. But we only want the first 20!"/
 
 Here is how we express that as a SPARQL query:
 
