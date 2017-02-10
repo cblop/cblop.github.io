@@ -3,6 +3,8 @@
 
 * Converting CSV Tables into RDF Triples with Grafter
 
+PLEASE NOTE: This article is a work in progress!
+
 ** Context: The DM4T Project
 
 [[https://teddinet.org][TEDDINET]] is a multi-disciplinary research project to monitor the energy usage of homes and appliances, and work out ways to reduce it. From 2013 up until 2016, millions of sensor readings have been taken from hundreds of homes, recording data such as power usage, temperature, humidity, and sound levels. Now that all the data have been gathered, we have to figure out how to process it to make it easy to query and visualise.
