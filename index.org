@@ -10,7 +10,7 @@
 
 *Recent*:
 
-[[./sparql.html][Querying Home Sensor Data with SPARQL]]
+[[./dm4t/sparql.html][Querying Home Sensor Data with SPARQL]]
 
 *Previous*:
 
@@ -60,7 +60,7 @@
 :HTML_CONTAINER_CLASS: right-align
 :END:
 
-[[./rex/index.html][Rex Flotsam: Beach Cop (Global Game Jam 2017 game)]]
+[[./rex][Rex Flotsam: Beach Cop (Global Game Jam 2017 game)]]\\
 [[https://github.com/cblop/bloodbath][Blood Bath (Love2D source)]]
 
 -----
