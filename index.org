@@ -1,6 +1,6 @@
 #+TITLE:MATT THOMPSON
 #+HTML: <div align=center>
-/Interactive narrative researcher/
+/Interactive narrative researcher & data scientist/
 #+HTML: </div>
 
 [[file:./img/mattconf.jpg]]
@@ -10,12 +10,13 @@
 
 *Recent*:
 
-[[./bloodbath.html][Create a live-action fighting game with your friends as characters]]\\
-[[./every-object.html][Every Object Tells a Story]]\\
-[[./punch-judy.html][An interactive, generative Punch and Judy show]]
+[[./sparql.html][Querying Home Sensor Data with SPARQL]]
 
 *Previous*
 
+[[./bloodbath.html][Create a live-action fighting game with your friends as characters]]\\
+[[./every-object.html][Every Object Tells a Story]]\\
+[[./punch-judy.html][An interactive, generative Punch and Judy show]]\\
 [[./keyboard.html][IBM is still making ThinkPad keyboards]]\\
 [[./monty-hall.html][Solving the Monty Hall problem in Clojure]]\\
 [[./do-life.html][What do you want to do with your life?]]\\
@@ -33,10 +34,11 @@
 
 *Recent*:
 
-[[https://www.researchgate.net/profile/Steve_Battle/publication/300139574_Telling_Non-linear_Stories_with_Interval_Temporal_Logic/links/5733578408ae298602dce909.pdf][Telling Non-Linear Stories with Interval Temporal Logic (ICIDS2015 poster)]]
+[[http://ebooks.iospress.nl/volumearticle/45762][Describing Legal Policies as Story Tropes in Normative Systems (JURIX 2016 poster)]]
 
 *Previous*:
 
+[[https://www.researchgate.net/profile/Steve_Battle/publication/300139574_Telling_Non-linear_Stories_with_Interval_Temporal_Logic/links/5733578408ae298602dce909.pdf][Telling Non-Linear Stories with Interval Temporal Logic (ICIDS2015 poster)]]
 [[http://drops.dagstuhl.de/opus/frontdoor.php?source_opus%3D5288][Governing Narrative Events with Institutional Norms (CMN 2015)]]\\
 [[http://coin2015.tbm.tudelft.nl/files/2015/06/COINIJCAI_2015_submission_19.pdf][An Interactive, Generative Punch and Judy Show Using Institutions, ASP and Emotional Agents (COIN @ IJCAI 2015)]]\\
 [[http://www.cs.kent.ac.uk/events/2015/AISB2015/proceedings/aiAndGames/AI-games-15_submission_10--MatthewThompson--interactive.pdf][An Interactive, Generative Punch and Judy Show Using Institutions, ASP and Emotional Agents (AISB 2015)]]\\
@@ -58,6 +60,7 @@
 :HTML_CONTAINER_CLASS: right-align
 :END:
 
+[[./rex/index.html][Rex Flotsam: Beach Cop (Global Game Jam 2017 game)]]
 [[https://github.com/cblop/bloodbath][Blood Bath (Love2D source)]]
 
 -----
