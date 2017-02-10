@@ -12,7 +12,7 @@
 
 [[./sparql.html][Querying Home Sensor Data with SPARQL]]
 
-*Previous*
+*Previous*:
 
 [[./bloodbath.html][Create a live-action fighting game with your friends as characters]]\\
 [[./every-object.html][Every Object Tells a Story]]\\
