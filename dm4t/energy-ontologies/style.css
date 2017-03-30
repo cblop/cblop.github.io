@@ -13,20 +13,35 @@ body {
     background-color: #fff;
     font-family: 'Source Serif Pro', serif;
     font-size: 18px;
+    display: flex;
+    flex-flow: column wrap;
     padding: 0 15%;
     margin: 0 15%;
+    justify-content: center;
+    /* align-items: center; */
 }
+/* p ul { */
+/*     flex: 1 auto; */
+/* } */
 hr {
     border: 0;
     height: 1px;
     background: #aaa;
+    flex: 1 auto;
 }
 .right-align {
     text-align: right;
+    flex: 1 auto;
 }
 img {
-    display: block;
-    margin: 0 auto;
+    /* display: block; */
+    /* margin: 0 auto; */
+    margin: 0 -75%;
+    /* margin: auto; */
+    /* padding: auto; */
+    /* padding: 0 -15%; */
+    flex: 1 auto;
+    /* align-self: flex-start; */
 }
 .src {
     color: #fff;
@@ -34,21 +49,25 @@ img {
     padding: 20px;
     box-shadow: 1px 1px 5px #333;
     border-radius: 3px;
+    flex: 1 auto;
 }
 .src a {
     color: #fff;
     underline: none;
     text-decoration: none;
+    flex: 1 auto;
 }
 
 .src-ttl {
     font-size: 14px;
     float: left;
+    flex: 1 auto;
 }
 
 .src-xml {
     font-size: 14px;
     float: left;
+    flex: 1 auto;
 }
 /*
 ul
