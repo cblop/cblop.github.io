@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MATT THOMPSON</title>
+<meta name="generator" content="Org mode">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">MATT THOMPSON</h1>
+</header><hr>
+
+<div id="outline-container-org3965a2e" class="outline-2">
+<h2 id="org3965a2e">Building Non-Linear Stories with Tropes</h2>
+<div class="outline-text-2" id="text-org3965a2e">
+<p>
+As part of my EngD project, I am creating ways for story authors to easily write narratives with multiple branches, along the lines of the <i>Choose Your Own Adventure</i> stories from the 1990s. Typically, this kind of story authoring is hard, as the number of material that needs to be written increases exponentially with the number of decision points.
+</p>
+
+<p>
+The approach that we have taken is to describe the story as a set of <i>constraints</i> upon the actions of intelligent agents. The rules of the story as described as social norms, telling the character agents what they are permitted and obliged to do as part of the story. The idea here is that the narrative is a kind of invisible force that guides the actions of the characters, which they could nonetheless technically break if they wanted. This is the same way that social norms ensure that people queue politely for a bus rather than scrambling towards the doors, for example. These are rules that are unspoken, yet still gently guide our actions.
+</p>
+</div>
+
+<div id="outline-container-orgfcb9996" class="outline-3">
+<h3 id="orgfcb9996">Tropes</h3>
+<div class="outline-text-3" id="text-orgfcb9996">
+<p>
+In order to describe our stories as social norms, we use the concept of <i>tropes</i>. Tropes are
+patterns that appear throughout various different media. Once one is familiar
+with a trope, it becomes easy to identify its use in any story. Take, for
+example, the <i>Hero's Journey</i> trope. It is a template which is repeated so often in
+many different media, stories and contexts that it is instantly recognised even
+by those that are completely unfamiliar with the concept of tropes. It describes a type of story where a hero leaves the comfort of home, goes to a land of adventure, defeats demons (internal or external), and returns home a changed person.
+</p>
+
+<p>
+Though the <i>Hero's Journey</i> describes the plot of a story as a whole, other tropes may work at different levels of abstraction. Tropes can be very specific, referring to individual lines of dialogue.
+</p>
+
+<p>
+One example, taken from the <a href="http://tvtropes.org">TV Tropes</a> website, is "We Will Meet Again":
+</p>
+
+<blockquote>
+<p>
+The standard phrase when the villain finds that he has been defeated by the heroes and there is no point in staying around with the immediate Evil Plan foiled.
+</p>
+</blockquote>
+
+<p>
+Tropes can also be very abstract, referring to particular genres, types of
+story, or events in a story that move the action forward. Other than the
+previously mentioned "Hero's Journey" trope, another
+example could be the "Hilarity Ensues" trope:
+</p>
+
+<blockquote>
+<p>
+Actions that are dangerous or illegal often lead to injury, arrest, job dismissal, expulsion from school, deportation, or other dire consequences. Thankfully for our fictional friends, both the Rule of Cool and the Rule of Funny keep them safe (the latter more prominently).
+</p>
+</blockquote>
+
+<p>
+<i>Metatropes</i> are tropes about tropes, often intended as a knowing wink to
+the trope-savvy audience. One such example is "Lampshade Hanging", which TV
+Tropes describes as:
+</p>
+
+<blockquote>
+<p>
+&#x2026;the writers' trick of dealing with any element of the story that threatens the audience's Willing Suspension of Disbelief, whether a very implausible plot development, or a particularly blatant use of a trope, by calling attention to it and simply moving on.
+</p>
+</blockquote>
+
+<p>
+Our system uses such tropes to create story <i>components</i>, which can be endlessly combined and rearranged to describe our stories. The idea is that story authors can choose tropes from a prewritten library, and construct their stories from the chosen tropes. They should also be able to easily create their own new tropes. For this purpose, we have created a Controlled Natural Language programming language, called <i>TropICAL</i>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf582e03" class="outline-3">
+<h3 id="orgf582e03">TropICAL</h3>
+<div class="outline-text-3" id="text-orgf582e03">
+<p>
+TropICAL (the TROPe Interactive Chronical Action Language) is a programming language that is designed for non-programmer story authors to use. Its syntax superficially resembles that of <a href="http://inform7.com">Inform 7</a>, a domain-specific language for Interactive Fiction authors. Similarly to Inform 7, its syntax looks a lot like written English sentences, for example:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-prolog"><span style="color: #FD971F;">The</span> <span style="color: #FD971F;">Hero</span> is at <span style="color: #FD971F;">Home</span>
+<span style="color: #FD971F;">Then</span> the <span style="color: #FD971F;">Hero</span> may go <span style="color: #FD971F;">Away</span>
+  <span style="color: #FD971F;">Or</span> the <span style="color: #FD971F;">Hero</span> may kill the <span style="color: #FD971F;">Villain</span>
+<span style="color: #FD971F;">Then</span> the <span style="color: #FD971F;">Hero</span> must go <span style="color: #FD971F;">Home</span>
+  <span style="color: #FD971F;">Or</span> the <span style="color: #FD971F;">Villain</span> must kill the <span style="color: #FD971F;">Mentor</span>
+  <span style="color: #FD971F;">Or</span> the <span style="color: #FD971F;">Villain</span> may kill the <span style="color: #FD971F;">Hero</span>
+</pre>
+</div>
+
+<p>
+This is how we describe a scene, or trope, with TropICAL, as sequences of events that occur one after another. Each event is written as a permission ("may do X") or an obligation ("must do Y"). This combination of permissions and obligations describe the constraints on the behaviour of the character agents in the story.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1defac6" class="outline-3">
+<h3 id="org1defac6">StoryBuilder</h3>
+<div class="outline-text-3" id="text-org1defac6">
+<p>
+StoryBuilder is the web-based user interface that we have created for the construction and visualisation of interactive stories through tropes. Using this interface, an auther can construct a story by creating their own tropes, or re-using pre-created tropes, and combining them to form a story with multiple paths through it. Once created, all of the possible paths through the story can be visualised:
+</p>
+
+
+<figure>
+<img src="img/storybuilder.png" alt="storybuilder.png">
+
+</figure>
+
+<p>
+As well as seeing all of the story paths as a tree structure, the visualisation also shows which tropes lead to which paths through the story, with the edges of the graph labeled with the names of tropes. As tropes are edited and rearranged, the story graph is updated, giving the story author a tight feedback loop with which to experiment when creating their story.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbbcf32e" class="outline-3">
+<h3 id="orgbbcf32e">At the Hackathon</h3>
+<div class="outline-text-3" id="text-orgbbcf32e">
+<p>
+For the AISB hackathon, I have prepared a study to examine the usefulness of StoryBuilder for interactive story authoring. Volunteers will be able to use the tools to create their own stories, as I ask questions about the authoring process. I hope to use this study to identify strengths and weaknesses of the system with a view to improve it further.
+</p>
+
+<hr>
+
+<div align=center>
+<p>
+<a href="http://mthompson.org">Home</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>
