@@ -3,6 +3,72 @@
 
 * Building Non-Linear Stories with Tropes
 
+As part of my EngD project, I am creating ways for story authors to easily write narratives with multiple branches, along the lines of the /Choose Your Own Adventure/ stories from the 1990s. Typically, this kind of story authoring is hard, as the number of material that needs to be written increases exponentially with the number of decision points.
+
+The approach that we have taken is to describe the story as a set of /constraints/ upon the actions of intelligent agents. The rules of the story as described as social norms, telling the character agents what they are permitted and obliged to do as part of the story. The idea here is that the narrative is a kind of invisible force that guides the actions of the characters, which they could nonetheless technically break if they wanted. This is the same way that social norms ensure that people queue politely for a bus rather than scrambling towards the doors, for example. These are rules that are unspoken, yet still gently guide our actions.
+
+** Tropes
+In order to describe our stories as social norms, we use the concept of /tropes/. Tropes are
+patterns that appear throughout various different media. Once one is familiar
+with a trope, it becomes easy to identify its use in any story. Take, for
+example, the /Hero's Journey/ trope. It is a template which is repeated so often in
+many different media, stories and contexts that it is instantly recognised even
+by those that are completely unfamiliar with the concept of tropes. It describes a type of story where a hero leaves the comfort of home, goes to a land of adventure, defeats demons (internal or external), and returns home a changed person.
+
+Though the /Hero's Journey/ describes the plot of a story as a whole, other tropes may work at different levels of abstraction. Tropes can be very specific, referring to individual lines of dialogue.
+
+One example, taken from the [[http://tvtropes.org][TV Tropes]] website, is "We Will Meet Again":
+
+#+BEGIN_QUOTE
+The standard phrase when the villain finds that he has been defeated by the heroes and there is no point in staying around with the immediate Evil Plan foiled.
+#+END_QUOTE
+
+Tropes can also be very abstract, referring to particular genres, types of
+story, or events in a story that move the action forward. Other than the
+previously mentioned "Hero's Journey" trope, another
+example could be the "Hilarity Ensues" trope:
+
+#+BEGIN_QUOTE
+Actions that are dangerous or illegal often lead to injury, arrest, job dismissal, expulsion from school, deportation, or other dire consequences. Thankfully for our fictional friends, both the Rule of Cool and the Rule of Funny keep them safe (the latter more prominently).
+#+END_QUOTE
+
+/Metatropes/ are tropes about tropes, often intended as a knowing wink to
+the trope-savvy audience. One such example is "Lampshade Hanging", which TV
+Tropes describes as:
+
+#+BEGIN_QUOTE
+...the writers' trick of dealing with any element of the story that threatens the audience's Willing Suspension of Disbelief, whether a very implausible plot development, or a particularly blatant use of a trope, by calling attention to it and simply moving on.
+#+END_QUOTE
+
+Our system uses such tropes to create story /components/, which can be endlessly combined and rearranged to describe our stories. The idea is that story authors can choose tropes from a prewritten library, and construct their stories from the chosen tropes. They should also be able to easily create their own new tropes. For this purpose, we have created a Controlled Natural Language programming language, called /TropICAL/.
+
+** TropICAL
+
+TropICAL (the TROPe Interactive Chronical Action Language) is a programming language that is designed for non-programmer story authors to use. Its syntax superficially resembles that of [[http://inform7.com][Inform 7]], a domain-specific language for Interactive Fiction authors. Similarly to Inform 7, its syntax looks a lot like written English sentences, for example:
+
+#+BEGIN_SRC prolog
+The Hero is at Home
+Then the Hero may go Away
+  Or the Hero may kill the Villain
+Then the Hero must go Home
+  Or the Villain must kill the Mentor
+  Or the Villain may kill the Hero
+#+END_SRC
+
+This is how we describe a scene, or trope, with TropICAL, as sequences of events that occur one after another. Each event is written as a permission ("may do X") or an obligation ("must do Y"). This combination of permissions and obligations describe the constraints on the behaviour of the character agents in the story.
+
+** StoryBuilder
+
+StoryBuilder is the web-based user interface that we have created for the construction and visualisation of interactive stories through tropes. Using this interface, an auther can construct a story by creating their own tropes, or re-using pre-created tropes, and combining them to form a story with multiple paths through it. Once created, all of the possible paths through the story can be visualised:
+
+[[file:img/storybuilder.png]]
+
+As well as seeing all of the story paths as a tree structure, the visualisation also shows which tropes lead to which paths through the story, with the edges of the graph labeled with the names of tropes. As tropes are edited and rearranged, the story graph is updated, giving the story author a tight feedback loop with which to experiment when creating their story.
+
+** At the Hackathon
+
+For the AISB hackathon, I have prepared a study to examine the usefulness of StoryBuilder for interactive story authoring. Volunteers will be able to use the tools to create their own stories, as I ask questions about the authoring process. I hope to use this study to identify strengths and weaknesses of the system with a view to improve it further.
+
 -----
 
 #+HTML:<div align=center>
