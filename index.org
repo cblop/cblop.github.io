@@ -1,6 +1,6 @@
 #+TITLE:MATT THOMPSON
 #+HTML: <div align=center>
-/Interactive narrative researcher & data scientist/
+/Interactive narrative game designer & researcher/
 #+HTML: </div>
 
 [[file:./img/mattconf.jpg]]
