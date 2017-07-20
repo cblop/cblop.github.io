@@ -25,14 +25,6 @@ hr {
     text-align: right;
 }
 img {
-    display: block;
-    margin: 0 auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
-/*
-ul
-{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-*/
