@@ -37,21 +37,27 @@ img {
     margin-left: 50%;
     transform: translateX(-50%);
 }
+
+table {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
 .src a {
     color: #fff;
     underline: none;
     text-decoration: none;
 }
 
-.src-ttl {
-    font-size: 14px;
-    float: left;
-}
+/* .src-ttl { */
+/*     font-size: 14px; */
+/*     float: left; */
+/* } */
 
-.src-xml {
-    font-size: 14px;
-    float: left;
-}
+/* .src-xml { */
+/*     font-size: 14px; */
+/*     float: left; */
+/* } */
 /*
 ul
 {
