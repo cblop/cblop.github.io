@@ -69,7 +69,7 @@
 ** Contact
 
 [[./cv][CV]]\\
-[[mailto:mrt32@bath.ac.uk][Email]]\\
+[[mailto:matt@mthompson.org][Email]]\\
 [[https://github.com/cblop][Github]]\\
 [[https://twitter.com/cblop][Twitter]]
 
