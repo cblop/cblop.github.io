@@ -1,41 +1,109 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-  <head>
-    <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <meta  name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MATT THOMPSON</title>
-    <meta  name="generator" content="Org-mode" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-    <div id="content">
-      <header>
-        <h1 class="title">MATT THOMPSON</h1>
-      </header><hr  />
-      <div id="outline-container-orgheadline1" class="outline-2">
-        <h2 id="orgheadline1">Solving the Monty Hall problem in Clojure</h2>
-        <div class="outline-text-2" id="text-orgheadline1">
-          <p>
-            At this week's Bristol Clojurians meetup we decided to give the Monty Hall problem a go as described in the <a href="http://cyber-dojo.org/">cyber dojo</a> problem set. Here's the solution I (eventually) came up with:
-          </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MATT THOMPSON</title>
+<meta name="generator" content="Org mode">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
 
-          <script src="https://gist.github.com/cblop/c4254965e599911cfe6c.js"></script>
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
 
-          <p>
-            This turned out to be a lot trickier than it looks. I ended up spending way more time than necessary hacking emoji support into Emacs to display little car and goat icons. Important things first, right?
-          </p>
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
 
-          <hr  />
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
 
-          <div align=center>
-            <p>
-              <a href="http://mthompson.org/">Home</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">MATT THOMPSON</h1>
+</header><hr>
+<div id="outline-container-org0cdd48c" class="outline-2">
+<h2 id="org0cdd48c">Solving the Monty Hall problem in Clojure</h2>
+<div class="outline-text-2" id="text-org0cdd48c">
+<p>
+At this week's Bristol Clojurians meetup we decided to give the Monty Hall problem a go as described in the <a href="http://cyber-dojo.org">cyber dojo</a> problem set. Here's the solution I (eventually) came up with:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-clojure"><span style="color: #AE81FF;">(</span><span style="color: #F92672;">defn</span> <span style="color: #A6E22E;">choose</span> <span style="color: #66D9EF;">[</span>n change<span style="color: #66D9EF;">]</span>
+  <span style="color: #66D9EF;">(</span><span style="color: #F92672;">let</span> <span style="color: #A6E22E;">[</span>car <span style="color: #E6DB74;">(</span>rand-int <span style="color: #AE81FF;">3</span><span style="color: #E6DB74;">)</span>
+        world <span style="color: #E6DB74;">(</span>assoc <span style="color: #FD971F;">[</span><span style="color: #E6DB74;">"</span><span style="color: #E6DB74;">:goat:</span><span style="color: #E6DB74;">"</span> <span style="color: #E6DB74;">"</span><span style="color: #E6DB74;">:goat:</span><span style="color: #E6DB74;">"</span> <span style="color: #E6DB74;">"</span><span style="color: #E6DB74;">:goat:</span><span style="color: #E6DB74;">"</span><span style="color: #FD971F;">]</span> car <span style="color: #E6DB74;">"</span><span style="color: #E6DB74;">:car:</span><span style="color: #E6DB74;">"</span><span style="color: #E6DB74;">)</span>
+        choice <span style="color: #E6DB74;">(</span>nth world n<span style="color: #E6DB74;">)</span>
+        others <span style="color: #E6DB74;">(</span>remove #<span style="color: #FD971F;">(</span>= n <span style="color: #FD971F;">%</span><span style="color: #FD971F;">)</span> <span style="color: #FD971F;">(</span>range <span style="color: #AE81FF;">3</span><span style="color: #FD971F;">)</span><span style="color: #E6DB74;">)</span>
+        other-choice <span style="color: #E6DB74;">(</span><span style="color: #F92672;">if</span> <span style="color: #FD971F;">(</span>= <span style="color: #E6DB74;">"</span><span style="color: #E6DB74;">:goat:</span><span style="color: #E6DB74;">"</span> <span style="color: #F92672;">(</span>nth world <span style="color: #AE81FF;">(</span>first others<span style="color: #AE81FF;">)</span><span style="color: #F92672;">)</span><span style="color: #FD971F;">)</span>
+                       <span style="color: #FD971F;">(</span>last others<span style="color: #FD971F;">)</span> <span style="color: #FD971F;">(</span>first others<span style="color: #FD971F;">)</span><span style="color: #E6DB74;">)</span><span style="color: #A6E22E;">]</span>
+    <span style="color: #A6E22E;">(</span><span style="color: #F92672;">if-not</span> change
+      <span style="color: #E6DB74;">(</span><span style="color: #F92672;">if</span> <span style="color: #FD971F;">(</span>= <span style="color: #E6DB74;">"</span><span style="color: #E6DB74;">:car:</span><span style="color: #E6DB74;">"</span> choice<span style="color: #FD971F;">)</span> <span style="color: #AE81FF;">true</span> <span style="color: #AE81FF;">false</span><span style="color: #E6DB74;">)</span>
+      <span style="color: #E6DB74;">(</span><span style="color: #F92672;">if</span> <span style="color: #FD971F;">(</span>= <span style="color: #E6DB74;">"</span><span style="color: #E6DB74;">:car:</span><span style="color: #E6DB74;">"</span> <span style="color: #F92672;">(</span>nth world other-choice<span style="color: #F92672;">)</span><span style="color: #FD971F;">)</span> <span style="color: #AE81FF;">true</span> <span style="color: #AE81FF;">false</span><span style="color: #E6DB74;">)</span><span style="color: #A6E22E;">)</span><span style="color: #66D9EF;">)</span><span style="color: #AE81FF;">)</span>
+
+<span style="color: #AE81FF;">(</span><span style="color: #F92672;">defn</span> <span style="color: #A6E22E;">play</span> <span style="color: #66D9EF;">[</span>times<span style="color: #66D9EF;">]</span>
+  <span style="color: #66D9EF;">(</span><span style="color: #F92672;">let</span> <span style="color: #A6E22E;">[</span>stick <span style="color: #E6DB74;">(</span>take times <span style="color: #FD971F;">(</span>repeatedly #<span style="color: #F92672;">(</span>choose <span style="color: #AE81FF;">(</span>rand-int <span style="color: #AE81FF;">3</span><span style="color: #AE81FF;">)</span> <span style="color: #AE81FF;">false</span><span style="color: #F92672;">)</span><span style="color: #FD971F;">)</span><span style="color: #E6DB74;">)</span>
+        change <span style="color: #E6DB74;">(</span>take times <span style="color: #FD971F;">(</span>repeatedly #<span style="color: #F92672;">(</span>choose <span style="color: #AE81FF;">(</span>rand-int <span style="color: #AE81FF;">3</span><span style="color: #AE81FF;">)</span> <span style="color: #AE81FF;">true</span><span style="color: #F92672;">)</span><span style="color: #FD971F;">)</span><span style="color: #E6DB74;">)</span>
+        s-count <span style="color: #E6DB74;">(</span>count <span style="color: #FD971F;">(</span>filter true? stick<span style="color: #FD971F;">)</span><span style="color: #E6DB74;">)</span>
+        c-count <span style="color: #E6DB74;">(</span>count <span style="color: #FD971F;">(</span>filter true? change<span style="color: #FD971F;">)</span><span style="color: #E6DB74;">)</span><span style="color: #A6E22E;">]</span>
+    <span style="color: #A6E22E;">(</span>hash-map <span style="color: #AE81FF;">:stick</span> s-count <span style="color: #AE81FF;">:change</span> c-count<span style="color: #A6E22E;">)</span><span style="color: #66D9EF;">)</span><span style="color: #AE81FF;">)</span>
+
+<span style="color: #AE81FF;">(</span>play <span style="color: #AE81FF;">1000</span><span style="color: #AE81FF;">)</span>
+</pre>
+</div>
+
+<p>
+This turned out to be a lot trickier than it looks. I ended up spending way more time than necessary hacking emoji support into Emacs to display little car and goat icons. Important things first, right?
+</p>
+
+<hr>
+
+<div align=center>
+<p>
+<a href="http://mthompson.org">Home</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
 </html>
