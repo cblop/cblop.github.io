@@ -1,0 +1,20 @@
+#+TITLE: CLOJURE TOOLS FOR FRICTIONLESS DATA
+-----
+
+This series of blog posts are to document the development of the Clojure libraries for the [[https://frictionlessdata.io/][Frictionless Data]] project.
+
+The tools that I'm developing are:
+
+[[https://github.com/frictionlessdata/tableschema-clj][tableschema-clj]]: A library for working with [[http://specs.frictionlessdata.io/table-schema/][Table Schema]] in Clojure
+[[https://github.com/frictionlessdata/datapackage-clj][datapackage-clj]]: A library for working with [[http://specs.frictionlessdata.io/data-package/][Data Packages]] in Clojure
+
+# - [[./frictionless.html][A gentle introduction to Frictionless Data]]: This post explains what table schema and data packages are, and why to use them
+# - [[build.html][Setting up Travis CI and Coveralls for Clojure Development]]: The steps I took to set up the build environment
+# - [[./tests.html][Translating Python and Ruby tests to Clojure]]: How I ported the existing tests over to Clojure's core.test
+# - [[spec-types.html][Using Clojure Spec for Table Schema types]]: How I'm using spec, and why I think it's a great fit
+
+-----
+
+#+HTML:<div align=center>
+[[http://mthompson.org][Home]]
+#+HTML:</div>
