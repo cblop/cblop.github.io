@@ -2,6 +2,9 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css" />
 -----
 
+#+attr_html: :width 800px
+[[file:~/repos/cblop.github.io/img/frictionlessdata-logo.png]]
+
 This series of blog posts are to document the development of the Clojure libraries for the [[https://frictionlessdata.io/][Frictionless Data]] project.
 
 The tools that I'm developing are:

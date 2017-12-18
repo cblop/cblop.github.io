@@ -61,6 +61,7 @@ This is how we describe a scene, or trope, with TropICAL, as sequences of events
 
 StoryBuilder is the web-based user interface that we have created for the construction and visualisation of interactive stories through tropes. Using this interface, an auther can construct a story by creating their own tropes, or re-using pre-created tropes, and combining them to form a story with multiple paths through it. Once created, all of the possible paths through the story can be visualised:
 
+#+attr_html: :width 800px
 [[file:img/storybuilder.png]]
 
 As well as seeing all of the story paths as a tree structure, the visualisation also shows which tropes lead to which paths through the story, with the edges of the graph labeled with the names of tropes. As tropes are edited and rearranged, the story graph is updated, giving the story author a tight feedback loop with which to experiment when creating their story.
