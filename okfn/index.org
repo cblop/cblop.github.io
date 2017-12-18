@@ -1,4 +1,4 @@
-#+TITLE: CLOJURE TOOLS FOR FRICTIONLESS DATA
+#+TITLE: Clojure Tools for Frictionless Data
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css" />
 -----
 
