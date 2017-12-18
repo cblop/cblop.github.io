@@ -1,4 +1,5 @@
 #+TITLE: DM4T PROJECT
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css" />
 -----
 
 * Querying Home Sensor Data with SPARQL

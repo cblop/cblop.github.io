@@ -1,4 +1,5 @@
 #+TITLE: CLOJURE TOOLS FOR FRICTIONLESS DATA
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../style.css" />
 -----
 
 This series of blog posts are to document the development of the Clojure libraries for the [[https://frictionlessdata.io/][Frictionless Data]] project.
