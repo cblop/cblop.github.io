@@ -10,10 +10,7 @@
 
 *Recent*:
 
-[[./storybuilder.html][Building Non-Linear Stories with Tropes]]
-
-*Previous*:
-
+[[./storybuilder.html][Building Non-Linear Stories with Tropes]]\\
 [[./dm4t/sparql.html][Querying Home Sensor Data with SPARQL]]\\
 [[./bloodbath.html][Create a live-action fighting game with your friends as characters]]\\
 [[./every-object.html][Every Object Tells a Story]]\\
@@ -33,12 +30,9 @@
 :HTML_CONTAINER_CLASS: right-align
 :END:
 
-*Recent*:
-
-[[http://ebooks.iospress.nl/volumearticle/45762][Describing Legal Policies as Story Tropes in Normative Systems (JURIX 2016 poster)]]
-
-*Previous*:
-
+[[http://eprints.uwe.ac.uk/32346/][Governing Narrative Events with Tropes as Institutional Norms (ALIA 2016, in press)]]\\
+[[http://eprints.uwe.ac.uk/32345/][A Modal Logic Analysis of a Line-Following Robot (ALIA 2016, in press)]]\\
+[[http://ebooks.iospress.nl/volumearticle/45762][Describing Legal Policies as Story Tropes in Normative Systems (JURIX 2016 poster)]]\\
 [[https://www.researchgate.net/profile/Steve_Battle/publication/300139574_Telling_Non-linear_Stories_with_Interval_Temporal_Logic/links/5733578408ae298602dce909.pdf][Telling Non-Linear Stories with Interval Temporal Logic (ICIDS2015 poster)]]\\
 [[http://drops.dagstuhl.de/opus/frontdoor.php?source_opus%3D5288][Governing Narrative Events with Institutional Norms (CMN 2015)]]\\
 [[http://coin2015.tbm.tudelft.nl/files/2015/06/COINIJCAI_2015_submission_19.pdf][An Interactive, Generative Punch and Judy Show Using Institutions, ASP and Emotional Agents (COIN @ IJCAI 2015)]]\\
