@@ -8,8 +8,6 @@
 -----
 ** Blog
 
-*Recent*:
-
 [[./storybuilder.html][Building Non-Linear Stories with Tropes]]\\
 [[./dm4t/sparql.html][Querying Home Sensor Data with SPARQL]]\\
 [[./bloodbath.html][Create a live-action fighting game with your friends as characters]]\\
