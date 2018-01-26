@@ -40,7 +40,17 @@
 
 -----
 
+** Books
+
+[[http://web.codeuntangled.com][The Web, Untangled: Make Web Apps with PHP, MySQL, HTML and Javascript]]\\
+[[http://bentojapanese.com][Bento Japanese: Delicious, Bite-sized Japanese Lessons]]\\
+
+-----
+
 ** Music
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: right-align
+:END:
 
 [[http://commanderblop.bandcamp.com][Commander Blop]]\\
 [[http://vlov.bandcamp.com][Vice Lords of Valhalla]]\\
@@ -49,9 +59,6 @@
 -----
 
 ** Games
-:PROPERTIES:
-:HTML_CONTAINER_CLASS: right-align
-:END:
 
 [[./rex][Rex Flotsam: Beach Cop (Global Game Jam 2017 game)]]\\
 [[https://github.com/cblop/bloodbath][Blood Bath (Love2D source)]]
@@ -59,6 +66,9 @@
 -----
 
 ** Contact
+:PROPERTIES:
+:HTML_CONTAINER_CLASS: right-align
+:END:
 
 [[./cv][CV]]\\
 [[mailto:matt@mthompson.org][Email]]\\
