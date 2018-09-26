@@ -60,7 +60,7 @@
 
 ** Games
 
-[[./rex][Rex Flotsam: Beach Cop]] [[https://github.com/cblop/rex][(ClojureScript source)]]\\
+[[./rex][Rex Flotsam: Beach Cop]] [[https://github.com/cblop/rex-flotsam][(ClojureScript source)]]\\
 [[http://mthompson.org/bloodbath][Blood Bath]] [[https://github.com/cblop/bloodbath][(Love2D source)]]
 
 -----
