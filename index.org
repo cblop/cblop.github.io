@@ -61,8 +61,8 @@
 :HTML_CONTAINER_CLASS: right-align
 :END:
 
-[[./rex][Rex Flotsam: Beach Cop (Global Game Jam 2017 game)]]\\
-[[https://github.com/cblop/bloodbath][Blood Bath (Love2D source)]]
+[[./rex][Rex Flotsam: Beach Cop]] [[https://github.com/cblop/rex][(ClojureScript source)]]\\
+[[http://mthompson.org/bloodbath][Blood Bath]] [[https://github.com/cblop/bloodbath][(Love2D source)]]
 
 -----
 

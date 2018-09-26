@@ -24,6 +24,8 @@ chroma-keying technique. This video footage was then converted into sprite sheet
 
 The code for the project is online [[https://github.com/cblop/bloodbath][here]], and needs the [[http://love2d.org][LÖVE game engine]] to run.
 
+The game can also be played online [[http://mthompson.org/bloodbath][here]].
+
 ** Tools
 
 *** LÖVE
